@@ -32,7 +32,7 @@ h1{
 .main input{
   width: 100%;
   margin-bottom: 20px;
-  background-color: grey;
+  
 }
 .main input[type=text]{
    border: none;
@@ -54,7 +54,7 @@ h1{
   background: transparent;
   height: 30px;
   font-size: 16px;
-  font-weight: ;
+  font-weight:bold;
   opacity: 1;
   color: #ccc;
 
