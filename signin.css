@@ -1,0 +1,140 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image:url(img/back.jpg) ;
+    background-size:cover ;
+    font-family: Poppins;
+  }
+  .main{
+    width: 400px;
+    height: 500px;
+    color: #000;
+    margin-top: 30%;
+    top: 50%;
+    left: 50%;
+    padding: 60px 40px 60px 40px;
+    position: relative;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    box-shadow: 8px 8px 50px #000;
+  }
+  h1{
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 8%;
+  
+  }
+  .main input{
+    width: 100%;
+    margin-bottom: 20px;
+    
+  }
+  .main input[type=text]{
+     border: none;
+     border-bottom: 2px solid #ddd;
+     background: transparent;
+     outline: none;
+     height: 30px;
+     font-size: 16px;
+     opacity: 1;
+     color: rgb(251, 252, 250);
+  
+  }
+  
+  .main input[type=password]{
+    display: flex;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    background: transparent;
+    height: 30px;
+    font-size: 16px;
+    font-weight:bold; 
+    opacity: 1;
+    color: #ccc;
+  
+  }
+  .main input[type=submit]{
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 14px;
+    opacity: 1;
+    color: rgb(43, 35, 35);
+    font-weight: bold;
+  
+  }
+  .main input[type=submit]:hover{
+    cursor: pointer;
+  }
+  .main a{
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+  }
+  .main a :hover{
+    color : #fff;
+    opacity: 1;
+  }
+  .bottom-text{
+    color: #fff;
+  
+  }
+  .bottom-text input{
+    width: 12%;
+    float: left;
+  
+  }
+  .bottom-text a{
+    float: right;
+  }
+  
+  
+  .login{
+    color: white;
+    margin: 20px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  }
+  .link{
+    display: flex;
+    cursor: pointer;
+    color: white;
+    margin: 0 0 20px 0;
+  }
+  .fa {
+    padding: 20px 10px 15px 10px;
+    font-size: 30px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-google {
+    background: #8b0707;
+    color: white;
+  }
+  .signup{
+    color: white;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+  }
+  .signup a{
+    color: #3498db;
+    text-decoration: none;
+  }
+  .signup a:hover{
+    text-decoration: underline;}
