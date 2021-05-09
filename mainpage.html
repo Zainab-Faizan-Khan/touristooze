@@ -1,119 +1,200 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Touristooze</title>
-    <link rel='stylesheet' href="style.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="responsive.css"/>
+    <!--icon of website-->
+    <link rel="shortcut icon" href="logo.png"/>
     <script src="https://kit.fontawesome.com/71b0414b2a.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- <input type="button" class="btn" id="test" style="width:50px" value="sdfsdf" text="button" />-->
     <div class="container">
-    
-        <header>
-            <div class= "mainheader">
-                <div class ="logo">
-                    <a href=""><b>Touristooze</b></a>
-                </div>
-                <div class="search">
-                <input type="text" placeholder="Search for cities..." >
-                <a  href="" style="font-size:large; color:white;"><i class="fas fa-search"></i></a>
-                </div>
-                <nav>
-                    <ul>
-                    <li><a href="" ><i class="far fa-user-circle"></i></a></li>
-                    <ul>
-                        <li><a href="">My Profile</a></li>
-                        <li><a href="">Feedback</a></li>
-                        <li><a href="" >Login</a></li>
-                  </ul>
-                  <li><a href=""><i class="far fa-question-circle"></i></a></li>
-                  <ul>
-                  <li><p>Frequently Asked Questions</p></li>
-                  </ul>
-                  <li><a href=""><i class="far fa-heart"></i></a></li>
-                  <ul>
-                  <li><h5>About us</h5></li>
-                  <li><p>Read about us</p></li>
-                  </ul>
-                  <li><a href=""><i class="far fa-star"></i></a></li>
-                  <ul>
-                  <li><h5>Reviews</h5></li>
-                  <li><p>Read through people experiences</p></li>
-                  </ul>
-                <li><a href=""><i class="fas fa-plane"></i></a></li>
-                <ul>
-                <li><h5>My Trips</h5></li>
-                <li><p>All your trips planned</p></li>
-                </ul>
-                
-                </ul>
-                </nav>
-            </div>
-        </header>
-        
-        <div class="Wrapper">            
+         <div class="wrapper">
+    <!--navigation bar-->
+    <nav class="navbar">
+        <!--logo-->
+        <img src="logo.png">
+        <a href="" class="logo">Touristooze</a>
+          <!--search-->
+        <div class="search">
+            <input type="text" placeholder="Explore Destination"/>
+            <i class="fas fa-search" ></i>
         </div>
-        
-        <div class="Package">
-            <div class="Content">
-                <h1>What Are You Waiting For?</h1>
-                <h2> Plan Your Trip with us right now!</h2>
-                <p>Select from the available packages and customize and plan your trip with the most trusted tourist guides</p>
-            </div>
-            <div class="Plan1">
-                
-                        <h3>Student Package</h3>
-                        
-                
-            </div>
-            <div class="Plan2">
-            
-                        <h3>Regular Package</h3>
-                        
-                    
-            </div>
+          <label class="menu-icon" for="menu-btn" style="font-size:1.2rem; ">
+            <span><i style= "padding: 10px" class="fas fa-bars"></i></span>
+        </label> 
+        <!--menu-->
+        <ul class="menu">
+            <li><a href="">My Trips</a></li>
+            <li><a href="">Reviews</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">FAQs</a></li>
+            <li><a href="">Account</a></li>  
+        </ul>
+    </nav>
+<!--changing text on wrapper-->
+    <div class="pop">
+        <h1>EXPLORE THE WORLD OF</h1>
+        <div class="change">
+        <ul>
+            <li>CULTURE</li>
+            <li>HISTORY</li>
+            <li>BEAUTY</li>
+            <li>TRADITION</li>
+            <li>ADVENTURE</li>
+        </ul>
         </div>
-        
-        <div class="Contact">
-        
-        <a><i class="fas fa-phone-alt"></i></a>
-        
-        </div>
-        <div class="options">
-        <a href="" style="bottom: 186px;"><i class="far fa-envelope"></i></a>
-        <a href="" style="bottom: 135px;"><i class="fab fa-whatsapp"></i></a>
-        <a href="" style="bottom: 83px;"><i class="fab fa-facebook-f"></i></a>
-
-        </div>
-     
+     </div>
     </div>
+    <!--DESCRIPTION OF TOURTISTOOZE FEATURES-->
+
+  <h1 id="section">HOP IN WITH TOURISTOOZE</h1>
+
+  <div class="subsec" id="S1">
+        <h1 style="transform:rotate(180deg);margin-left: 5%;">100+</h1>
+        <div class="formatsec" >  
+             <h2 style="margin-left: 40%;"> DESTINATIONS</h2>
+             <div class="gallery">
+                <div class="img"><img src="g2.jpg"></div>
+                <div class="img"><img src="g3.jpg"></div>
+                <div class="img"><img src="g4.jpg"></div>
+                <div class="img"><img src="g6.jpg"></div>
+                <div class="img"><img src="g5.jpg"></div>
+                <div class="img"><img src="g7.jpg"></div>
+             </div>
+        </div>
+             
+    </div>
+    <div class="subsec" id="S2">
+        
+        <div class="formatsec" style="justify-content: flex-end;float: right;">
+            <h2 style="margin-right: 10%;" >TRIPS: EASY &</h2>
+            <div class="img1">
+               <img src="gg1.png">
+            </div>
+
+        </div>
+        <h1 >SECURE</h1>
+    </div>
+
+    <div class="subsec" id="S3" style="margin-top:40%">
+        <h1 style="transform:rotate(180deg); margin-left: 5%;">COOL</h1>
+        <div class="formatsec">
+            <h2 style="margin-left: 40%;">ACTIVITIES</h2>
+             <div style="display:flex;height: auto;padding-left:20%;margin-top:18%;width: 180%;">
+                <div class="actgal" id="act1">
+                </div>
+               <div class="actgal" id="act2">
+    
+               </div>
+               <div class="actgal" id="act3">
+        
+                </div>
+                <div class="actgal" id="act4">
+                    
+                </div>
+                <div class="actgal" id="act5">
+                </div>
+             </div>
+        </div>
+    </div>
+    <h2  class="H" id="packages">AND EXCITING <br>AFFORDABLE PACKAGES</h2>
+    <div class="pack">
+        
+
+        <div class="packagelist" id="one">
+           <div class="dot"></div>
+            <h3>REGULAR</h3>
+            <p>Get a chance to create your own trip with</p>
+            <ul id="packul">
+                <li>* Customized Routes</li>
+                <li>* Exciting Destinations</li>
+                <li>* Variety of routes</li>
+            </ul>
+            <p>And much more..!</p>
+        </div>
+        <div class="packagelist" id="two">
+            <div class="dot"></div>
+            <h3>TEENSTER</h3>
+            
+            <p>Special package for people upto 25 years</p>
+            <p>Specify Destinations and budget and gear up to experience the journey of your dreams</p>
+        </div>
+    </div>
+    <h1 class="H" id="topreview">HEAR FROM OUR CUSTOMERS..!</h1>
+    <div style=" width:90% ;padding-left:6%;height:auto;display:flex;">
+    <div class="review" id="r1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="content">
+        </div>
+    </div>
+     <div class="review" id="r2">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="content">
+        </div>
+    </div>
+     <div class="review" id="r3">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="content">
+        </div>
+    </div>
+
+    </div>
+    <h1 class="H" id="news">NEWS AND UPDATES</h1>
+    <div class="news">
+        
+    </div>
+    </div><!--container-->
     <footer> 
-       <div class="Footer">
-        <div class="category1" >
-            <h2 >Touristooze</h2>
-            <p >+923330249895</p>
-            <p>+923323383697</p>
-
-            <a href="AboutUs.html">About</a>
-            <a href="">FAQs</a>
-            <a href="">Blog</a>
+        <h2 >Touristooze</h2>
+        <div style="width:100%;height:auto;display: flex;flex-direction: row;border-bottom:2px solid white;border-top:2px solid white;">
+            <div class="foot" id="foot1">
+                <p style="text-decoration:underline" >+923330249895</p>
+                <p style="text-decoration:underline" >+923323383697</p>
+                <a href="">About</a>
+                <a href="">FAQs</a>
+                <a href="">Blog</a>
+            </div>
+            <div class="foot" id="foot2">
+                <h1>BROWSE</h1>
+                <a href="">Destinations</a>
+                <a href="">Reviews</a>
+            </div>
+            <div class="foot" id="foot3">
+                <h1>PERSONALIZED</h1>
+                <a href="">My Trips</a>
+                <a href="">My Profile</a>
+                <a href="">Trip Planner</a>
+                <a href="">Payments</a>
+            </div>
+            <div class="foot" id="foot4">
+                <h1>PARTNERS</h1>
+                <div class="part">
+                <img src="part2.png" title="Punjab Tourism Development Corporation">
+                <img src="part3.png"title="Sindh Tourism Development Corporation">
+                <img src="part4.png" title="Khyber Pakhtunkhwa Tourism Development Corporation">
+                <img src="part5.png" title="Balochistan Tourism Development Corporation">
+                 <img src="part6.png" title="Pakistan Foreign Board">
+                </div>
+                 <img  src="part1.png" title="Pakistan Tourism Development Corporation">
+            </div>
+            
         </div>
-        <div class="category1">
-            <p style="font-size:x-large;padding-top:20px;">Browse</p>
-            <a href="">Destinations</a>
-            <a href="">Reviews</a>
-        </div>
-        <div class="category1" >
-            <p style="font-size:x-large; padding-top:20px;">Personalized</p>
-            <a href="">My Trips</a>
-            <a href="">My Profile</a>
-            <a href="">Trip Planner</a>
-            <a href="Payment.html">Payments</a>
-        </div>
-
-
-        </div>
-        <p  style="padding-left: 90px; width: 100%;">_____________________________________________________________________________________________________________________________________________</p>
-        <p style="padding-left: 600px; box-sizing: border-box; width: 100%; font-size:small; padding-top:0px;">
-        Copyright @2020 Touristooze. Designed by Alishba , Zainab</p>
+         <p id="last">Copyright @2020 Touristooze. Designed by Alishba , Zainab</p>
+  
     </footer>
 </body>
 </html>
