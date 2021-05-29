@@ -228,7 +228,25 @@ nav i:hover,nav .menu li a:hover{
     align-items: center;
     justify-content: center;
     box-shadow: inset 0px 0px 30px 10px rgba(0,0,0,0.6);
+
 }
+#gal1{animation: pic1 8s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes pic1{50%{content: url(gg2.jpg);} 0%,100%{content: url(g2.jpg);}}
+
+#gal2{animation: pic2 10s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes pic2{50%{content: url(gg3.jpg);} 0%,100%{content: url(g3.jpg);}}
+
+#gal3{animation: pic3 12s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes pic3{50%{content: url(gg4.jpg);} 0%,100%{content: url(g4.jpg);}}
+
+#gal4{animation: pic4 10s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes pic4{50%{content: url(gg6.jpg);} 0%,100%{content: url(g6.jpg);}}
+
+#gal5{animation: pic5 12s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes pic5{50%{content: url(gg5.jpg);} 0%,100%{content: url(g5.jpg);}}
+
+#gal6{animation: pic6 8s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes pic6{50%{content: url(gg7.jpg);} 0%,100%{content: url(g7.jpg);}}
 
 .gallery .img:first-child{grid-column-start: span 2;}
 
@@ -238,14 +256,13 @@ nav i:hover,nav .menu li a:hover{
     height:80%;
     width:80%;
     margin-right:30%; 
-  
     margin-bottom: -10%;
     margin-left: -30%;
 }
 .img1 img{height: 120%;width: 150%;}
 
 .actgal{
-    width: 100%;
+    width: 70vw;
     height: 40vh;
     background-size: cover;
     background-position: center;
@@ -259,11 +276,17 @@ nav i:hover,nav .menu li a:hover{
     margin-top: -7%;
 }
 
+#act1{animation: a1 8s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes a1{50%{background:  url(act5.jpg); background-size: cover;} 0%,100%{ background-size: cover;background:   url(act1.jpg);}}
+
 #act2{
     background-image: url(act2.jpg);
     transform: rotate(-6deg);
     margin-left: -5%;
 }
+
+#act2{animation: a2 8s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes a2{50%{background:   url(act1.jpg); background-size: cover;} 0%,100%{ background-size: cover;background:  url(act2.jpg);}}
 
 #act3{
     background-image: url(act3.jpg);
@@ -271,18 +294,10 @@ nav i:hover,nav .menu li a:hover{
     margin-left: -5%;
     z-index: 5;
 }
-#act4{
-    background-image: url(act4.jpg);
-    transform: rotate(6deg);
-    margin-left: -5%;  
-}
 
-#act5{
-    background-image: url(act5.jpg);
-    transform: rotate(-12deg);
-    margin-left: -5%;
-    margin-top: -7%;
-}
+#act3{animation: a3 8s linear infinite;animation-timing-function: ease-in-out;}
+@keyframes a3{50%{background:   url(act2.jpg); background-size: cover;} 0%,100%{background:   url(act3.jpg); background-size: cover;}}
+
 
 
 .H{font-size: 5vw;
