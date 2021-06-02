@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Plan Trip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png"/>
+    <link rel='stylesheet' href="PlanTrip.css" >
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+          <!--navigation bar-->
+        <nav class="navbar">
+            <!--logo-->
+            <img src="logo.png">
+            <a href="" class="logo">Touristooze</a>
+              <!--search-->
+            <div class="search">
+                <input type="text" placeholder="Explore Destination"/>
+                <i class="fas fa-search" ></i>
+            </div>
+              <label class="menu-icon" for="menu-btn" style="font-size:1.2rem; ">
+                <span><i style= "padding: 10px" class="fas fa-bars"></i></span>
+            </label> 
+            <!--menu-->
+            <ul class="menu">
+                <li><a href="">My Trips</a></li>
+                <li><a href="">Reviews</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">FAQs</a></li>
+                <li><a href="">Account</a></li>  
+            </ul>
+        </nav>
+        </div> 
+        <div class="PlanTrip">
+            <div class="tab">
+           <div class="province">
+               <h1>Select Province!</h1>
+            <div style="margin-left:6%; padding-right:6%">
+
+                <ul id="autoWidth" class="cs-hidden">
+                  <li class="item-a">
+                    <div class="box" style="background-image: url(Plantrip/sindh.jpg);">
+                    <h1 class="boxhead">SINDH</h1>
+                    </div>
+                  </li>
+                  <li class="item-b">
+                    <div class="box" style="background-image: url(Plantrip/Punjab1.jpg);">
+                    <h1 class="boxhead">PUNJAB</h1>
+                    </div> 
+                  </li>
+                  <li class="item-c">
+                    <div class="box"style="background-image: url(Plantrip/baloch.jpg);">
+                    <h1 class="boxhead">BALOCHISTAN</h1>
+                    </div></li>
+                  <li class="item-d">
+                    <div class="box"style="background-image: url(Plantrip/kpk.jpg);">
+                    <h1 class="boxhead">KPK</h1>
+                    </div>
+                  </li>
+                </ul> 
+            </div>
+            <h2>Customize Your Plan..</h2>
+         </div>
+        </div>
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+
+        </div> 
+    </body>
+
+</html>
