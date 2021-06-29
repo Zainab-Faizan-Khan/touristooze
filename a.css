@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16px;
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(#c7bfdf , #db938f);
+    background-attachment: fixed;
+}
+
+/*/////////////////////////////////////*/
+
+
+
+#PlanTrip{
+    width: 60%;
+    height:auto;
+    margin: 4% 20%;
+    box-sizing: border-box;
+    box-shadow: 8px 8px 50px #000;
+    border-radius: 10px;
+}
+/*main heading*/
+h1{ 
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3em;
+    padding-top: 2%;
+    color: transparent;
+    box-shadow: 0px 10px 5px rgb(109, 28, 85);
+    background-image: url(Sindh.jpg);
+    -webkit-background-clip: text;
+    background-size: 100% 100%;
+    letter-spacing: 3px;
+
+}
+/*Province heading*/
+.tab h3{
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+    font-size: 2em; 
+    margin:2% 0; 
+    padding-left: 7%;
+    background-color: rgba(0, 0, 0, 0.219); 
+}
+/*Province list*/
+
+.provincelist{
+    width: 100%;
+    height:fit-content;    
+    padding: 3%;
+    justify-content: center;
+    align-content: center;
+}
+
+.box{
+    width:10vw;
+    height:16vw;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.705);
+    transition: all ease-in-out 0.7s;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.checkbox{
+    margin-right: 3%;
+    visibility: hidden;
+}
+.check{
+    transition: all ease-in-out 0.5s;
+    width: 7.5vw;
+    height: 6vw;
+    border-bottom-left-radius:90% ;
+    border-top-right-radius: 14px;
+   opacity: 0;
+}
+
+.select{
+    width: 2em;
+    height: 2em;
+    background-color: rgb(109, 28, 85);
+    opacity: 1;
+    margin: 22% 45%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);   
+}
+
+.provincelist{
+    display: flex;
+    flex-direction: row;
+}
+.provincelist .checkbox:checked ~ .check{
+    opacity: 1;
+}
+
+.item1 , .item2 , .item3 ,.item4{
+    width: 18%;
+    margin-right: 3%;
+}
+.provincelabel{
+    padding:0% 25%;
+    color: rgb(109, 28, 85);
+    font-size: x-large;
+    font-family:'Gloria Hallelujah', cursive;
+    font-weight: bold;
+}
+
+.item4 .provincelabel{
+    font-size: 1.3em;
+    padding:0% 0% ;
+}
+
+.item3 .provincelabel{
+    padding:0% 9%;
+}
+
+
+.container {
+    display: block;
+    margin:2% 13%;
+
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ position: relative;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+visibility: hidden;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+position: absolute;
+height: 1em;
+width: 1em;
+background-color: #eee;
+left: -7%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+background-color: rgb(219, 183, 183);
+}
+
+/* When the checkbox is checked, add a background  */
+.container input:checked ~ .checkmark {
+background-color: #c27bad;
+
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+left: 0.56em;
+top: 0.31em;
+width: 0.31em;
+height: 0.625em;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+
+/* Hide all steps by default: */
+.tab {
+display: none;
+}
+
+button {
+background-color: #04AA6D;
+color: #ffffff;
+border: none;
+padding: 0.62em 1.25em;
+font-size: 1.1em;
+font-family: Raleway;
+cursor: pointer;
+}
+
+button:hover {
+opacity: 0.8;
+}
+/*Previous button*/
+#prevBtn {
+size: 1.25em;
+background-color: rgb(175, 124, 124);
+border-radius: 10px;
+padding: 0.3em 1.3em;
+margin-left: 10em;
+font-size: 1rem;
+font-weight: bold;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+width: 15%;
+position: fixed;
+margin-top: 1em;
+
+}
+
+/*Next button*/
+#nextBtn{
+size: 1.25em;
+background-color: rgb(175, 124, 124);
+border-radius: 10px;
+padding: 0.3em 1.3em;
+margin-left: 70%;
+margin-top: 3%;
+font-size: 1rem;
+font-weight: bold;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+width: 15%;
+
+}
+button{
+inline-size: 3%;
+}
+
+/* Make circles that indicate the steps of the form: */
+
+.step {
+height: 1em;
+width: 1em;
+margin: 0  .125em;
+background-color: #bbbbbb;
+border: none;  
+border-radius: 50%;
+display: inline-block;
+opacity: 0.5;
+}
+
+.step.active {
+opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+background-color: #97627f;
+}
+/*Right Coloumn*/
+.col1{
+float: right;
+width: 10%;
+padding: 1em;
+height: 40em; 
+background-color: rgb(224, 224, 224);
+margin-top: 4em;
+border-radius: 10px;
+background-attachment: fixed;
+background-image: url(Plantrip/t1.jpg);
+animation-name: animatewrap;
+box-shadow: 10px 10px 5px #302f2f;
+animation-duration: 15s;
+animation-timing-function: ease-in-out;
+animation-play-state: running;
+animation-iteration-count: infinite;
+
+}
+@keyframes animatewrap{
+    0%{background-image: url(Plantrip/t1.jpg);}
+    50%{background-image: url(Plantrip/t2.jpg);}            
+}
+
+.pop1{
+background:rgba(202, 179, 179, 0.479);
+height:10%;
+width: 112%;
+margin-top: 3.5em;
+letter-spacing: 2px;
+color: white;
+text-shadow: 0 0 10px rgb(56, 55, 55);
+border-radius: 4px;
+font-size: 1em;
+font-family: fantasy;
+font-style: italic;
+
+
+}
+
+.pop2{
+background:rgba(202, 179, 179, 0.479);
+height:10%;
+width: 114%;
+margin-top: 4.5em;
+letter-spacing: 2px;
+color: white;
+text-shadow: 0 0 10px rgb(56, 55, 55);
+border-radius: 4px;
+font-size: 1em;
+font-family: fantasy;
+font-style: italic;
+float: right;
+
+}
+.pop3{
+background:rgba(202, 179, 179, 0.479);
+height:10%;
+width: 114%;
+margin-top: 5.5em;
+letter-spacing: 2px;
+color: white;
+text-shadow: 0 0 10px rgb(56, 55, 55);
+border-radius: 4px;
+font-size: 1em;
+font-family: fantasy;
+font-style: italic;
+float: left;
+
+}
+/*left Coloumn*/
+.col2{
+float: left;
+width: 10%;
+padding: 1em;
+height: 40em; 
+background-color: aqua;
+margin-top: 4em;
+border-radius: 10px;
+background-attachment: fixed;
+
+background-image: url(Plantrip/t3.jpg);
+animation-name: animatewrap2;
+box-shadow: 10px 10px 5px #302f2f;
+animation-duration: 15s;
+animation-timing-function: ease-in-out;
+animation-play-state: running;
+animation-iteration-count: infinite;
+
+}
+@keyframes animatewrap2{
+    0%{background-image: url(Plantrip/t5.jpg);}
+    50%{background-image: url(Plantrip/t4.jpg);}
+    100%{background-image: url(Plantrip/t3.jpg);}            
+}
+.pop4{
+background:rgba(202, 179, 179, 0.479);
+height:10%;
+width: 112%;
+margin-top: 3.5em;
+letter-spacing: 2px;
+color: white;
+text-shadow: 0 0 10px rgb(56, 55, 55);
+border-radius: 4px;
+font-size: 1em;
+font-family: fantasy;
+font-style: italic;
+float: right;
+
+
+}
+
+.pop5{
+background:rgba(202, 179, 179, 0.479);
+height:10%;
+width: 114%;
+margin-top: 4.5em;
+letter-spacing: 2px;
+color: white;
+text-shadow: 0 0 10px rgb(56, 55, 55);
+border-radius: 4px;
+font-size: 1em;
+font-family: fantasy;
+font-style: italic;
+float: left;
+
+}
+.pop6{
+background:rgba(202, 179, 179, 0.479);
+height:10%;
+width: 114%;
+margin-top: 5.5em;
+letter-spacing: 2px;
+color: white;
+text-shadow: 0 0 10px rgb(56, 55, 55);
+border-radius: 4px;
+font-size: 1em;
+font-family: fantasy;
+font-style: italic;
+float: right;
+
+}
+/*Scrollbar*/
+::-webkit-scrollbar{width:15px; border-radius: 20px;}
+::-webkit-scrollbar-track{background: linear-gradient(transparent,rgba(182, 92, 92, 0.945)); 
+box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.39);  }
+::-webkit-scrollbar-thumb{background: linear-gradient(rgb(94, 32, 32),rgb(109, 37, 37),rgb(163, 55, 55),rgb(172, 77, 77)); border-radius: 20px;}
