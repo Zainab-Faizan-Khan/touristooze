@@ -318,7 +318,7 @@ nav i:hover,nav .menu li a:hover{
 
 .packagelist{
     width: 35vw;
-    height:40vh;
+    height:auto;
     padding: 5% 3%;
     border-radius: 4%; 
     box-shadow: 10px 10px 5px #302f2f;

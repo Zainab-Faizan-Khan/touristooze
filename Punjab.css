@@ -133,7 +133,6 @@ nav i:hover,nav .menu li a:hover{
 
 /*Actual page content*/
 .actualcontent{
-    height: 1000px;
     width: 100%;
     margin-top: 9vw;
 }
@@ -149,7 +148,7 @@ nav i:hover,nav .menu li a:hover{
     -webkit-background-clip: text;
     background-size: 100% 100%;
 }
-
+/*just for styling */
 #falto1{
     width: 5%;
     height: 5px;
@@ -161,6 +160,7 @@ nav i:hover,nav .menu li a:hover{
     margin-top: -10px;
     border-top: 4px solid black;
 }
+/*just for styling */
 .filterbar{
     padding-left:27%;
     display:flex;
@@ -284,3 +284,10 @@ nav i:hover,nav .menu li a:hover{
 
 .box:hover>.boxhead{padding-top: 50%;}
 .box:hover{transform: scale(1.1,1.1);}
+
+
+footer{
+    height: 2vw;
+    width: 100%;
+    background: inherit;
+}

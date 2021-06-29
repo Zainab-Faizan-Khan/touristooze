@@ -133,7 +133,7 @@ nav i:hover,nav .menu li a:hover{
 
 /*Actual page content*/
 .actualcontent{
-    height: 1000px;
+    
     width: 100%;
     margin-top: 9vw;
 }
@@ -284,3 +284,9 @@ nav i:hover,nav .menu li a:hover{
 
 .box:hover>.boxhead{padding-top: 50%;}
 .box:hover{transform: scale(1.1,1.1);}
+
+footer{
+    height: 2vw;
+    width: 100%;
+    background: inherit;
+}

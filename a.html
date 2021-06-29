@@ -1,93 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> 
  <title>Plan Trip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="shortcut icon" href="logo.png"/>
-    <link rel='stylesheet' href="a.css" >
-</head>
+    <link rel='stylesheet' href="PlanTrip.css" >
     
 <body>
-  <form id="PlanTrip" action="/action_page.php">
-    <h1>CREATE YOUR TRIP!!</h1>
+    <div class="wrapper">
+        <!--navigation bar-->
+      <nav class="navbar">
+          <!--logo-->
+          <img src="logo.png">
+          <a href="main page.html" class="logo">Touristooze</a>
+            <!--search-->
+          <div class="search">
+              <input type="text" placeholder="Explore Destination"/>
+              <i class="fas fa-search" ></i>
+          </div>
+            <label class="menu-icon" for="menu-btn" style="font-size:1.2rem; ">
+              <span><i style= "padding: 10px" class="fas fa-bars"></i></span>
+          </label> 
+          <!--menu-->
+          <ul class="menu">
+          <li><a href="MyTrips.html">My Trips</a></li>
+          <li><a href="">Reviews</a></li>
+          <li><a href="AboutUs.html">About</a></li>
+          <li><a href="">FAQs</a></li>
+          <li><a href="">Account</a></li> 
+          </ul>
+      </nav>
+      </div> 
+      <!--left Coloumn-->
+      <div class="col1">
+        <div class="pop1">
+          "To Travel Is To LIVE!"
+      </div>
+      <div class="pop2">
+        "Collect Moments, Not Things!"
+      </div>
+      <div class="pop3">
+        "TRAVEL!!!"<br> Before You Run Out Of Time
+      </div>
+      </div>
+      <!--Right coloumn-->
+      <div class="col2">
+        <div class="pop4">
+          “Life is short and the world is wide.” 
+      </div>
+      <div class="pop5">
+        "Escape The Ordinary!!!""
+      </div>
+      <div class="pop6">
+        Travel Is A Therapy."
+      </div>
+      </div>
+      <!--MAIN PLAN TRIP FORM-->
+    <form id="PlanTrip" action="/action_page.php">
+        <h1>Customize Your Plan!!!</h1>
         <!--province page-->
-    
+      <div class="province">
       <!-- One "tab" for each step in the form: -->
-      <div class="tab">
-        <h3>Select Province:</h3>
-        <div class="provincelist">
+      <div class="tab"><h3>Select Province:</h3>
+        <div style="margin-left:6%; padding-right:6%">
 
-            <div class="item1">
-                <label  for="check1">
-                  
-                  <div class="box" style="background-image: url(Sindh/logos/mirpurkhas.jpg);">
-                    <input id="check1" type="checkbox" value="Sindh" class="checkbox">
-                    
-                    <div class="check">
-                    <div class="select">
-                    </div>
-                    </div>
-                  </div> 
-                </label>
-                <label for="check1" class="provincelabel">Sindh</label>
-            </div>
-
-            <div class="item2">
-                <label  for="check2">
-                  
-                  <div class="box" style="background-image: url(Punjab/logos/islamabad.jpg);">
-                    <input id="check2" type="checkbox" value="Punjab" class="checkbox">
-                    <div class="check">
-                    <div class="select">
-                    </div>
-                    </div>
-                  </div> 
-                </label>
-                <label for="check2" class="provincelabel">Punjab</label>
-            </div>
-
-            <div class="item3">
-                <label  for="check3">
-                  
-                  <div class="box" style="background-image: url(Balochistan/logos/kalat.jpg);">
-                    <input id="check3" type="checkbox" value="Balochistan" class="checkbox">
-                    <div class="check">
-                    <div class="select">
-                    </div>
-                    </div>
-                  </div> 
-                </label>
-                <label for="check3" class="provincelabel">Balochistan</label>
-            </div>
-
-            <div class="item4">
-                <label  for="check4">
-                  
-                  <div class="box" style="background-image: url(Khyber/logos/kurram.jpg);">
-                    <input id="check4" type="checkbox" value="Khyber" class="checkbox">
-                    <div class="check">
-                    <div class="select">
-                    </div>
-                    </div>
-                  </div> 
-                </label>
-                <label for="check4" class="provincelabel">Khyber Pakhtun</label>
-            </div>            
+            <ul id="autoWidth" class="cs-hidden">
+              <li class="item-a">
+                <div class="box" style="background-image: url(Plantrip/sindh.jpg);">
+                <h2 class="boxhead">SINDH</h2>
+                <input type="radio" checked="checked" name="radio">
+                </div>
+              </li>
+              <li class="item-b">
+                <div class="box" style="background-image: url(Plantrip/Punjab1.jpg);">
+                <h2 class="boxhead">PUNJAB</h2>
+                <input type="radio" checked="checked" name="radio">
+                </div> 
+              </li>
+              <li class="item-c">
+                <div class="box"style="background-image: url(Plantrip/baloch.jpg);">
+                <h2 class="boxhead">BALOCHISTAN</h2>
+                <input type="radio" checked="checked" name="radio">
+                </div></li>
+              <li class="item-d">
+                <div class="box"style="background-image: url(Plantrip/kpk.jpg);">
+                <h2 class="boxhead">KPK</h2>
+                <input type="radio" checked="checked" name="radio">
+                </div>
+              </li> 
+              </ul>
         </div>
-      
-
-
     </div>
-
+ </div>
  <!--Activity page-->
-      <div class="tab"><h3>Activities Preferences (OPTIONAL)</h3>
-
+      <div class="tab"><h4>Activities Preferences (OPTIONAL)</h4><br>
+        <div class="slide">
+          
+        </div>
       
           <label class="container">Beaches
             <input type="checkbox">
@@ -126,12 +136,12 @@
           
       </div>
       <!--trip date page-->
-      <div class="date"><!--I CANT FIND WHERE THIS DIV ENDS-->
-      <div class="tab"><h3>Trip Dates:</h3>
+      <div class="date">
+      <div class="tab"><h5>Trip Dates:</h5><br>
         <input type = "date" name="date" id="Startdate-picker" >
         <input type = "date" name="date" id="Enddate-picker" >
         <div class="passenger">
-            <label><h3>No Of Passengers</h3></label><br>
+            <label>No Of Passengers</label><br>
             <select class="option">
                 <option>0</option>
                 <option>1</option>
@@ -146,7 +156,7 @@
        
     </div>
     <!--routes page-->
-      <div class="tab"><h3>Transport Options:</h3>(Only For Regular Packages)
+      <div class="tab"><h6>Transport Options:</h6>(Only For Regular Packages)
         <div style="margin-left:6%; padding-right:6%">
 
             <ul id="autoWidth" class="cs-hidden">
@@ -225,9 +235,9 @@
         <span class="step"></span>
         <span class="step"></span>
       </div>
-    -->
-  </form>
-      <script>
+    </form>
+    
+    <script>
     var date = new Date();
 document.getElementById("Startdate-picker").value = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + String(date.getDate()).padStart(2,'0');
 var date = new Date();
@@ -306,5 +316,6 @@ document.getElementById("Enddate-picker").value = date.getFullYear() + '-' + (da
       x[n].className += " active";
     }
     </script>
-</body>
-</html>
+    
+    </body>
+    </html>
