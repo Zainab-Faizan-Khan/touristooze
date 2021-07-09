@@ -1,0 +1,312 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: linear-gradient(#c7bfdf , #db938f);
+  background-attachment: fixed;
+}
+.wrapper{
+  width: 100%;
+  border-bottom: 2px solid black;
+  height:24vw;
+  background-size: cover;
+  background-attachment: fixed;
+  background:brown;
+  box-shadow: 10px 10px 5px #302f2f;
+}
+
+/*/////////////////////////////////////*/
+.wrapper h3{
+  color:#d88581d2 ;
+  margin-left: 18%;
+    font-family: sans-serif;
+    font-size: 6em;
+    padding-top: 3%;
+    
+    text-shadow: 5px 5px 2px black;
+}
+
+
+
+#PlanTrip{
+  width: 60%;
+  height:fit-content;
+  margin: -10% 20%;
+  box-sizing: border-box;
+  box-shadow: 8px 8px 50px #000;
+  border-radius: 10px;
+  background: inherit;
+}
+
+/*Province heading*/
+.tab h3{
+  font-family: 'Kaushan Script', cursive;
+  font-weight: bold;
+  font-size: 2em; 
+  padding-left: 7%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.219); 
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+/*Province list*/
+
+.provincelist{
+  width: 100%;
+  height:fit-content;    
+  padding: 3%;
+  justify-content: center;
+  align-content: center;
+}
+
+.box{
+  width:10vw;
+  height:16vw;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.705);
+  transition: all ease-in-out 0.7s;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+}
+.checkbox{
+  margin-right: 3%;
+  visibility: hidden;
+}
+.check{
+  transition: all ease-in-out 0.5s;
+  width: 7.5vw;
+  height: 6vw;
+  border-bottom-left-radius:90% ;
+  border-top-right-radius: 14px;
+ opacity: 0;
+}
+
+.select{
+  width: 2em;
+  height: 2em;
+  background-color: rgb(109, 28, 85);
+  opacity: 1;
+  margin: 22% 45%;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);   
+}
+
+.provincelist{
+  display: flex;
+  flex-direction: row;
+}
+.provincelist .checkbox:checked ~ .check{
+  opacity: 1;
+}
+
+.item1 , .item2 , .item3 ,.item4{
+  width: 18%;
+  margin-right: 3%;
+}
+.provincelabel{
+  padding:30% 25%;
+  text-align: center;
+  color: rgb(109, 28, 85);
+  font-size: x-large;
+  font-family:'Gloria Hallelujah', cursive;
+  font-weight: bold;
+}
+
+.item4 .provincelabel{
+  font-size: 1.3em;
+  padding:0% 0% ;
+}
+
+.item3 .provincelabel{
+  padding:0% 9%;
+}
+
+
+.container {
+  display: flex;
+  margin:2% 13%;
+align-content: flex-end;
+  cursor: pointer;
+  font-size: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+position: relative;
+
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+visibility: hidden;
+}
+.container p{margin-left: 25px;}
+/* Create a custom checkbox */
+.checkmark {
+position: absolute;
+height: 1em;
+width: 1em;
+background-color: #eee;
+
+
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+background-color: rgb(219, 183, 183);
+}
+
+/* When the checkbox is checked, add a background  */
+.container input:checked ~ .checkmark {
+background-color: #c27bad;
+
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+left: 0.56em;
+top: 0.31em;
+width: 0.31em;
+height: 0.625em;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+/*Date selector*/
+ 
+#Startdate-picker{
+  margin: 5% 10%;
+  border-radius: 10px;
+  font-size: 1.5em;
+ 
+  background-color: rgb(211, 194, 188);
+}
+#Enddate-picker{
+ 
+  margin: 5% 10%;
+border-radius: 10px;
+font-size: 1.5em;
+margin-left: 5em;
+background-color: rgb(211, 194, 188);
+}
+/*No of travelers*/
+
+.option{
+border-radius: 10px;
+font-size: 1.5em;
+background-color: rgb(221, 195, 186);
+margin: 5% 5%;
+
+}
+.transport{
+  font-size: 1.1em;
+  margin: 3%;
+}
+.transport legend{
+  font-size: 1.6em;
+  
+}
+/* Hide all steps by default: */
+.tab {
+display: none;
+height: 60%;
+}
+
+button {
+background-color: #04AA6D;
+color: #ffffff;
+border: none;
+padding: 0.62em 1.25em;
+font-size: 1.1em;
+font-family: Raleway;
+cursor: pointer;
+}
+
+button:hover {
+opacity: 0.8;
+}
+/*Previous button*/
+#prevBtn {
+size: 1.25em;
+background-color: rgb(175, 124, 124);
+border-radius: 10px;
+padding: 0.3em 0.3em;
+margin-left: 7%;
+font-size: 1rem;
+font-weight: bold;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+width: 9%;
+position: fixed;
+margin-top: 1.7em;
+
+}
+
+/*Next button*/
+#nextBtn{
+size: 1.25em;
+background-color: rgb(175, 124, 124);
+border-radius: 10px;
+padding: 0.3em 1.3em;
+margin-left: 70%;
+margin-top: 3%;
+font-size: 1rem;
+font-weight: bold;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+width: 15%;
+
+}
+button{
+inline-size: 3%;
+}
+
+/* Make circles that indicate the steps of the form: */
+
+.step {
+height: 1em;
+width: 1em;
+margin: 0  .125em;
+background-color: #bbbbbb;
+border: none;  
+border-radius: 50%;
+display: inline-block;
+opacity: 0.5;
+}
+
+.step.active {
+opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+background-color: #97627f;
+}
+
+
+
+
+/*Scrollbar*/
+::-webkit-scrollbar{width:15px; border-radius: 20px;}
+::-webkit-scrollbar-track{background: linear-gradient(transparent,rgba(182, 92, 92, 0.945)); 
+box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.39);  }
+::-webkit-scrollbar-thumb{background: linear-gradient(rgb(94, 32, 32),rgb(109, 37, 37),rgb(163, 55, 55),rgb(172, 77, 77)); border-radius: 20px;}
