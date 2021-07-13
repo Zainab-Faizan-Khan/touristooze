@@ -1,45 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+     <link rel="stylesheet" href="signin.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <title>Login</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Sign Up!</h1>
-        <form action="">
-            <label for="fname"><b>First Name: </b></label>
-            <input type="text" placeholder="Enter First Name" name="fname" required><br>
-            <label for="lname"><b>Last Name: </b></label>
-            <input type="text" placeholder="Enter Last Name" name="lname" required> <br>
-            <label for="email"><b>Email: </b></label>
-            <input type="text" placeholder="Enter Email" name="email" required><br>
-            <label for="email"><b>Country: </b></label>
-            <input type="text" placeholder="Enter Country" name="country" ><br>
-            <label for="city"><b>City: </b></label>
-            <input type="text" placeholder="Enter city" name="city" ><br>
-            <label for="cnic"><b>CNIC: </b></label>
-            <input type="text" placeholder="Enter CNIC" name="cnic" required><br>
-            <label for="zipcode"><b>Zip Code: </b></label>
-            <input type="postal" placeholder="Enter Zip Code" name="zipcode"><br>
-            <label for="Pnum"><b>Phone Number: </b></label>
-            <input type="tel" placeholder="Enter Phone Number" name="Pnum"><br>
-            <label for="psw"><b>Password: </b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required><br>
-            <label for="psw-repeat"><b>Repeat Password: </b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
-            <label for="gender"><b>Gender:                   </b></label><br>
-            <input type="radio" name="gender" value="male"> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-            <input type="radio" name="gender" value="other"> Other <br>
-            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-            <button type="submit" class="signupbtn">Sign Up</button>
-        </form>
+     <div class="container">
+          <div class="pop" id="pop" style="float:right">
+               <div class="register">
+                    <h1>Sign Up!</h1>
+                    <form action="">
+                         <label for="fname"><b>First Name: </b></label>
+                         <input type="text" placeholder="Enter First Name" name="fname" required><br>
+                         <label for="lname"><b>Last Name: </b></label>
+                         <input type="text" placeholder="Enter Last Name" name="lname" required> <br>
+                         <label for="email"><b>Email: </b></label>
+                         <input type="text" placeholder="Enter Email" name="email" required><br>
+                         <label for="email"><b>Country: </b></label>
+                         <input type="text" placeholder="Enter Country" name="country" ><br>
+                         <label for="cnic"><b>CNIC: </b></label>
+                         <input type="text" placeholder="Enter CNIC" name="cnic" required><br>
+                         <label for="Pnum"><b>Phone Number: </b></label>
+                         <input type="tel" placeholder="Enter Phone Number" name="Pnum"><br>
+                         <label for="psw"><b>Password: </b></label>
+                         <input type="password" placeholder="Enter Password" name="psw" required><br>
+                         <label for="age"><b>Age Group: </b></label>
+                                     <select class="option">
+                                        <option>1-18</option>
+                                        <option>18-30</option>
+                                        <option>30+</option>
+                                   </select>
+                         <p>By creating an account you agree to our <br><a href="#" style="color:purple">Terms & Privacy</a>.</p>
+                        <button type="submit" class="signupbtn">Sign Up</button>
+                    </form>
             
-          <div class="signup">
+          <div class="login">
             Already have an account? <a href="SignIn.html">Login</a>
           </div>
     </div>
