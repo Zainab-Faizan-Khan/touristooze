@@ -5,7 +5,13 @@ const cookieParser=require("cookie-parser")
 const router=express.Router();
 
 
-
+router.get("/Payment" ,(req,res)=> {
+    if ((req.session.back=req.session.form) &&(req.session.back)){
+    res.render("Payment",{tag:()=>{if(req.session.name){return "Logout" }else{return "Login"}}});
+    req.session.back=req.originalUrl;
+    console.log(req.session.back)}
+    else{res.redirect("/PlanTrip")}
+});
 router.get("/" ,(req,res)=> {
     res.render("mainpage",{tag:()=>{if(req.session.name){return "Logout" }else{return "Login"}}});
     req.session.back=req.originalUrl;

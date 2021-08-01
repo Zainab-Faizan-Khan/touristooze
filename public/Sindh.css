@@ -427,30 +427,26 @@ nav i:hover,nav .menu li a:hover{
 .imgdiv{
     width: 90%;
     height: 90%;
-    animation: image 5s linear infinite;
-    background-position:center;
-    background-size: cover;
-    transition: all ease-in-out 5s;
-}
-@keyframes image {
-    0% ,100%{background-image: url(/Sindh/i1.jpg);}
-    10%{background-image: url(/Sindh/i2.jpg);}
-    20%{background-image: url(/Sindh/i3.jpg);}
-    30%{background-image: url(/Sindh/i4.jpg);}
-    40%{background-image: url(/Sindh/i5.jpg);}
-    50%{background-image: url(/Sindh/i6.jpg);}
-    60%{background-image: url(/Sindh/i7.jpg);}
-    70%{background-image: url(/Sindh/i8.jpg);}
-    80%{background-image: url(/Sindh/i9.jpg);}
-    90%{background-image: url(/Sindh/i10.jpg);}
+    animation-name: fade;
+  animation-duration: 1.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
     
+    transition: all ease-in-out 25s;
 }
-#insight{
+.imgdiv img{width: 100%;height: 100%;}
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+.insight{
     width: 100%;
     height:80vh;
-    background-color: red;
+    
     padding:5% ;
 }
+
+
 
 
 .deshead{
@@ -498,7 +494,7 @@ nav i:hover,nav .menu li a:hover{
 .searcherr{font-size: 1.5em;text-align: center;background-color: #db938f;color: red;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 justify-content: center;width: 100%;display: none;}
-.city{}
+.city{display:none;}
 .city,.places{
     margin: 5% 3%;
     padding: 4%;

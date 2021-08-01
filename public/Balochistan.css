@@ -125,6 +125,7 @@ nav{
     font-size: 2rem;
     background-color: rgba(0, 0, 0, 0.473);
     align-items:center;
+    overflow-y:hidden ;
 }
 .navbar img{height:4vw;width:5vw;}
 
@@ -137,6 +138,7 @@ nav .menu{display:flex;}
 nav .menu li a{
     height: 40px;
     line-height: 43px;
+    overflow-y: hidden;
     margin: 0px;
     padding: 0px 25px;
     display: inline-block;

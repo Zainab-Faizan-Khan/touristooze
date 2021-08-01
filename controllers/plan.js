@@ -13,7 +13,7 @@ const db= mysql.createConnection({
 
 exports.plantrip=(req,res)=>{
     
-    
+    req.session.province=null;
     req.session.startdate=req.body.startdate
     req.session.enddate=req.body.enddate
     req.session.car=req.body.car
@@ -28,10 +28,14 @@ exports.plantrip=(req,res)=>{
 Plane:req.session.plane},(error,results)=>{
         if(error){console.log(error);res.redirect("../PlanTrip")}
         else{
-          if(req.session.province.length<0){res.redirect("/MyTrips")}
+          req.session.no=req.session.province.length-1;
+          if(req.session.province.no<0){res.render("/Payment")}
           else{
-            req.session.no=req.session.province.length;
-            res.render(req.session.province[req.session.no-1])
+            
+            
+            res.render(req.session.province[req.session.no])
+            
+
           }     
                 
         }
@@ -60,15 +64,11 @@ exports.plansindh=(req,res)=>{
         db.query('INSERT INTO citybooking SET ?',{ province:province,cityname:req.body.city[x],Tripno:req.session.tripno},(error,results)=>{
           if (error) throw error
         })}
-        req.session.no--
-        if(req.session.no=0){
+        
+        
           req.session.tripno=0;
-          res.redirect("/Payment")
-          
-        }
-        else{
-          res.render(req.session.province[req.session.no-1])
-        }
+          res.render("/Payment")
+        
 
     }
     else{console.log("Just viewing")}
@@ -83,14 +83,24 @@ exports.plankhyber=(req,res)=>{
         db.query('INSERT INTO citybooking SET ?',{ province:province,cityname:req.body.city[x],Tripno:req.session.tripno},(error,results)=>{
           if (error) throw error
         })}
-        req.session.no--
-        if(req.session.no=0){
-          req.session.tripno=0;
-          res.redirect("/Payment")
+        console.log(req.session.no)
+        if( req.session.province[req.session.no-1]=="Balochistan"){
+          
+          res.render(req.session.province[req.session.no-1])
+          req.session.no-=1
           
         }
-        else{
+        else if(req.session.province[req.session.no-1]=="Punjab" ){
           res.render(req.session.province[req.session.no-1])
+          req.session.no-=1
+        }
+        else if(req.session.province[req.session.no-1]=="Sindh" ){
+          res.render(req.session.province[req.session.no-1])
+          req.session.no-=1
+        }
+        else{
+          req.session.tripno=0;
+          res.render("Payment")
         }
     }
     else{console.log("Just viewing")}
@@ -104,14 +114,18 @@ exports.planbaloch=(req,res)=>{
         db.query('INSERT INTO citybooking SET ?',{ province:province,cityname:req.body.city[x],Tripno:req.session.tripno},(error,results)=>{
           if (error) throw error
         })}
-        req.session.no--
-        if(req.session.no=0){
-          req.session.tripno=0;
-          res.redirect("/Payment")
-          
+        
+         if(req.session.province[req.session.no-1]=="Punjab" ){
+          res.render(req.session.province[req.session.no-1])
+          req.session.no-=1
+        }
+        else if(req.session.province[req.session.no-1]=="Sindh"){
+          res.render(req.session.province[req.session.no-1])
+          req.session.no-=1
         }
         else{
-          res.render(req.session.province[req.session.no-1])
+          req.session.tripno=0;
+          res.render("/Payment")
         }
 
     }
@@ -126,14 +140,14 @@ exports.planpunjab=(req,res)=>{
         db.query('INSERT INTO citybooking SET ?',{ province:province,cityname:req.body.city[x],Tripno:req.session.tripno},(error,results)=>{
           if (error) throw error
         })}
-        req.session.no--
-        if(req.session.no=0){
-          req.session.tripno=0;
-          res.redirect("/Payment")
-          
+       
+         if(req.session.province[req.session.no-1]=="Sindh" ){
+          res.render(req.session.province[req.session.no-1])
+          req.session.no-=1
         }
         else{
-          res.render(req.session.province[req.session.no-1])
+          req.session.tripno=0;
+          res.render("/Payment")
         }
 
     }

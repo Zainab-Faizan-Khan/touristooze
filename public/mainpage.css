@@ -340,17 +340,31 @@ nav i:hover,nav .menu li a:hover{
 .gallery .img:first-child{grid-column-start: span 2;}
 
 .gallery .img:nth-child(3){grid-row: span 2;}
-
-.img1{
-    background-image: url(/img/main/gg1.png);
-    background-size: cover;
-    height:90%;
-    width:30%;
-    margin-left: 25%;
-
+#DIV{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
 }
 
 
+.img1{
+    background-image: url(/img/main/trip1.png);
+    background-size: cover;
+    height:90%;
+    width:30%;
+    
+
+}
+.img2{
+    background-image: url(/img/main/trip3.png);
+    background-size: cover;
+    height:90%;
+    width:30%;
+    margin-left: 5%;
+
+}
 .actgal{
     width: 30%;
     height: 40vh;
