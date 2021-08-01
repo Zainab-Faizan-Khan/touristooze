@@ -1,0 +1,119 @@
+const session=require("express-session")
+const mysql= require("mysql");
+const bcrypt=require('bcryptjs');
+const router = require("../routes");
+
+const db= mysql.createConnection({
+    user:process.env.DATABASE_USER,
+    host:process.env.DATABASE_HOST,
+    password:process.env.DATABASE_PASSWORD,
+    database:process.env.DATABASE,
+    
+})
+
+exports.signin=(req,res)=>{
+    console.log(req.body);
+
+    const email=req.body.email;
+    const pass=req.body.psw;
+    
+
+    db.query('SELECT * FROM customer WHERE email =? ',[email], (error,results)=>{
+        if(results.length>0){
+            data = results[0];
+            let hash = data.password;
+            console.log(hash);
+            bcrypt.hash(pass, 10, function(err, hash1) {
+               
+            });
+                
+            bcrypt.compare(pass,hash,function(error,result){
+                if(result){
+                    
+                    
+                    req.session.first_name=data.first_name;
+                    req.session.last_name=data.last_name;
+                    req.session.name=req.session.first_name+" "+req.session.last_name;
+                    req.session.phone_no=data.phone_no;
+                    req.session.email=data.email;
+                    req.session.country=data.country;
+                    req.session.cnic=data.cnic;
+                    req.session.val="1";
+                    if(data.payment_status){req.session.pay="clear";}
+                    else{req.session.pay="pending"}
+                    
+
+                    res.render("MyTrips",{name:req.session.name,email:req.session.email,country:req.session.country,phone_no:req.session.phone_no,pay:req.session.pay});
+                }
+                else{
+                    return res.render('SignIn',{
+                    message:'Invalid password'
+                });}
+            })
+            
+            
+     
+        }
+        else{
+            return res.render('SignIn',{
+                message:'Invalid Login'
+            });
+        }   
+       
+    } )
+}
+
+
+exports.signup=(req,res)=>{
+    console.log(req.body);
+    const first_name=req.body.fname;
+    const last_name=req.body.lname;
+    const country=req.body.country;
+    const cnic=req.body.cnic ;
+    const phone_no=req.body.Pnum;
+    const password=req.body.psw;
+    const email=req.body.email;
+
+
+    db.query('SELECT email FROM customer WHERE email= ?',[email],async(error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        if(results.length>0){
+            return res.render('Login',{
+                message:'That email is already in use'
+            });
+        }
+        const saltRounds = 10;
+        bcrypt.hash(password, saltRounds, function(err, hashpw) {
+            
+            // store hash in database
+            db.query('INSERT INTO customer SET ?',{first_name:first_name,last_name:last_name,country:country,
+                cnic:cnic,phone_no:phone_no,password:hashpw,email:email},(error,results)=>{
+                if(error){console.log(error);}
+                else{
+                        console.log(results);
+                        res.redirect("../SignIn")
+                }
+                })
+          });
+
+        
+
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

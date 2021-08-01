@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> 
+ <title>Plan Trip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/img/logo.png"/>
+    <link rel='stylesheet' href="/PlanTrip.css" >
+</head>
+<body onload="loadfun()">
+    <div id="loading">
+  <div class="load1" ></div>
+  <div class="load2"></div>
+  <div class="load3"></div>
+  <div class="load4"></div>
+  <div class="load5"></div>
+</div>
+   
+
+  <script>
+  function loadfun() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+  document.body.style.overflow="visible";
+}
+</script>
+<div id="myDiv">
+ <img src="/img/logo.png" id="logo">
+      <a href="/mainpage" class="logo">Touristooze</a>
+      <div id="PlanTrip" style="margin-top: 13%;" >
+      <div class="tab" style="display: block;">
+        <h3>Select from our provinces to explore their destinations</h3>
+        <div class="provincelist">
+
+            <div class="item1">
+                
+                  
+                  <div class="box" style="background-image: url(/Sindh/logos/mirpurkhas.jpg);cursor:pointer" onclick="window.location.href = '/Sindh';">
+
+                <label  class="provincelabel">Sindh</label>
+                </div>
+            </div>
+            <div class="item2">
+                
+                  
+                  <div class="box" style="background-image: url(/Punjab/logos/islamabad.jpg);cursor:pointer"onclick="window.location.href = '/Punjab';">
+                    
+                <label for="check2" class="provincelabel">Punjab</label>
+                </div>
+            </div>
+            <div class="item3">
+                
+                  
+                  <div class="box" style="background-image: url(/Balochistan/logos/kalat.jpg);cursor:pointer" onclick="window.location.href = '/Balochistan';">
+                    
+                <label for="check3" class="provincelabel">Balochistan</label>
+                    </div>
+            </div>
+            <div class="item4">
+               
+                  
+                  <div class="box" style="background-image: url(/Khyber/logos/kurram.jpg);cursor:pointer" onclick="window.location.href = '/KPK';">
+                   
+                <label for="check4" class="provincelabel">Khyber Pakhtun</label>
+                </div>            
+            </div>
+      
+</div>
+
+        </div>
+    </div>
+    </div></div>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="/signin.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="shortcut icon" href="/img/logo.png"/>
+     <title>Login</title>
+</head>
+<body onload="loadfun()">
+    <div id="loading">
+  <div class="load1" ></div>
+  <div class="load2"></div>
+  <div class="load3"></div>
+  <div class="load4"></div>
+  <div class="load5"></div>
+</div>
+
+
+
+
+     <div class="container" id="myDiv">
+<script>
+  function loadfun() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+  document.body.style.overflow="visible";
+}
+</script>
+
+          
+               <img src="/img/logo.png" id="logo">
+      <a href="/mainpage" class="logo">Touristooze</a>
+      <div id="m">{{#if message}}
+                              <h5 class="warning">{{message}}</h5>
+                         {{/if}}</div>
+          <div class="pop" id="pop">
+               <div class="signin">
+
+                    <h1>Sign In</h1>
+                    <form action="/auth/signin" method="POST">
+                         <input type="email" placeholder="email" name="email" required>
+                         <input type="password" placeholder="Password" name="psw" required>
+                         <input type="submit" value="LOGIN">
+                    </form>
+
+                    <div class="login"></div>
+                    <div class="link">
+                         
+                    </div>
+                         <div class="bottom-text">
+                         
+                         <a href="#">Forgotten Password ?</a><br>
+                    </div>
+                    <div class="signup">
+                         Not a member?<br> <a href="/Login">Signup now!</a>
+                    </div>
+               </div>
+            
+          </div>
+     </div>
+
+
+</body>
+</html>

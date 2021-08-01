@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Trips</title>
+    <link rel="shortcut icon" href="/img/logo.png"/>
+    <link rel='stylesheet' href="/MyTrips.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71b0414b2a.js" crossorigin="anonymous"></script>
+        <!--slider files-->
+    <link rel="stylesheet" href="/lsfile/lightslider.css">
+    <script src="/jquery.js"></script>
+    <script src="/lsfile/lightslider.js"></script>
+
+</head>
+
+
+<body onload="loadfun()">
+    <div id="loading">
+  <div class="load1" ></div>
+  <div class="load2"></div>
+  <div class="load3"></div>
+  <div class="load4"></div>
+  <div class="load5"></div>
+</div>
+    <div class="container" id="myDiv">
+        <script>
+  function loadfun() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+  document.body.style.overflow="visible";
+}
+</script>
+        <div class="wrapper">
+          <!--navigation bar-->
+        <nav class="navbar">
+            <!--logo-->
+            <img src="/img/logo.png">
+            <a href="/mainpage" class="logo">Touristooze</a>
+              <!--search-->
+           
+             <!-- <label class="menu-icon" for="menu-btn" style="font-size:1.2rem; ">
+                <span><i style= "padding: 10px" class="fas fa-bars"></i></span>
+            </label> -->
+            <!--menu-->
+        <ul class="menu">
+          <li><a href="/MyTrips">My Trips</a></li>
+          <li><a href="/AboutUs/#re">Reviews</a></li>
+          <li><a href="/AboutUs">About</a></li>
+          <li><a href="/catalog">Destinations</a></li>
+          <li><a href="/SignIn">Logout</a></li>  
+        </ul>
+        </nav>
+        
+    
+        <h3>My Profile</h3>
+
+    
+    
+    
+    
+    </div>
+
+    <div class="Card">
+        <div style="display: flex;flex-direction: row;">
+        <div class="dp">
+
+        </div>
+        <div class="name">
+            <h2>{{name}}</h2>
+        </div>
+        <h3>Payment Status : </h3>
+        <h4>{{pay}}</h4>
+        </div>
+        <div class="info">
+            <h3>Number : </h3><h2 name="number">{{phone_no}}</h2><br>
+            <h3>Email : </h3><h2 name="email">{{email}}</h2><br>
+            <h3>Country : </h3><h2 name="country">{{country}}</h2><br>
+            
+            
+        </div>
+
+    </div>
+    <div class="wishlist">
+        <h3>WISHLIST</h3></br>
+        <div id="wishlist" >
+              <ul id="autoWidth" class="cs-hidden">
+                <li class="item-a">
+                <div class="box" style="background-image: url(/Punjab/logos/lahore.jpg);">
+                <h1 class="boxhead">Lahore</h1>
+                </div>
+                </li>
+                <li class="item-b">
+                <div class="box" style="background-image: url(/Punjab/logos/islamabad.jpg);">
+                <h1 class="boxhead">islamabad</h1>
+                </div> 
+                </li>
+                <li class="item-c">
+                <div class="box"style="background-image: url(/Punjab/logos/kamoke.jpg);">
+                <h1 class="boxhead">kamoke</h1>
+                </div></li>
+                <li class="item-d">
+                <div class="box"style="background-image: url(/Punjab/logos/sialkot.jpg);">
+                <h1 class="boxhead">sialkot</h1>
+                </div>
+                </li>
+                <li class="item-e">  
+                <div class="box"style="background-image: url(/Punjab/logos/jhang.jpg);">
+                <h1 class="boxhead">jhang</h1>
+                </div>
+                </li>
+                <li class="item-f">  
+                <div class="box"style="background-image: url(/Punjab/logos/chiniot.jpg);">
+                <h1 class="boxhead">chiniot</h1>
+                </div>
+                </li>
+                <li class="item-g">  
+                <div class="box"style="background-image: url(/Punjab/logos/faisalabad.jpg);">
+                <h1 class="boxhead">faisalabad</h1>
+                </div>
+                </li>
+                <li class="item-h">  
+                <div class="box"style="background-image: url(/Punjab/logos/wah.jpg);">
+                <h1 class="boxhead">wah</h1>
+                </div>
+                </li>
+                <li class="item-i">  
+                <div class="box"style="background-image: url(/Punjab/logos/kasur.jpg);">
+                <h1 class="boxhead">kasur</h1>
+                </div>
+                </li>
+            </ul> 
+        </div>
+          <script src="/slider.js"></script>
+  </div>
+    </div>
+    <div class="mytrips">
+        <div class="T" id="t1">
+        <div class="trip">
+            <a><img  src="/img/trip.png"></a>
+        </div>
+        <h1><h1>
+        </div>
+        <div class="T" id="t2">
+        <div class="trip">
+            <a><img  src="/img/trip.png"></a>
+        </div>
+        <h1><h1>
+        </div>
+        <div class="T" id="t3">
+        <div class="trip">
+            <a><img  src="/img/trip.png"></a>
+        </div>
+        <h1><h1>
+        </div>
+        <div class="T" id="t4">
+        <div class="trip">
+            <a><img  src="/img/trip.png"></a>
+        </div>
+        <h1><h1>
+        </div>
+        <div class="T" id="t5">
+        <div class="trip">
+            <a><img  src="/img/trip.png"></a>
+        </div>
+        <h1><h1>
+        </div>
+        <div class="T" id="t6">
+        <div class="trip">
+            <a><img  src="/img/trip.png"></a>
+        </div>
+        <h1><h1>
+        </div>
+        <div class="T" id="t7">
+        <div class="trip">
+            <a><img  src="/img/trip.png"></a>
+        </div>
+        <h1><h1>
+        </div>
+        <div class="T" id="t8">
+        <div class="trip">
+            <a><img  src="/img/trip.png"></a>
+        </div>
+        <h1><h1>
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+
+</body>
+</html>

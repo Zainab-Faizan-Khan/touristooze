@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar{width:15px; border-radius: 20px;}
+::-webkit-scrollbar-track{background: linear-gradient(transparent,rgba(182, 92, 92, 0.945)); 
+    box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.39);  }
+::-webkit-scrollbar-thumb{background: linear-gradient(rgb(94, 32, 32),rgb(109, 37, 37),rgb(163, 55, 55),rgb(172, 77, 77)); border-radius: 20px;}
+#loading{
+    background-color: rgb(56, 9, 9);
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 90000;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+}
+.load1{
+    width:3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: rgb(221, 191, 196);
+    animation: load1 2s linear infinite;
+    transition: all ease-in-out 1s;
+    box-shadow: 0 5px 15px rgba(221, 191, 196, 0.753) ;
+}
+.load2{width:2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: rgb(211, 150, 160);
+    animation: load2 2s linear infinite;
+    transition: all ease-in-out 1s;
+    box-shadow: 0 5px 15px rgb(211, 150, 160,0.753);
+}
+.load3{
+    width:2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: rgb(190, 94, 110);
+    animation: load3 2s linear infinite;
+    transition: all ease-in-out 1s;
+    box-shadow: 0 5px 15px rgb(190, 94, 110,0.753);
+}
+.load4{width:1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background-color: rgb(146, 53, 69);
+     animation: load4 2s linear infinite;
+    transition: all ease-in-out 1s;
+    box-shadow: 0 5px 15px rgb(146, 53, 69,0.753);
+}
+.load5{
+    width:1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: rgb(99, 32, 43);
+    animation: load5 2s linear infinite;
+    transition: all ease-in-out 1s;
+    box-shadow: 0 5px 15px rgb(99, 32, 43,0.753);
+}
+
+@keyframes load1 {
+    0%,100%{width: 3em;height: 3em;}
+    10%,80%{width: 2.5em;height: 2.5em;}
+    20%,70%{width: 2em;height: 2em;}
+    30%,60%{width: 1.5em;height:1.5 em;}
+    40%,50%{width: 1em;height: 1em;}
+}
+@keyframes load2 {
+    10%{width: 3em;height: 3em;}
+    0%,20%,100%{width: 2.5em;height: 2.5em;}
+    80%,30%{width: 2em;height: 2em;}
+    70%,40%{width: 1.5em;height:1.5 em;}
+    60%,50%{width: 1em;height: 1em;}
+}
+
+@keyframes load3 {
+    20%{width: 3em;height: 3em;}
+    10%,30%{width: 2.5em;height: 2.5em;}
+    0%,50%,100%{width: 2em;height: 2em;}
+    90%,60%{width: 1.5em;height:1.5 em;}
+    80%,70%{width: 1em;height: 1em;}
+}
+
+@keyframes load4 {
+    30%{width: 3em;height: 3em;}
+    20%,50%{width: 2.5em;height: 2.5em;}
+    10%,60%{width: 2em;height: 2em;}
+    0%,70%,100%{width: 1.5em;height:1.5 em;}
+    80%{width: 1em;height: 1em;}
+}
+@keyframes load4 {
+    40%{width: 3em;height: 3em;}
+    30%,60%{width: 2.5em;height: 2.5em;}
+    20%,70%{width: 2em;height: 2em;}
+    1%,80%{width: 1.5em;height:1.5 em;}
+    0%,100%{width: 1em;height: 1em;}
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(#c7bfdf , #db938f);
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.container{}
+/*These are the contents of the navigation bar*/
+ ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-self: space-around;
+   position: fixed;
+   z-index: 200;
+    width: 100%;
+    border: 1px solid black;
+    color: white;
+    height: 4rem;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.473);
+    align-items:center;
+}
+.navbar img{height:4vw;width:5vw;}
+
+.logo{display: flex;
+flex-direction: row;
+align-items: center;
+color: white;}
+
+nav .menu{display:flex;margin-left: 35%;justify-content: flex-end;}
+nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin: 0px;
+    padding: 0px 25px;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+}
+
+nav i:hover,nav .menu li a:hover{
+    border-bottom: 4px solid rgb(141, 42, 136);
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff;
+    transition: all ease 0.5s;
+}
+
+.search{
+    width: 15%;
+    display: flex;
+    background-color: transparent;
+    height: 40px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content:center ;
+    padding: 0px 20px;
+    margin-left: 5%;
+    border: 3px solid white;
+    font-size: large;
+    color: white;
+}
+
+.search input{
+    background-color: transparent;
+    outline: none;
+    width:90%;
+    border: none;
+    font-weight: bolder;
+}
+/*This the wrapper which also contains the nav bar */
+.wrapper{
+    width: 100%;
+    border-bottom: 2px solid black;
+    height:24vw;
+    background-size: cover;
+    background-attachment: fixed;
+    background:brown;
+    box-shadow: 10px 10px 5px #302f2f;
+}
+/*................................................*/
+.wrapper h3{
+    color:#d88581d2 ;
+    margin-left: 35%;
+    font-family: sans-serif;
+    font-size: 6em;
+    padding-top: 7%;  
+    text-shadow: 5px 5px 2px black;
+}
+
+.Card{
+    width:60%;
+    height:auto;
+    background: linear-gradient(#c7bfdf , #db938f);
+    box-shadow: 10px 10px 7px #302f2f;
+    position: absolute;
+    margin-top: -7vw;
+    margin-left: 5vw;
+    border-radius: 15px;
+    border: 5px black;
+    display: flex;
+    flex-direction: column;
+}
+.dp{
+    height: 10vw;
+    border-radius: 50%;
+    
+    width:10vw;
+    margin:5%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    border:5px solid brown;
+}
+
+.name{
+    height: 10vw;
+    width:20vw;
+    font-size: 2em;
+    padding-top: 1%;
+    padding-left: 3%;
+    margin: 5%;
+    border-left: 5px solid brown;
+}
+.Card h3 , .Card h4 {
+    font-size: 1.2em;
+    margin-bottom: 0.7em;
+}
+.info h3{
+    color: brown;
+    text-decoration: underline;
+    text-decoration-color:brown ;
+    display: inline;
+
+}
+.info h2{
+
+    display: inline;
+
+}
+.info{
+    padding: 1em 2em;
+    width: 80%;
+    height: 10vw;
+}
+.wishlist{
+    margin-top:2%;
+    margin-left: 65%;
+    width: 32%;
+    height: 17em;
+    padding: 1%;
+    background-color: #d88581d2;
+    border-radius: 5px;
+    text-align: center;
+    color: brown;
+}
+.wishlist h3{
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 13px 17px 7px #302f2f;
+}
+.mytrips{
+    margin:5% 5%;
+    padding: 3%;
+    width: 83%;
+    display: grid;
+    grid-template-columns: auto auto auto  ;
+    grid-template-rows: auto;
+    grid-gap: 2em;
+}
+
+.trip{
+    width:18vw;
+    height:18vw;
+    border-radius: 50%;
+    box-shadow: 10px 10px 5px #302f2f;
+
+}
+
+.trip img{
+    width:120%;
+    height: 120%;
+    cursor: pointer;
+    margin-left: -8%;
+    margin-top: 2%;
+}
+
+.trip:hover{
+    transition:all ease0.5s ;
+    opacity: 0.8;
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+.T h1{
+    text-align:center;
+    background-color: brown;
+    box-shadow: 10px 10px 5px #302f2f ;
+    width: 50%;
+    margin-top: -4%;
+    margin-left: 9%;
+    z-index: 4;
+    font-size: 1.5em;
+    
+}
+
+#wishlist{
+
+}
+
+.box{
+    
+    width:10vw;
+    height:13vw;
+    border-radius: 15px;
+    margin:0 0%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 10px 20px 5px rgba(0, 0, 0, 0.705);
+    transition: all ease-in-out 0.7s;
+    
+}
+
+.boxhead{
+    text-align: center;
+    padding-top: 2%;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.425);
+    font-weight: bold;
+    border-top-left-radius:15px ;
+    border-top-right-radius:15px ;
+    transition: all ease-in-out 0.5s;
+    text-transform: uppercase;
+}

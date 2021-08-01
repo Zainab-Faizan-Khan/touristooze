@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="/signin.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="shortcut icon" href="/img/logo.png"/>
+     <title>Login</title>
+</head>
+<body onload="loadfun()">
+    <div id="loading">
+  <div class="load1" ></div>
+  <div class="load2"></div>
+  <div class="load3"></div>
+  <div class="load4"></div>
+  <div class="load5"></div>
+</div>
+     <div class="container" id="myDiv">
+
+          <script>
+  function loadfun() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+  document.body.style.overflow="visible";
+}
+</script>
+          <img src="/img/logo.png" id="logo">
+      <a href="/mainpage" class="logo">Touristooze</a>
+          <div class="pop" id="pop" style="float:right">
+               <div class="register">
+                    <h1>Sign Up!</h1>
+                         {{#if message}}
+                              <h5 class="warning">{{message}}</h5>
+                         {{/if}}
+                    <form action="/auth/signup" method="POST">
+                         <label for="fname"><b>First Name: </b></label>
+                         <input type="text" placeholder="Enter First Name" name="fname"  required><br>
+                         <label for="lname"><b>Last Name: </b></label>
+                         <input type="text" placeholder="Enter Last Name" name="lname"  required> <br>
+
+                         <label for="email"><b>Email: </b></label>
+                         <input type="email" placeholder="Enter Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br>
+                         <label for="email"><b>Country: </b></label>
+                         <input type="text" placeholder="Enter Country" name="country"  ><br>
+                         <label for="cnic"><b>CNIC: </b></label>
+                         <input type="text" placeholder="Enter CNIC" name="cnic" required><br>
+                         <label for="Pnum"><b>Phone Number: </b></label>
+                         <input type="tel" placeholder="enter with code +92090800802" name="Pnum" ><br>
+                         <label for="psw">Password :</label>
+                         <input name="psw" id="psw" type="password" onkeyup='check();' />
+
+                         <br>
+                         <label for="cpsw">Confirm Password: </label>
+                         <input type="password" name="cpsw" id="cpsw"  onkeyup='check();' /> 
+                         <span id='message'></span><br>
+
+                         <script>var check = function() {
+                         if (document.getElementById('psw').value ==
+                         document.getElementById('cpsw').value) {
+                         document.getElementById('message').style.color = 'green';
+                         document.getElementById('message').innerHTML = 'matching';
+                         } else {
+                         document.getElementById('message').style.color = 'red';
+                         document.getElementById('message').innerHTML = 'not matching';
+                         }
+                         }
+                         </script>
+                         <label for="age"><b>Age Group: </b></label>
+                                     <select class="option">
+                                        <option>1-18</option>
+                                        <option>18-30</option>
+                                        <option>30+</option>
+                                   </select>
+                         <p style="text-align: center;">By creating an account you agree to our <br><a href="#" style="color:purple">Terms & Privacy</a>.</p>
+                        <button type="submit" class="signupbtn">Sign Up</button>
+                    </form>
+            
+          <div class="login">
+            Already have an account? <a href="/SignIn">Login</a>
+          </div>
+    </div>
+    
+</body>
+</html>
+
+
