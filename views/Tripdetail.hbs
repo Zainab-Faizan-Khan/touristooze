@@ -1,0 +1,80 @@
+<htmml>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> 
+    <title>Trip Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/img/logo.png"/>
+    <link rel='stylesheet' href="/Tripdetails.css" >
+    </head>
+    <body>
+        <body onload="loadfun()">
+    <div id="loading">
+  <div class="load1" ></div>
+  <div class="load2"></div>
+  <div class="load3"></div>
+  <div class="load4"></div>
+  <div class="load5"></div>
+</div>
+<div class="container" id="myDiv" >
+<h1>{{city}}</h1>
+{{#each city}}
+<div class="city" id="tandoadam">
+      <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
+          
+          
+          
+                   <label for="check20">
+            <input id="check20" type="checkbox" value="tandoadam" class="checkbox" name="city" style="visibilty:visible">
+            <div class="checkb">
+              <div class="check"></div>
+              <h4>Add to <br>Wishlist!</h4>
+            </div>
+          </label>
+          <div class="DIV">
+            
+            <div class="cimg">
+              <img src="/Sindh/logos/tandoadam.jpg" alt="">
+            </div>
+            <h1 class="cname">{{this}}</h1>
+          </div>
+      
+
+          <div class="places">
+          
+        
+            <div class="DIV">
+            
+            <div class="pimg">
+              <img src="" alt="">
+            </div>
+            <h1 class="pname"> </h1>
+          </div>
+          <h2>Activities:</h2>
+          <h3></h3><br>
+  
+          <h2>Ratings:</h2>
+          <h3></h3><br>
+          </div>
+  </div> 
+</div>
+{{/each}}
+
+
+</div>
+  <script>
+  function loadfun() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+  document.body.style.overflow="visible";
+}
+</script>
+    </body>
+</html>

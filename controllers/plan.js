@@ -10,6 +10,13 @@ const db= mysql.createConnection({
     database:process.env.DATABASE,
     
 })
+exports.pack=(req,res)=>{
+  
+  req.session.package=req.body.package;
+  console.log(req.session.package)
+    res.redirect("../PlanTrip")
+}
+
 
 exports.plantrip=(req,res)=>{
     

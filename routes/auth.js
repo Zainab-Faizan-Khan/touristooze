@@ -11,4 +11,8 @@ router.post("/plansindh",planController.plansindh);
 router.post("/planpunjab",planController.planpunjab);
 router.post("/planbaloch",planController.planbaloch);
 router.post("/plankhyber",planController.plankhyber);
+router.post("/pack",planController.pack);
+
+
+
 module.exports = router;
