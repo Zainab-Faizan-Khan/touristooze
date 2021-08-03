@@ -136,8 +136,8 @@
         </div>
     </div>
     <form method="POST" id="package" action="/auth/pack">
-        <input type="checkbox" value="special" name="package" style="visibility: hidden;" id="special">
-        <input type="checkbox" value="regular" name="package" style="visibility: hidden;" id="regular">
+        <input type="checkbox" value="null" name="package" style="visibility: hidden;" id="special">
+        <input type="checkbox" value="o" name="package" style="visibility: hidden;" id="regular">
     </form>
     <script>
         $(document).on("click",".packagelist", function () {
@@ -158,31 +158,31 @@
     <h1 class="H" id="news">NEWS AND UPDATES</h1>
     <div class="news">
         <div class="newsslide" id="n1">
-            <img src="/img/news/new4.jpg">
+            <img src="{{new1.image}}">
             <div class="headline">
-                <h1>Covid negatively affects toruism</h1>
-                <p>Tourism ban in pakistan due to increasing rates of covid</p>
+                <h1>{{new1.heading}}</h1>
+                <p>{{new1.content}}</p>
             </div>
         </div>
         <div class="newsslide" id="n2">
-            <img src="/img/news/new2.jpg">
+            <img src="{{new2.image}}">
             <div class="headline">
-                <h1>Prime Minister announces new strategy for tourism</h1>
-                <p>Tourism sector enhances as Pm takes multiple steps to inrease tourism </p>
+                <h1>{{new2.heading}}</h1>
+                <p>{{new2.content}}</p>
             </div>
         </div>
         <div class="newsslide" id="n3">
-            <img src="/img/news/new3.jpg">
+            <img src="{{new3.image}}">
             <div class="headline">
-                <h1>New Hotels ..New Places</h1>
-                <p>Hotels motels and lodges being set up in KPK</p>
+                <h1>{{new3.heading}}</h1>
+                <p>{{new3.content}}</p>
             </div>
         </div>
         <div class="newsslide" id="n4">
-            <img src="/img/news/new1.jpg">
+            <img src="{{new4.image}}">
             <div class="headline">
-                <h1>Covid negatively affects toruism</h1>
-                <p>Tourism ban in pakistan due to increasing rates of covid</p>
+                <h1>{{new4.heading}}</h1>
+                <p>{{new4.content}}</p>
             </div>
         </div>
 

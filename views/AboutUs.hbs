@@ -13,6 +13,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/71b0414b2a.js" crossorigin="anonymous"></script>
 </head>
+<style>
+  #c1{background: url({{t1.image}});background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;}
+  #c2{background: url({{t2.image}});background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;;}
+  #c3{background: url({{t3.image}});background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;}
+  #c4{background: url({{t4.image}});background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;}
+  .card{
+    padding: 3%;
+    width: 13vw;
+    height:16vw;
+    margin-left:18% ;
+    margin-top: 15%;
+    cursor: pointer;
+    border-radius: 5%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: background 0.8s;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#c1:hover{
+    background-size: 180%;
+    background-position: left center;
+}
+#c2:hover{
+    background-size: 180%;
+    background-position: left center;
+}
+#c3:hover{
+    background-size: 180%;
+    background-position: left center;
+}
+#c4:hover{
+    background-size: 120%;
+    background-position: left center;
+}
+
+.card span{
+    color: #f6f6f6;
+    font-weight: bold;
+    font-size: 2vw;
+    transition: all 0.8s;
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 0 5px 5px #111;
+}
+
+.card:hover span{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
 <body onload="loadfun()">
     <div id="loading">
   <div class="load1" ></div>
@@ -23,6 +85,8 @@
 </div>
 <div class="container" id="myDiv">
   <script>
+
+
   function loadfun() {
   myVar = setTimeout(showPage, 3000);
 }
@@ -119,7 +183,8 @@ function showPage() {
         <span></span>
         <span></span>
         <div class="content">
-          <p>so much fun so much professionalism so much excitement and happiness in just one trip.</p>
+          <p>{{r1.review}}</p><br><br>
+          <p ><i>{{r1.name}}</i></p>
         </div>
     </div>
   <h1 class="mainheadings" id="re">HEAR FROM OUR<br>CUSTOMERS..! </h1>
@@ -129,7 +194,8 @@ function showPage() {
         <span></span>
         <span></span>
         <div class="content">
-          <p>It is true that pakistan is a piece of heaven and touristooze makes it even better</p>
+           <p>{{r2.review}}</p><br><br>
+          <p ><i>{{r2.name}}</i></p>
         </div>
     </div>
   </div>
@@ -139,7 +205,8 @@ function showPage() {
         <span></span>
         <span></span>
         <div class="content">
-          <p>For security purposes, it is essential to consider touristooze only your choice.</p>
+           <p>{{r3.review}}</p><br><br>
+          <p ><i>{{r3.name}}</i></p>
         </div>
     </div>
      <div class="review" id="r3">
@@ -147,7 +214,8 @@ function showPage() {
         <span></span>
         <span></span>
         <div class="content">
-          <p>Unimaginable time , loads of sun and lots of fun</p>
+           <p>{{r4.review}}</p><br><br>
+          <p ><i>{{r4.name}}</i></p>
         </div>
     </div>
 </div>
@@ -159,40 +227,40 @@ function showPage() {
   </div>
   <div id="tourguides2">
   <div class="tg1">
-    <div class="card" id="c1">
-      <span>Areeb Nadeem</span>
+    <div class="card" id="c1" >
+      <span>{{t1.fname}} {{t1.lname}}</span>
       <ul class="social-media">
-        <li><a href="https://www.instagram.com/areeb_4561/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/areeb-nadeem-a33738196/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a href="{{t1.insta}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="{{t1.linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        
       </ul>
     </div>
 
-     <div class="card" id="c2">
-      <span>Areeb Nadeem</span>
+     <div class="card" id="c2" >
+      <span>{{t2.fname}} {{t2.lname}}</span>
       <ul class="social-media">
-        <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a href="{{t2.insta}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="{{t2.linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        
       </ul>
     </div>
   </div>
     <div class="tg1">
-    <div class="card" id="c3">
-      <span>Areeb Nadeem</span>
+    <div class="card" id="c3" >
+      <span>{{t3.fname}} {{t3.lname}}</span>
       <ul class="social-media">
-        <li><a href=""target="_blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a href="{{t3.insta}}"target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="{{t3.linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      
       </ul>
     </div>
 
-     <div class="card" id="c4">
-      <span>Areeb Nadeem</span>
+     <div class="card" id="c4" >
+      <span>{{t4.fname}} {{t4.lname}}</span>
       <ul class="social-media">
-        <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a href="{{t4.insta}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="{{t4.linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+   
       </ul>
     </div>
   </div>

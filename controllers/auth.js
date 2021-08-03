@@ -43,7 +43,7 @@ exports.signin=(req,res)=>{
                     else{req.session.pay="pending"}
                     
 
-                    res.render("MyTrips",{name:req.session.name,email:req.session.email,country:req.session.country,phone_no:req.session.phone_no,pay:req.session.pay});
+                    res.redirect("../MyTrips");
                 }
                 else{
                     return res.render('SignIn',{

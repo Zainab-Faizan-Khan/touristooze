@@ -36,6 +36,7 @@ function showPage() {
 }
 </script>
   <div class="wrapper">
+     <h1 class="messagehead">Click the cities and places to add them in wishlist then click continue in cart to confirm</h1>
     <!--navigation bar-->
   <nav class="navbar">
       <!--logo-->
@@ -89,8 +90,10 @@ function showPage() {
   </div>
     <div class="sideinfo">
     <h2>Events</h2>
-    <h4></h4>
-    <p>None at present</p>
+   
+    {{#each events}}
+    <p>{{this.Name}} at {{this.City}} on {{this.month}}</p><br>
+    {{/each}}
   </div>
   </div>
 
@@ -273,7 +276,7 @@ function showSlides() {
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
           <label for="check1">
           <label for="check1">
-            <input id="check1" type="checkbox" value="karachi" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check1" type="checkbox" value="Zhob" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -289,30 +292,28 @@ function showSlides() {
         
               
 
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each zhob}}
+             <div class="places">
+          
             
              
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"></h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-         
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="nushki">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check2">
-            <input id="check2" type="checkbox" value="badin" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check2" type="checkbox" value="Nushki" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -327,29 +328,28 @@ function showSlides() {
           </div>
           
               
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each nushki}}
+             <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-   
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="nasirabad">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
           <label for="check3">
-            <input id="check3" type="checkbox" value="dadu" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check3" type="checkbox" value="Nasirabad" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -365,29 +365,28 @@ function showSlides() {
           
               
 
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each nasirabad}}
+           <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"></h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-        
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="kochi">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check4">
-            <input id="check4" type="checkbox" value="dharki" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check4" type="checkbox" value="Kochi" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -403,28 +402,28 @@ function showSlides() {
           
 
 
+   {{#each kochi}}
           <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-    
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="kohlu">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                    <label for="check5">
-            <input id="check5" type="checkbox" value="mirpurkhas" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check5" type="checkbox" value="Kohlu" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -439,31 +438,28 @@ function showSlides() {
             </h1>
           </div>
           
-             
-
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
+ {{#each kohlu}}
+           <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-     
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="khuzdar">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check6">
-            <input id="check6" type="checkbox" value="Nawabshah" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check6" type="checkbox" value="Khuzdar" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -477,31 +473,28 @@ function showSlides() {
             <h1 class="cname">khuzdar</h1>
           </div>
           
-             
-
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+ {{#each khuzdar}}
+              <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-    
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="quetta">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                    <label for="check7">
-            <input id="check7" type="checkbox" value="larkana" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check7" type="checkbox" value="Quetta" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -515,30 +508,28 @@ function showSlides() {
             <h1 class="cname">quetta</h1>
           </div>
 
-
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
-           
+{{#each quetta}}
+            <div class="places">
+          
+            
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-        
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="sibi">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check8">
-            <input id="check8" type="checkbox" value="Kotri" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check8" type="checkbox" value="Sibi" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -552,30 +543,28 @@ function showSlides() {
             <h1 class="cname"> Sibi</h1>
           </div>
           
-
-
+{{#each sibi}}
           <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
+          <h2>Activities: {{this.Type}}</h2>
+       
 
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="musakhel">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check9">
-            <input id="check9" type="checkbox" value="Khairpur" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check9" type="checkbox" value="Musakhel" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -589,30 +578,28 @@ function showSlides() {
             <h1 class="cname"> musakhel</h1>
           </div>
           
-
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each musakhel}}
+            <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"></h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
+          <h2>Activities: {{this.Type}}</h2>
+       
 
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="makran">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                    <label for="check10">
-            <input id="check10" type="checkbox" value="Ghotki" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check10" type="checkbox" value="Makran" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -626,30 +613,28 @@ function showSlides() {
             <h1 class="cname">Makran</h1>
           </div>
           
-
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each makran}}
+           <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-     
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="loralai">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check11">
-            <input id="check11" type="checkbox" value="Hyderabad" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check11" type="checkbox" value="Loralai" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -663,30 +648,28 @@ function showSlides() {
             <h1 class="cname">loralai</h1>
           </div>
       
-
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each loralai}}
+        <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"></h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-      
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="lasbela">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.visibility='hidden'">
                    <label for="check12">
-            <input id="check12" type="checkbox" value="Jacobabad" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check12" type="checkbox" value="Lasbela" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -700,30 +683,28 @@ function showSlides() {
             <h1 class="cname">lasbela</h1>
           </div>
           
-
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.visibility='hidden'">
+{{#each lasebela}}
+            <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"></h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-        
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="kech">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check13">
-            <input id="check13" type="checkbox" value="Sukker" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check13" type="checkbox" value="Kech" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -737,29 +718,28 @@ function showSlides() {
             <h1 class="cname">kech</h1>
           </div>
          
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each kech}}
+            <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"></h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-         
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="kalat">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check14">
-            <input id="check14" type="checkbox" value="Shadadkot" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check14" type="checkbox" value="Kalat" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -773,28 +753,27 @@ function showSlides() {
             <h1 class="cname">Kalat</h1>
           </div>
           
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each kalat}}
+              <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
- 
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
     <div class="city" id="jaffarabad">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.visibility='hidden'">
                     <label for="check15">
-            <input id="check15" type="checkbox" value="sehwan" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check15" type="checkbox" value="Jaffarabad" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -808,31 +787,28 @@ function showSlides() {
             <h1 class="cname">jaffarabad</h1>
           </div>
          
-
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.visibility='hidden'">
+{{#each jaffarabad}}
+            <div class="places">
+          
             
-            </label>
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-        
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="harnai">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check16">
-            <input id="check16" type="checkbox" value="Rohri" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check16" type="checkbox" value="Harnai" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -847,29 +823,28 @@ function showSlides() {
           </div>
          
 
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each harnai}}
+             <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"></h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-         
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="derabugti">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check17">
-            <input id="check17" type="checkbox" value="Tando-Allahyar" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check17" type="checkbox" value="Dera Bugti" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -883,29 +858,28 @@ function showSlides() {
             <h1 class="cname">Derabugti</h1>
           </div>
          
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each derabugti}}
+            <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-          
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="gawadar">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check18">
-            <input id="check18" type="checkbox" value="Umerkot" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check18" type="checkbox" value="Gawadar" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -919,29 +893,28 @@ function showSlides() {
             <h1 class="cname">Gawadar</h1>
           </div>
          
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
-           
+{{#each gawadar}}
+               <div class="places">
+          
+            
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
+          <h2>Activities: {{this.Type}}</h2>
        
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="chagai">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check19">
-            <input id="check19" type="checkbox" value="shikarpur" class="checkbox" name="city" >
+            <input id="check19" type="checkbox" value="Chagai" class="checkbox" name="city" >
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -955,23 +928,22 @@ function showSlides() {
             <h1 class="cname">Chagai</h1>
           </div>
          
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" onclick="this.parentNode.style.display='none'">
+{{#each chagai}}
+                <div class="places">
+          
             
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
-   
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+          <h2>Activities: {{this.Type}}</h2>
+       
+
+          </div>{{/each}}
   </div> 
 
     <div class="city" id="awaran">
@@ -980,7 +952,7 @@ function showSlides() {
           
           
                    <label for="check20">
-            <input id="check20" type="checkbox" value="tandoadam" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check20" type="checkbox" value="Awaran" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -994,23 +966,22 @@ function showSlides() {
             <h1 class="cname">Awaran</h1>
           </div>
       
-
-          <div class="places">
-          <img src="/img/payment/close.png" alt="close" class="close daba" id="close2" >
-        
+{{#each awaran}}
+                <div class="places">
+          
+            
+             
             <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
             
             <div class="pimg">
-              <img src="" alt="">
+              <img src="{{this.image}}" alt="">
             </div>
-            <h1 class="pname"> </h1>
+            <h1 class="pname">{{this.Name}}</h1>
           </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
+          <h2>Activities: {{this.Type}}</h2>
        
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
+
+          </div>{{/each}}
   </div> 
 </div>
    
@@ -1059,12 +1030,14 @@ $(document).ready(function() {
  
             if (checked > 0) {
                 $('.messagehead').css("display","block");
+
                 var wishlist = [];
                  $.each($("input[name='city']:checked"), function(){
                 wishlist.push($(this).val());
+               
             });
             $.each(wishlist, function(index, value){
-            $("#list").append(index+1 + ": " + value + '<br>');
+             $("#list").append(  value + '<br>')
         });
             } else {
                 $('.messagehead').css("display","none");
@@ -1096,7 +1069,7 @@ $(document).ready(function() {
        
        x=$(this).attr('id');
 
-       if (x=="1"){
+       if (x=="1"){$(".city").css("display","none");
        $('#quetta').css("display","block");
        }
        else  if(x=="2"){$('#gawadar').css("display","block");}

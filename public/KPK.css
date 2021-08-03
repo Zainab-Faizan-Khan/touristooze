@@ -132,7 +132,21 @@ nav{
 flex-direction: row;
 align-items: center;
 color: white;}
-
+.messagehead{
+    position: fixed;
+    color: purple;
+    background-color: #db938f;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    z-index: 60000;
+    display: none;
+}
 nav .menu{display:flex;}
 nav .menu li a{
     height: 40px;
