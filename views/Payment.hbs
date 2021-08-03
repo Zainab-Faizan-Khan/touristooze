@@ -53,9 +53,9 @@ function showPage() {
         </div>
 
         <div class="payment" id="cardpopup">
-           
+          
             <div class="contentcardpop">
-                <form action="">
+                <form action="/auth/paycard" method="POST">
                     <div class="carddetails">
                         <img src="/img/payment/close.png" alt="close" class="close" id="close1">
                         <h3>Payment</h3>
@@ -68,10 +68,9 @@ function showPage() {
                         <label for="cname">Name On Card</label>
                         <input type="text" id="cname" name="cardname" placeholder="Enter Name" required><br>
                         <label for="ccnum">Credit card number</label>
-                        <input type="text" id="ccnum" name="cardnumber" placeholder="Card Number" required><br>
-                        <label for="expmonth">Expiary Month</label>
-                        <input type="text" id="expmonth" name="expmonth" placeholder="Expiration(MM/YY)"><br>
-                        <label for="expmonth">CVV</label>
+                        <input type="num" id="ccnum" name="cardnumber" placeholder="Card Number" required><br>
+                        
+                        <label for="cvv">CVV</label>
                         <input type="text" id="cvv" name="cvv" placeholder="CVV" required><br>
                         <button type="submit"  id="paybtnc" class="paybtn" >Pay Now!</button>
                     </div>
@@ -82,7 +81,7 @@ function showPage() {
 
         <div class="payment" id="easypopup">
             <div class="contenteasypop">
-                <form action="">
+                <form action="/auth/payeasy" method="POST">
                     <div class="easydetails">
                         <img src="/img/payment/close.png" alt="close" class="close" id="close2">
                         <h2>Pay with Your EasyPaisa Mobile Account!</h2>
@@ -104,7 +103,7 @@ function showPage() {
     
         <div class="payment" id="jazzpopup">
             <div class="contentjazzpop">
-            <form action="">
+            <form action="/auth/payjazz" method="POST">
                 <div class="jazzdetails">
                     <img src="/img/payment/close.png" alt="close" class="close" id="close3">
                     <h2>Pay with Your JazzCash Account!</h2>

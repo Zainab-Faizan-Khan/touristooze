@@ -1,15 +1,21 @@
-<htmml>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> 
-    <title>Trip Details</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<!DOCTYPE html><html>
+<head>
+    <title>Trip Detail</title>
     <link rel="shortcut icon" href="/img/logo.png"/>
     <link rel='stylesheet' href="/Tripdetails.css" >
-    </head>
+    <script src="/jquery.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71b0414b2a.js" crossorigin="anonymous"></script>
+    <!--slider files-->
+    <link rel="stylesheet" href="/lsfile/lightslider.css">
+    
+    <script src="/lsfile/lightslider.js"></script>
+
+</head>
     <body>
         <body onload="loadfun()">
     <div id="loading">
@@ -20,7 +26,20 @@
   <div class="load5"></div>
 </div>
 <div class="container" id="myDiv" >
-<h1>{{city}}</h1>
+  <h3 class="note">Click the back button to go back and edit trip!</h3>
+<div class="info">
+<h1>TRIP NO:{{tripno}}</h1>
+<h1>NAME:{{name}}</h1>
+<h1>PAYMENT TOTAL:{{pay}}</h1>
+</div>
+
+<button  id="continueBtn" onclick="window.location.href='/Payment'">Continue</button>
+<button   id="cancelBtn" >Cancel Trip</button><form id="cancel" method="POST" action="/auth/canceltrip"></form>
+<div class="warn"><p>This will clear all Data</p><br>
+<button  id="YesBtn" >Yes</button>
+<button  id="NoBtn" >No</button>
+</div>
+
 {{#each city}}
 <div class="city" id="tandoadam">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
@@ -65,6 +84,13 @@
 
 
 </div>
+<script>
+   $(document).on("click","#NoBtn", function (){$('.warn').css("display","none");})
+ $(document).on("click","#cancelBtn", function () {$('.warn').css("display","block");})
+
+  $(document).on("click","#YesBtn", function () {
+   $('#cancel').submit();})
+</script>
   <script>
   function loadfun() {
   myVar = setTimeout(showPage, 3000);
@@ -75,6 +101,8 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
   document.body.style.overflow="visible";
 }
+
 </script>
+
     </body>
 </html>
