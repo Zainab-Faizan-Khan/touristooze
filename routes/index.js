@@ -506,7 +506,7 @@ router.get("/Tripdetail" ,(req,res)=> {
     res.render("Pleasewait")
 })
 router.get("/Trips" ,(req,res)=> {
-    db.query("SELECT * FROM planbooking WHERE Tripno=?",[Tripno],(err,result)=>{
+    db.query("SELECT * FROM planbooking WHERE Tripno=?",[43],(err,result)=>{
                 
                 
                 
@@ -524,7 +524,7 @@ router.get("/Trips" ,(req,res)=> {
         else{
             p="Clear"
         }
-    db.query("SELECT * FROM citybooking WHERE Tripno=?",[Tripno],(err,results)=>{
+    db.query("SELECT * FROM citybooking WHERE Tripno=?",[43],(err,results)=>{
         if (err)throw err
         console.log("results are")
         console.log(results)

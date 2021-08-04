@@ -5,13 +5,14 @@
 <link rel='stylesheet' href="/wait.css"/>
     </head>
     <body>
+        <div>
         <form action="/auth/wait" method="POST" style="visibility: none;"name="cartCheckout" id="cartCheckout">
         </form>
-        <h1>Please Wait.....</h1>     
+        <h1>Please Wait.....</h1>  </div>   
     </body>
     <script>
 window.onload=function(){ 
-    window.setTimeout(function() { document.cartCheckout.submit(); }, 2000);
+    window.setTimeout(function() { document.cartCheckout.submit(); }, 3000);
 };
     </script>
 </html>

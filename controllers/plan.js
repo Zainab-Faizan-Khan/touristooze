@@ -545,13 +545,16 @@ exports.mytrip=(req,res)=>{
 
 exports.wait=(req,res)=>{
 
-  db.query("SELECT * FROM planbooking WHERE Tripno=?",[Tripno],(err,result)=>{
+  db.query("SELECT * FROM citybooking WHERE Tripno=?",[Tripno],(err,results)=>{
 
-req.session.car=result[0].Car
-req.session.bus=result[0].Bus
-req.session.plane=result[0].Plane
-req.session.train=result[0].Train
-
+    const rate=7923
+    console.log(results)
+    if(results.length>0){
+    req.session.total=rate * results.length
+    }
+    else{
+      req.session.total=rate*17
+    }
     res.redirect("../Trips")
   })
  
