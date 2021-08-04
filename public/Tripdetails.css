@@ -193,7 +193,7 @@ body{
     top:30vh;
     height:20vh;
     width: 50vw;
-    display: block;
+    display: none;
     left:25vw;
     background-color: #db938f;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);

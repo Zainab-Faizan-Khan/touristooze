@@ -170,8 +170,8 @@ function showSlides() {
           <label for="ac3">Shopping</label>
           </div>
           <div style="width:30%;margin-left:5%">
-          <input type="checkbox" name="activity" value="eateriers" id="ac4" class="activitychoice">
-          <label for="ac4">Eateries</label><br>
+          <input type="checkbox" name="activity" value="Hill" id="ac4" class="activitychoice">
+          <label for="ac4">Hill</label><br>
           <input type="checkbox" name="activity" value="culture" id="ac5" class="activitychoice">
           <label for="ac5">Culture</label><br>
           <input type="checkbox" name="activity" value="history" id="ac6" class="activitychoice">
@@ -203,7 +203,7 @@ function showSlides() {
     </i>Filter</button>
   </div>
     <h1 class="searcherr">This city doesnt exist</h1>
-  <script>
+    <script>
   function enableScrolling(){
     window.onscroll=function(){};
     }
@@ -213,6 +213,14 @@ function showSlides() {
           window.onscroll=function(){window.scrollTo(x, y);};
       }
       document.querySelector("#close2").addEventListener("click", function(){
+            document.querySelector("#filterportion").style.display="none";
+            enableScrolling()
+            })
+      document.querySelector("#cancelBtn").addEventListener("click", function(){
+            document.querySelector("#filterportion").style.display="none";
+            enableScrolling()
+            })
+      document.querySelector("#applyBtn").addEventListener("click", function(){
             document.querySelector("#filterportion").style.display="none";
             enableScrolling()
             })
@@ -292,7 +300,7 @@ function showSlides() {
         
               
 {{#each abbotabad}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -327,7 +335,7 @@ function showSlides() {
           </div>
           
 {{#each bannu}}
-           <div class="places">
+           <div class="places {{this.Type}}">
           
             
              
@@ -363,7 +371,7 @@ function showSlides() {
           
               
 {{#each charsadda}}
-              <div class="places">
+              <div class="places {{this.Type}}">
           
             
              
@@ -398,7 +406,7 @@ function showSlides() {
           </div>
           
 {{#each chitral}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -434,7 +442,7 @@ function showSlides() {
           
              
 {{#each deraismail}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -470,7 +478,7 @@ function showSlides() {
           
              
 {{#each dir}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -505,7 +513,7 @@ function showSlides() {
           </div>
 
 {{#each hangu}}
-           <div class="places">
+           <div class="places {{this.Type}}">
           
             
              
@@ -540,7 +548,7 @@ function showSlides() {
           </div>
           
 {{#each haripur}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -576,7 +584,7 @@ function showSlides() {
           
 
 {{#each havelian}}
-          <div class="places">
+          <div class="places {{this.Type}}">
           
             
              
@@ -612,7 +620,7 @@ function showSlides() {
           
 
 {{#each karak}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -647,7 +655,7 @@ function showSlides() {
           </div>
       
 {{#each khyber}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -682,7 +690,7 @@ function showSlides() {
           </div>
           
 {{#each kohat}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -717,7 +725,7 @@ function showSlides() {
           </div>
          
 {{#each kurram}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -752,7 +760,7 @@ function showSlides() {
           </div>
           
 {{#each lakkimarwat}}
-              <div class="places">
+              <div class="places {{this.Type}}">
           
             
              
@@ -786,7 +794,7 @@ function showSlides() {
           </div>
          
 {{#each malakand}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -821,7 +829,7 @@ function showSlides() {
           </div>
          
 {{#each mansehra}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -856,7 +864,7 @@ function showSlides() {
           </div>
          
 {{#each peshawer}}
-           <div class="places">
+           <div class="places {{this.Type}}">
           
             
              
@@ -891,7 +899,7 @@ function showSlides() {
           </div>
          
 {{#each swabi}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -926,7 +934,7 @@ function showSlides() {
           </div>
          
 {{#each nowshera}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -964,7 +972,7 @@ function showSlides() {
           </div>
       
 {{#each mardan}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -1013,15 +1021,21 @@ function showSlides() {
 </form>
 <footer>
 </footer>
-<script>      document.querySelector("#ccancelBtn").addEventListener("click", function(){
+<script>     
+
+   document.querySelector("#ccancelBtn").addEventListener("click", function(){
             document.querySelector("#cartportion").style.display="none";
             enableScrolling()
             })</script>
   <script>
 
 $(document).ready(function() {
+var checkboxes = $( '.activitychoice' );
 
+    // Check all checkboxes
+    checkboxes.prop( 'checked', true );
   $(".checkbox").click(function () {
+    $("#list").empty()
             //Reference the CheckBoxes and determine Total Count of checked CheckBoxes.
             var checked = $("#cl input[type=checkbox]:checked").length;
  
@@ -1045,21 +1059,41 @@ $(document).ready(function() {
         var x = $("#cityfilter").val();
         x=x.toLowerCase();
         
-        if($("#"+x).length>0){$("#"+x).css("display","block")}
-        else{ $('.searcherr').css("display","block");}
+        if($("#"+x).length>0){$('.searcherr').css("display","none");$(".city").css("display","none");$("#"+x).css("display","block")}
         
-    });
-  $("#f").click(function(){
-        var x = $("#cityfilter").val();
-        x=x.toLowerCase();
-        
-        if($("#"+x).length>0){$("#"+x).css("display","block")}
-        else{ $('.searcherr').css("display","block");}
+        else{ $('.searcherr').css("display","block");$(".city").css("display","block")}
         
     });
     $("#ccancelBtn").click(function(event) {$('#cartportion').css("display","none");} );
     $(".cart").click(function(event) {$('#cartportion').css("display","block");} );
     $("#close5").click(function(event) {$('#cartportion').css("display","none");} );
+
+        $("#applyBtn").click(function(event) {
+      $('#filterportion').css("display","none");
+      $(".places").css("display","none")
+       $('.city').css("display","block");
+     if($("#ac1").prop("checked") == true){
+                $(".swimming").css("display","block")
+            }
+      if($("#ac2").prop("checked") == true){
+                $(".outdoors").css("display","block")
+            }
+      if($("#ac3").prop("checked") == true){
+                $(".shopping").css("display","block")
+            }
+      if($("#ac4").prop("checked") == true){
+                $(".hill").css("display","block")
+            }
+      if($("#ac5").prop("checked") == true){
+                $(".culture").css("display","block")
+            }
+      if($("#ac6").prop("checked") == true){
+                $(".history").css("display","block")
+            }
+     
+      } );
+
+
    
     $(".o").click(function(event) {
        $(".city").css("display","none");

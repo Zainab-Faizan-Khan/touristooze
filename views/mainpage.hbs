@@ -144,9 +144,10 @@
    var x = $(this).attr('id'); // or var clickedBtnID = this.id
    if(x=="one"){
         $('#regular').prop('checked', true);
+        $('#special').prop('checked', false);
         $('#package').submit();
     }
-   else{$('#special').prop('checked', true);
+   else{$('#special').prop('checked', true);$('#regular').prop('checked', false);
    $('#package').submit();
     }
    

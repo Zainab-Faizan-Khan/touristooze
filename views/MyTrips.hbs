@@ -105,23 +105,28 @@ function showPage() {
     </div>
     <div class="mytrips">
         {{#each trips}}
-        <div class="T" >
+        <div class="T" id={{this.Tripno}}>
         <div class="trip">
             <a><img  src="/img/trip.png"></a>
         </div>
         
         <h1>{{this.Tripno}}<h1>
-        <form>
-            <input type="checkbox" value="{{this.Tripno}}" style="visibility:hidden;">
+        <form class="tripshow" method="POST" action="/auth/tripshow" style="display: none;">
+            <input type="checkbox" value={{this.Tripno}} name="tripno">
         </form>
         </div>
        {{/each}}
     </div>
-
-
+    <form method="POST" action="/auth/mytrip" style="visibility:hidden;" id="for">
+<input type="text" id="t" name="tri">
+</form>
     </div>
 <script>
-    
+     $(".T").click(function(event){
+         x=($(this).attr('id'));
+         $("#t").val(x)
+         $("#for").submit()
+     })
 </script>
 
 

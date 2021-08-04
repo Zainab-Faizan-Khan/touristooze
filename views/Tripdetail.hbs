@@ -31,9 +31,12 @@
 <h1>TRIP NO:{{tripno}}</h1>
 <h1>NAME:{{name}}</h1>
 <h1>PAYMENT TOTAL:{{pay}}</h1>
+<h1>START DATE:{{startdate}}</h1>
+<h1>END DATE:{{enddate}}</h1>
+<h1>{{p}}</h1>
 </div>
 
-<button  id="continueBtn" onclick="window.location.href='/Payment'">Continue</button>
+<button  id="continueBtn" onclick="window.location.href='{{des}}'">Continue</button>
 <button   id="cancelBtn" >Cancel Trip</button><form id="cancel" method="POST" action="/auth/canceltrip"></form>
 <div class="warn"><p>This will clear all Data</p><br>
 <button  id="YesBtn" >Yes</button>
@@ -41,46 +44,24 @@
 </div>
 
 {{#each city}}
+
 <div class="city" id="tandoadam">
-      <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
-          
-          
-          
-                   <label for="check20">
-            <input id="check20" type="checkbox" value="tandoadam" class="checkbox" name="city" style="visibilty:visible">
-            <div class="checkb">
-              <div class="check"></div>
-              <h4>Add to <br>Wishlist!</h4>
-            </div>
-          </label>
+ 
+
           <div class="DIV">
             
             <div class="cimg">
-              <img src="/Sindh/logos/tandoadam.jpg" alt="">
+              <img src={{this.image}} >
             </div>
-            <h1 class="cname">{{this}}</h1>
+            <h1 class="cname">{{this.cityname}}</h1>
           </div>
       
 
-          <div class="places">
           
-        
-            <div class="DIV">
-            
-            <div class="pimg">
-              <img src="" alt="">
-            </div>
-            <h1 class="pname"> </h1>
-          </div>
-          <h2>Activities:</h2>
-          <h3></h3><br>
+  </div> {{/each}}
   
-          <h2>Ratings:</h2>
-          <h3></h3><br>
-          </div>
-  </div> 
 </div>
-{{/each}}
+
 
 
 </div>

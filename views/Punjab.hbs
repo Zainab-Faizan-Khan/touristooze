@@ -44,9 +44,7 @@ function showPage() {
       <a href="/mainpage" class="logo">Touristooze</a>
         <!--search-->
 
-        <label class="menu-icon" for="menu-btn" style="font-size:1.2rem; ">
-          <span><i style= "padding: 10px" class="fas fa-bars"></i></span>
-      </label> 
+      
       <!--menu-->
      <ul class="menu">
           <li><a href="/MyTrips">My Trips</a></li>
@@ -170,8 +168,8 @@ function showSlides() {
           <label for="ac3">Shopping</label>
           </div>
           <div style="width:30%;margin-left:5%">
-          <input type="checkbox" name="activity" value="eateriers" id="ac4" class="activitychoice">
-          <label for="ac4">Eateries</label><br>
+          <input type="checkbox" name="activity" value="Hill" id="ac4" class="activitychoice">
+          <label for="ac4">Hill</label><br>
           <input type="checkbox" name="activity" value="culture" id="ac5" class="activitychoice">
           <label for="ac5">Culture</label><br>
           <input type="checkbox" name="activity" value="history" id="ac6" class="activitychoice">
@@ -179,14 +177,7 @@ function showSlides() {
           </div>
           </div>
         </div>
-        <div class="activityfilter" id="activityfilter">
-          
-          <h4 class="filterhead" id="fh3">Custom Filter</h4>
-          <input type="checkbox" name="custom" value="ratings" id="c1" class="customchoice">
-          <label for="c1">Sort by Popularity</label><br>
-          <input type="checkbox" name="custom" value="events" id="c2" class="customchoice">
-          <label for="c2">Recent events</label><br>
-        </div>
+       
         <div style="display:flex;padding-left:60%">
           <button type="button" id="applyBtn" >Apply</button>
           <button type="button" id="cancelBtn" >Cancel</button>
@@ -204,6 +195,7 @@ function showSlides() {
   </div>
     <h1 class="searcherr">This city doesnt exist</h1>
   <script>
+   <script>
   function enableScrolling(){
     window.onscroll=function(){};
     }
@@ -213,6 +205,14 @@ function showSlides() {
           window.onscroll=function(){window.scrollTo(x, y);};
       }
       document.querySelector("#close2").addEventListener("click", function(){
+            document.querySelector("#filterportion").style.display="none";
+            enableScrolling()
+            })
+      document.querySelector("#cancelBtn").addEventListener("click", function(){
+            document.querySelector("#filterportion").style.display="none";
+            enableScrolling()
+            })
+      document.querySelector("#applyBtn").addEventListener("click", function(){
             document.querySelector("#filterportion").style.display="none";
             enableScrolling()
             })
@@ -292,7 +292,7 @@ function showSlides() {
               
 
 {{#each islamabad}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -328,7 +328,7 @@ function showSlides() {
           
               
 {{#each lahore}}
-              <div class="places">
+              <div class="places {{this.Type}}">
           
             
              
@@ -365,7 +365,7 @@ function showSlides() {
               
 
 {{#each bahawalpur}}
-              <div class="places">
+              <div class="places {{this.Type}}">
           
             
              
@@ -399,7 +399,7 @@ function showSlides() {
             <h1 class="cname">chiniot</h1>
           </div>
 {{#each chiniot}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -434,7 +434,7 @@ function showSlides() {
           </div>
           
 {{#each deraghazi}}
-              <div class="places">
+              <div class="places {{this.Type}}">
           
             
              
@@ -469,7 +469,7 @@ function showSlides() {
           </div>
           
 {{#each faislabad}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -504,7 +504,7 @@ function showSlides() {
           </div>
 
 {{#each gujranwala}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -539,7 +539,7 @@ function showSlides() {
           </div>
           
 {{#each gujrat}}
-              <div class="places">
+              <div class="places {{this.Type}}">
           
             
              
@@ -574,7 +574,7 @@ function showSlides() {
           </div>
           
 {{#each jhang}}
-           <div class="places">
+           <div class="places {{this.Type}}">
           
             
              
@@ -608,7 +608,7 @@ function showSlides() {
             <h1 class="cname"> kamoke</h1>
           </div>
  {{#each kamoke}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -643,7 +643,7 @@ function showSlides() {
           </div>
       
 {{#each kasur}}
-           <div class="places">
+           <div class="places {{this.Type}}">
           
             
              
@@ -679,7 +679,7 @@ function showSlides() {
           
 
 {{#each multan}}
-           <div class="places">
+           <div class="places {{this.Type}}">
           
             
              
@@ -714,7 +714,7 @@ function showSlides() {
           </div>
          
 {{#each wah}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -750,7 +750,7 @@ function showSlides() {
           
 
    {{#each sialkot}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -785,7 +785,7 @@ function showSlides() {
          
 
 {{#each sheikhupura}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -821,7 +821,7 @@ function showSlides() {
          
 
 {{#each sargodha}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -856,7 +856,7 @@ function showSlides() {
           </div>
          
 {{#each sahiwal}}
-               <div class="places">
+               <div class="places {{this.Type}}">
           
             
              
@@ -891,7 +891,7 @@ function showSlides() {
           </div>
          
 {{#each rawalpindi}}
-            <div class="places">
+            <div class="places {{this.Type}}">
           
             
              
@@ -926,7 +926,7 @@ function showSlides() {
           </div>
          
 {{#each rahimyarkhan}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -964,7 +964,7 @@ function showSlides() {
           </div>
       
 {{#each okara}}
-             <div class="places">
+             <div class="places {{this.Type}}">
           
             
              
@@ -1013,15 +1013,21 @@ function showSlides() {
 </form>
 <footer>
 </footer>
-  <script>      document.querySelector("#ccancelBtn").addEventListener("click", function(){
+<script>     
+
+   document.querySelector("#ccancelBtn").addEventListener("click", function(){
             document.querySelector("#cartportion").style.display="none";
             enableScrolling()
             })</script>
   <script>
 
 $(document).ready(function() {
+var checkboxes = $( '.activitychoice' );
 
+    // Check all checkboxes
+    checkboxes.prop( 'checked', true );
   $(".checkbox").click(function () {
+    $( "#list" ).empty();
             //Reference the CheckBoxes and determine Total Count of checked CheckBoxes.
             var checked = $("#cl input[type=checkbox]:checked").length;
  
@@ -1030,9 +1036,11 @@ $(document).ready(function() {
                 var wishlist = [];
                  $.each($("input[name='city']:checked"), function(){
                 wishlist.push($(this).val());
+                
             });
+            
             $.each(wishlist, function(index, value){
-            $("#list").append( value + '<br>');
+            $("#list").append (value + "<br>");
         });
             } else {
                 $('.messagehead').css("display","none");
@@ -1040,23 +1048,43 @@ $(document).ready(function() {
             
 
         });
-    $("#f").click(function(){
-        var x = $("#cityfilter").val();
-        x=x.toLowerCase();
-        
-        if($("#"+x).length>0){$("#"+x).css("display","block")}
-        else{ $('.searcherr').css("display","block");}
-        
-    });
-    $("#ccancelBtn").click(function(event) {$('#cartportion').css("display","none");} );
   $("#f").click(function(){
         var x = $("#cityfilter").val();
         x=x.toLowerCase();
         
-        if($("#"+x).length>0){$("#"+x).css("display","block")}
-        else{ $('.searcherr').css("display","block");}
+        if($("#"+x).length>0)$('.searcherr').css("display","none");{$(".city").css("display","none");$("#"+x).css("display","block")}
+        
+        else{ $('.searcherr').css("display","block");$(".city").css("display","block")}
         
     });
+    $("#ccancelBtn").click(function(event) {$('#cartportion').css("display","none");} );
+         $("#applyBtn").click(function(event) {
+      $('#filterportion').css("display","none");
+      $(".city").css("display","block")
+      $(".places").css("display","none")
+     if($("#ac1").prop("checked") == true){
+                $(".swimming").css("display","block")
+            }
+      if($("#ac2").prop("checked") == true){
+                $(".outdoors").css("display","block")
+            }
+      if($("#ac3").prop("checked") == true){
+                $(".shopping").css("display","block")
+            }
+      if($("#ac4").prop("checked") == true){
+                $(".hill").css("display","block")
+            }
+      if($("#ac5").prop("checked") == true){
+                $(".culture").css("display","block")
+            }
+      if($("#ac6").prop("checked") == true){
+                $(".history").css("display","block")
+            }
+     
+      } );
+
+
+
 
     $(".cart").click(function(event) {$('#cartportion').css("display","block");} );
     $("#close5").click(function(event) {$('#cartportion').css("display","none");} );

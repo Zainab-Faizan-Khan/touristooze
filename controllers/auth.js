@@ -10,9 +10,8 @@ const db= mysql.createConnection({
     database:process.env.DATABASE,
     
 })
-
 exports.signin=(req,res)=>{
-    console.log(req.body);
+    
 
     const email=req.body.email;
     const pass=req.body.psw;
@@ -22,7 +21,7 @@ exports.signin=(req,res)=>{
         if(results.length>0){
             data = results[0];
             let hash = data.password;
-            console.log(hash);
+            
             bcrypt.hash(pass, 10, function(err, hash1) {
                
             });
@@ -39,7 +38,7 @@ exports.signin=(req,res)=>{
                     req.session.country=data.country;
                     req.session.cnic=data.cnic;
                     req.session.val="1";
-                    if(data.payment_status){req.session.pay="clear";}
+                    if(data.payment_status=0){req.session.pay="clear";console.log("it is clear")}
                     else{req.session.pay="pending"}
                     
 
@@ -62,6 +61,9 @@ exports.signin=(req,res)=>{
        
     } )
 }
+
+
+
 
 
 exports.signup=(req,res)=>{
@@ -103,11 +105,6 @@ exports.signup=(req,res)=>{
     });
 
 }
-
-
-
-
-
 
 
 

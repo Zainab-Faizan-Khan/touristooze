@@ -53,7 +53,7 @@ db.connect((error)=>{
 app.use('/',require('./routes/index'));
 app.use('/auth',require('./routes/auth'))
 
-app.listen(3000,()=>{
+app.listen(3799,()=>{
 console.log("server working fine!");
 });
 
