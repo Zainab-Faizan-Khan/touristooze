@@ -541,11 +541,12 @@ exports.mytrip=(req,res)=>{
   
   req.session.tripno=req.body.tri
   res.redirect("../Tripdetail")
+  console.log(req.session.tripno)
 }
 
 exports.wait=(req,res)=>{
 
-  db.query("SELECT * FROM citybooking WHERE Tripno=?",[Tripno],(err,results)=>{
+  db.query("SELECT * FROM citybooking WHERE Tripno=?",[req.session.tripno],(err,results)=>{
 
     const rate=7923
     console.log(results)
