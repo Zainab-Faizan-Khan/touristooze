@@ -1017,7 +1017,7 @@ function showSlides() {
 </form>
 <footer>
 </footer>
- <script>     
+<script>     
 
    document.querySelector("#ccancelBtn").addEventListener("click", function(){
             document.querySelector("#cartportion").style.display="none";
@@ -1030,7 +1030,13 @@ var checkboxes = $( '.activitychoice' );
 
     // Check all checkboxes
     checkboxes.prop( 'checked', true );
-    $(".checkbox").click(function () {
+
+
+
+
+
+   
+  $(".checkbox").click(function () {
     $( "#list" ).empty();
             //Reference the CheckBoxes and determine Total Count of checked CheckBoxes.
             var checked = $("#cl input[type=checkbox]:checked").length;
@@ -1056,15 +1062,15 @@ var checkboxes = $( '.activitychoice' );
         var x = $("#cityfilter").val();
         x=x.toLowerCase();
         
-        if($("#"+x).length>0){$('.searcherr').css("display","none")$(".city").css("display","none");$("#"+x).css("display","block")}
+        if($("#"+x).length>0){$('.searcherr').css("display","none");$(".city").css("display","none");$("#"+x).css("display","block")}
         
         else{ $('.searcherr').css("display","block");$(".city").css("display","block")}
         
     });
+    $("#ccancelBtn").click(function(event) {$('#cartportion').css("display","none");} );
 
-    $(".cart").click(function(event) {$('#cartportion').css("display","block");} );
-    $("#close5").click(function(event) {$('#cartportion').css("display","none");} );
-     $("#applyBtn").click(function(event) {
+
+    $("#applyBtn").click(function(event) {
       $('#filterportion').css("display","none");
       $(".places").css("display","none")
       $(".city").css("display","block")
@@ -1090,11 +1096,17 @@ var checkboxes = $( '.activitychoice' );
       } );
 
 
+
+
+    $(".cart").click(function(event) {$('#cartportion').css("display","block");} );
+    $("#close5").click(function(event) {$('#cartportion').css("display","none");} );
+  
     $(".o").click(function(event) {
        
        x=$(this).attr('id');
-
-       if (x=="1"){$(".city").css("display","none");
+      
+       $(".city").css("display","none");
+if (x=="1"){
        $('#quetta').css("display","block");
        }
        else  if(x=="2"){$('#gawadar').css("display","block");}

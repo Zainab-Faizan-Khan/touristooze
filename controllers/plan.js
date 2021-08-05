@@ -75,7 +75,7 @@ exports.plansindh=(req,res)=>{
     if(req.body.city){
     const province="Sindh";
     if(req.body.city[1].length==1){
-      db.query('SELECT image FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
+      db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
         if (err) throw err
         else{
           let image=result[0].image
@@ -88,11 +88,11 @@ exports.plansindh=(req,res)=>{
     }
     else if(req.body.city[1].length>1){
     for(var x in req.body.city){
-      db.query('SELECT image FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
+      db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
         if (err) throw err
         else{
-          let image=req.body[0].image
-      db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:req.body.city[x],Tripno:req.session.tripno},(error,results)=>{
+          let image=result[0].image
+      db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
         if (error) throw error
       })}})}
       
@@ -116,23 +116,26 @@ exports.plansindh=(req,res)=>{
 else{
   if(req.body.city){
     if(req.body.city[0].length==1){
-      db.query('SELECT image FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
+      db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
         if (err) throw err
         else{
           let image=result[0].image
           console.log(image)
-      db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city,cnic:req.session.cnic},(error,results)=>{
+      db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city,cnic:req.session.name},(error,results)=>{
         if (error) throw error
       })}})
       res.redirect("../mainpage")
     }else{
-      for(var x in req.body.city){
+      for
+      (  var x in req.body.city){
         console.log()
-        db.query('SELECT image FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
+        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
           if (err) throw err
           else{
+            console.log("results are")
+            console.log(result)
             let image=result[0].image
-        db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city[x],cnic:req.session.cnic},(error,results)=>{
+        db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:result[0].Name,cnic:req.session.name},(error,results)=>{
           if (error) throw error
         })}})}
         res.redirect("../mainpage")
@@ -152,7 +155,7 @@ exports.plankhyber=(req,res)=>{
      if (req.body.city){
       if(req.body.city[1].length==1){
         
-        db.query('SELECT image FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
+        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
           if (err) throw err
           else{
             let image=result[0].image
@@ -185,11 +188,11 @@ exports.plankhyber=(req,res)=>{
     }
     else if(req.body.city[1].length>1)
     {for(var x in req.body.city){
-      db.query('SELECT image FROM cities WHERE Name=?',[req.body[x].city],(err,result)=>{
+      db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
         if (err) throw err
         else{
           let image=result[0].image
-          db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:req.body[x].city,Tripno:req.session.tripno},(error,results)=>{
+          db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
             if (error) throw error
             
           })
@@ -246,23 +249,23 @@ else{
   else{
     if(req.body.city){
       if(req.body.city[0].length==1){
-        db.query('SELECT image FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
+        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
           if (err) throw err
           else{
             let image=result[0].image
             console.log(image)
-        db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city,cnic:req.session.cnic},(error,results)=>{
+        db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city,cnic:req.session.name},(error,results)=>{
           if (error) throw error
         })}})
         res.redirect("../mainpage")
       }else{
         for(var x in req.body.city){
           console.log()
-          db.query('SELECT image FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
+          db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
             if (err) throw err
             else{
               let image=result[0].image
-          db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city[x],cnic:req.session.cnic},(error,results)=>{
+          db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:result[0].Name,cnic:req.session.name},(error,results)=>{
             if (error) throw error
           })}})}
           res.redirect("../mainpage")
@@ -280,7 +283,7 @@ exports.planbaloch=(req,res)=>{
       if(req.body.city){
       const province="Balochistan";
       if(req.body.city[1].length==1){
-        db.query('SELECT image FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
+        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
           if (err) throw err
           else{
             let image=result[0].image
@@ -302,12 +305,12 @@ exports.planbaloch=(req,res)=>{
           res.redirect("../Tripdetail")
         }
       }
-      else if(req.body.city[1].length>1){for(var x in req.body.city){
-        db.query('SELECT image FROM cities WHERE Name=?',[req.body[x].city],(err,result)=>{
+      else if(req.body.city[0].length>1){for(var x in req.body.city){
+        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
           if (err) throw err
           else{
             let image=result[0].image
-            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:req.body[x].city,Tripno:req.session.tripno},(error,results)=>{
+            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
               if (error) throw error
               
             })
@@ -344,23 +347,23 @@ exports.planbaloch=(req,res)=>{
         else{
           if(req.body.city){
             if(req.body.city[0].length==1){
-              db.query('SELECT image FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
+              db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
                 if (err) throw err
                 else{
                   let image=result[0].image
                   console.log(image)
-              db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city,cnic:req.session.cnic},(error,results)=>{
+              db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city,cnic:req.session.name},(error,results)=>{
                 if (error) throw error
               })}})
               res.redirect("../mainpage")
             }else{
               for(var x in req.body.city){
                 console.log()
-                db.query('SELECT image FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
+                db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
                   if (err) throw err
                   else{
                     let image=result[0].image
-                db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city[x],cnic:req.session.cnic},(error,results)=>{
+                db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:result[0].Name,cnic:req.session.name},(error,results)=>{
                   if (error) throw error
                 })}})}
                 res.redirect("../mainpage")
@@ -378,7 +381,7 @@ exports.planpunjab=(req,res)=>{
       if(req.body.city){
       const province="Punjab";
       if(req.body.city[1].length==1){
-        db.query('SELECT image FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
+        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
           if (err) throw err
           else{
             let image=result[0].image
@@ -397,11 +400,11 @@ exports.planpunjab=(req,res)=>{
         }
       }
       else if(req.body.city[1].length>1){for(var x in req.body.city){
-        db.query('SELECT image FROM cities WHERE Name=?',[req.body[x].city],(err,result)=>{
+        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
           if (err) throw err
           else{
             let image=result[0].image
-            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:req.body[x].city,Tripno:req.session.tripno},(error,results)=>{
+            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
               if (error) throw error
               
             })
@@ -435,23 +438,23 @@ else{
     else{
       if(req.body.city){
         if(req.body.city[0].length==1){
-          db.query('SELECT image FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
+          db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
             if (err) throw err
             else{
               let image=result[0].image
               console.log(image)
-          db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city,cnic:req.session.cnic},(error,results)=>{
+          db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city,cnic:req.session.name},(error,results)=>{
             if (error) throw error
           })}})
           res.redirect("../mainpage")
         }else{
           for(var x in req.body.city){
             console.log()
-            db.query('SELECT image FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
+            db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
               if (err) throw err
               else{
                 let image=result[0].image
-            db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:req.body.city[x],cnic:req.session.cnic},(error,results)=>{
+            db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:result[0].Name,cnic:req.session.name},(error,results)=>{
               if (error) throw error
             })}})}
             res.redirect("../mainpage")

@@ -103,6 +103,7 @@ function showPage() {
           <script src="/slider.js"></script>
   </div>
     </div>
+    <button class="planbtn" style="width: 13vw;" onclick="window.location.href = '/mainpage/#packages';">Plan Your Trip!</button>
     <div class="mytrips">
         {{#each trips}}
         <div class="T" id={{this.Tripno}}>
@@ -125,7 +126,7 @@ function showPage() {
      $(".T").click(function(event){
          x=($(this).attr('id'));
          $("#t").val(x)
-         alert(x)
+       
          $("#for").submit()
      })
 </script>

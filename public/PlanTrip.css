@@ -107,7 +107,7 @@ body{
 .wrapper{
   width: 100%;
   border-bottom: 2px solid black;
-  height:24vw;
+  height:24vh;
   background-size: cover;
   background-attachment: fixed;
   background:brown;
@@ -150,10 +150,10 @@ nav .menu li a{
 /*/////////////////////////////////////*/
 .wrapper h3{
   color:#d88581d2 ;
-  margin-left: 18%;
+text-align: center;
     font-family: sans-serif;
-    font-size: 6em;
-    padding-top: 3%;
+    font-size: 2em;
+    padding-top: 10vh;
     
     text-shadow: 5px 5px 2px black;
 }
@@ -175,7 +175,7 @@ nav .menu li a{
   font-family: 'Kaushan Script', cursive;
   font-weight: bold;
   font-size: 2em; 
-  padding-left: 7%;
+  
   text-align: center;
   background-color: rgba(0, 0, 0, 0.219); 
   border-top-left-radius: 7px;
@@ -192,8 +192,8 @@ nav .menu li a{
 }
 
 .box{
-  width:10vw;
-  height:16vw;
+  width:90%;
+  height:7vh;
   border-radius: 15px;
   background-size: cover;
   background-position: center;
@@ -228,33 +228,35 @@ nav .menu li a{
 
 .provincelist{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .provincelist .checkbox:checked ~ .check{
   opacity: 1;
 }
 
 .item1 , .item2 , .item3 ,.item4{
-  width: 18%;
+  width: 100%;
+  align-items: center;
   margin-right: 3%;
   cursor: pointer;
 }
 .provincelabel{
-  padding:30% 25%;
+  padding:0 35%;
   text-align: center;
   color: rgb(109, 28, 85);
-  font-size: x-large;
+  font-size: 1em;
+  
   font-family:'Gloria Hallelujah', cursive;
   font-weight: bold;
 }
 
 .item4 .provincelabel{
-  font-size: 1.3em;
-  padding:0% 0% ;
+  font-size: 1em;
+  padding:0% 13% ;
 }
 
 .item3 .provincelabel{
-  padding:0% 9%;
+  padding:0% 27%;
 }
 
 
@@ -277,7 +279,7 @@ position: relative;
 .container input {
 visibility: hidden;
 }
-.container p{margin-left: 12%;}
+.container p{margin-left: 42%;}
 /* Create a custom checkbox */
 .checkmark {
 position: absolute;
@@ -325,7 +327,7 @@ transform: rotate(45deg);
 }
 
 .animationgrid img{
-  width:30em;
+  width:37%;
   height: 18vw;
   margin-right: 7em;
   animation:act 30s 0.5s infinite ;
@@ -337,25 +339,26 @@ transform: rotate(45deg);
 
 .animationgrid{
   
-  width:38%;
+  width:70%;
 
-  margin-left: 5%;
+  margin-left: 15%;
+  margin-top: 2%;
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
 }
 
 @keyframes act {
-  0%,100%{transform: translateX(7em);}
-  10%{transform:translateX(30em) ;}
-  20%{transform:translateX(60em) ;}
-  30%{transform:translateX(79em) ;}
-  40%{transform:translateX(107em) ;}
-  50%{transform:translateX(136em) ;}
-  60%{transform:translateX(107em) ;}
-  70%{transform:translateX(79em) ;}
-  80%{transform:translateX(60em) ;}
-  90%{transform:translateX(30em) ;}
+  0%,100%{transform: translateX(6em);}
+  10%{transform:translateX(15em) ;}
+  20%{transform:translateX(25em) ;}
+  30%{transform:translateX(37em) ;}
+  40%{transform:translateX(47em) ;}
+  50%{transform:translateX(57em) ;}
+  60%{transform:translateX(47em) ;}
+  70%{transform:translateX(35em) ;}
+  80%{transform:translateX(25em) ;}
+  90%{transform:translateX(15em) ;}
   
 }
 
@@ -364,7 +367,7 @@ transform: rotate(45deg);
 #Startdate-picker{
   margin: 5% 10%;
   border-radius: 10px;
-  font-size: 1.5em;
+  font-size: 1em;
  
   background-color: rgb(211, 194, 188);
 }
@@ -372,29 +375,29 @@ transform: rotate(45deg);
  
   margin: 5% 10%;
 border-radius: 10px;
-font-size: 1.5em;
-margin-left: 5em;
+font-size: 1em;
+
 background-color: rgb(211, 194, 188);
 }
 /*No of travelers*/
 .pl{
-  font-size: 1.4em;
+  font-size: 1em;
   margin-bottom: 0.5em;
   margin: 0 5%;
 }
 
 .passenger input{
   padding-left: 15%;
-  font-size: 1.2em;
+  font-size: 1em;
   background-color: #db938f;
 }
 
 .transport{
-  font-size: 1.1em;
+  font-size: 1em;
   margin: 3%;
 }
 .transport legend{
-  font-size: 1.6em;
+  font-size: 1.2em;
   
 }
 
@@ -402,7 +405,7 @@ background-color: rgb(211, 194, 188);
   display: inline;
   float: right;
   width: 40%;
-  height: 40vh;
+  height: 10vh;
 }
 /* Hide all steps by default: */
 .tab {
@@ -429,13 +432,13 @@ size: 1.25em;
 background-color: rgb(175, 124, 124);
 border-radius: 10px;
 padding: 0.3em 0.3em;
-margin-left: 7%;
+margin-left: 2%;
 font-size: 1rem;
 font-weight: bold;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
-width: 9%;
+width: 24%;
 position: fixed;
-margin-top: 1.7em;
+margin-top: 3%;
 
 }
 
@@ -445,12 +448,12 @@ size: 1.25em;
 background-color: rgb(175, 124, 124);
 border-radius: 10px;
 padding: 0.3em 1.3em;
-margin-left: 70%;
-margin-top: 3%;
+margin-left: 60%;
+margin-top: 7%;
 font-size: 1rem;
 font-weight: bold;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
-width: 15%;
+width: 35%;
 
 }
 button{
@@ -458,7 +461,7 @@ inline-size: 3%;
 }
 
 /* Make circles that indicate the steps of the form: */
-
+.awein{flex-direction:column;display:flex;padding-top:2%;}
 .step {
 height: 1em;
 width: 1em;
@@ -487,3 +490,191 @@ background-color: #97627f;
 ::-webkit-scrollbar-track{background: linear-gradient(transparent,rgba(182, 92, 92, 0.945)); 
 box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.39);  }
 ::-webkit-scrollbar-thumb{background: linear-gradient(rgb(94, 32, 32),rgb(109, 37, 37),rgb(163, 55, 55),rgb(172, 77, 77)); border-radius: 20px;}
+@media screen and (min-width: 480px) {
+  .wrapper{
+    width: 100%;
+    border-bottom: 2px solid black;
+    height:24vw;
+    background-size: cover;
+    background-attachment: fixed;
+    background:brown;
+    box-shadow: 10px 10px 5px #302f2f;
+  }
+  .wrapper h3{
+    color:#d88581d2 ;
+    margin-left: 18%;
+      font-family: sans-serif;
+      font-size: 6em;
+      padding-top: 3%;
+      
+      text-shadow: 5px 5px 2px black;
+  }
+  .tab h3{
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+    font-size: 2em; 
+    padding-left: 7%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.219); 
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+  .provincelist{
+    display: flex;
+    flex-direction: row;
+  }
+  .provincelist{
+    display: flex;
+    flex-direction: row;
+  }
+  .provincelist .checkbox:checked ~ .check{
+    opacity: 1;
+  }
+  
+  .item1 , .item2 , .item3 ,.item4{
+    width: 18%;
+    margin-right: 3%;
+    cursor: pointer;
+  }
+  .provincelabel{
+    padding:30% 25%;
+    text-align: center;
+    color: rgb(109, 28, 85);
+    font-size: x-large;
+    font-family:'Gloria Hallelujah', cursive;
+    font-weight: bold;
+  }
+  
+  .item4 .provincelabel{
+    font-size: 1.3em;
+    padding:0% 0% ;
+  }
+  
+  .item3 .provincelabel{
+    padding:0% 9%;
+  }
+  .item1 , .item2 , .item3 ,.item4{
+    width: 18%;
+    margin-right: 3%;
+    cursor: pointer;
+  }
+  .provincelabel{
+    padding:30% 25%;
+    text-align: center;
+    color: rgb(109, 28, 85);
+    font-size: x-large;
+    font-family:'Gloria Hallelujah', cursive;
+    font-weight: bold;
+  }
+  .box{
+    width:90%;
+    height:34vh;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.705);
+    transition: all ease-in-out 0.7s;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+  }
+  #nextBtn,#submitBtn{
+    size: 1.25em;
+    background-color: rgb(175, 124, 124);
+    border-radius: 10px;
+    padding: 0.3em 1.3em;
+    margin-left: 70%;
+    margin-top: 3%;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 15%;
+    
+    }
+    button{
+    inline-size: 3%;
+    }
+    #prevBtn {
+      size: 1.25em;
+      background-color: rgb(175, 124, 124);
+      border-radius: 10px;
+      padding: 0.3em 0.3em;
+      margin-left: 7%;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      width: 9%;
+      position: fixed;
+      margin-top: 1.7em;
+      
+      }
+      .awein{flex-direction:row;display:flex;padding-top:3%;}
+      .animationgrid img{
+        width:30em;
+        height: 14vw;
+        margin-right: 7em;
+        animation:act 30s 0.5s infinite ;
+      
+        animation-fill-mode: forwards;
+        
+        transition: all ease-in-out 0.5s;
+      }
+      
+      .animationgrid{
+        
+        width:38%;
+      
+        margin-left: 5%;
+        display: flex;
+        justify-content: flex-end;
+        overflow: hidden;
+      }
+      
+      @keyframes act {
+        0%,100%{transform: translateX(7em);}
+        10%{transform:translateX(30em) ;}
+        20%{transform:translateX(60em) ;}
+        30%{transform:translateX(79em) ;}
+        40%{transform:translateX(107em) ;}
+        50%{transform:translateX(136em) ;}
+        60%{transform:translateX(107em) ;}
+        70%{transform:translateX(79em) ;}
+        80%{transform:translateX(60em) ;}
+        90%{transform:translateX(30em) ;}
+        
+      }
+      .checkmark {
+position: absolute;
+height: 1em;
+width: 1em;
+background-color: #eee;
+
+
+}
+.container p{margin-left: 12%;}
+#Startdate-picker{
+  margin: 5% 10%;
+  border-radius: 10px;
+  font-size: 1.5em;
+ 
+  background-color: rgb(211, 194, 188);
+}
+#Enddate-picker{
+ 
+  margin: 5% 10%;
+border-radius: 10px;
+font-size: 1.5em;
+margin-left: 5em;
+background-color: rgb(211, 194, 188);
+}.travelposter{
+  display: inline;
+  float: right;
+  width: 40%;
+  height: 40vh;
+}
+.transport legend{
+  font-size: 1.6em;
+  
+}
+    }

@@ -1,0 +1,18 @@
+ if (x=="1"){$(".city").css("display","none");
+       $('#quetta').css("display","block");
+       }
+       else  if(x=="2"){$('#gawadar').css("display","block");}
+
+       else  if(x=="3"){$('#kalat').css("display","block");}
+
+       else  if(x=="4"){$('#harnai').css("display","block");}
+
+       else  if(x=="5"){$('#zhob').css("display","block");}
+
+       else  if(x=="6"){$('#lasbela').css("display","block");}
+
+       else  if(x=="7"){$('#kochi').css("display","block");}
+
+       else  if(x=="8"){$('#kech').css("display","block");}
+
+       else  if(x=="9"){$('#makran').css("display","block");}

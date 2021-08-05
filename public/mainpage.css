@@ -107,7 +107,7 @@ body{
     animation-timing-function: ease-in-out;
     animation-play-state: running;
     animation-iteration-count: infinite;
-    background-size: 100vw 100vh;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     overflow-x: hidden;
     overflow: hidden;
@@ -189,7 +189,7 @@ nav i:hover,nav .menu li a:hover{
 }
 /*This the wrapper which also contains the nav bar */
 .wrapper{
-    height:95vh;
+    height:30vh;
 }
 
 .H{font-size: 5em;
@@ -209,10 +209,10 @@ nav i:hover,nav .menu li a:hover{
         
 }
 .pop{background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
-    height:89%;
+    height:30%;
     width: 48%;
     
-    padding-top: 5%;
+    padding-top: 25%;
     letter-spacing: 2px;
     color: white;
     font-family: 'Bowlby One SC', cursive;
@@ -226,6 +226,7 @@ nav i:hover,nav .menu li a:hover{
     height: 7vw;
     padding: 0;
     overflow: hidden;
+    margin-top: 5%;
 }
 
 .pop ul{
@@ -258,14 +259,14 @@ nav i:hover,nav .menu li a:hover{
     text-shadow: 5px 5px 2px rgb(109, 28, 85);
     background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
     margin-top: 5%;
-    width: 92%;
-    text-align: center;
+    
+    text-align:left;
     color:#d88581d2 ;
-    padding-left: 7%;
+    padding-left: 2%;
     font-family: sans-serif;
-    font-size: 6em;
+    font-size: 2em;
     letter-spacing: 3px;
-    word-spacing: 60px;
+    word-spacing: 10px;
 }
 
 .subsec{
@@ -623,4 +624,51 @@ nav.menu{display: flex;}
 ::-webkit-scrollbar-thumb{background: linear-gradient(rgb(94, 32, 32),rgb(109, 37, 37),rgb(163, 55, 55),rgb(172, 77, 77)); border-radius: 20px;}
 
 
-
+@media screen and (min-width: 480px) {
+    .pop{background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
+        height:89%;
+        width: 48%;
+        
+        padding-top: 5%;
+        letter-spacing: 2px;
+        color: white;
+        font-family: 'Bowlby One SC', cursive;
+        text-shadow: 0 0 10px rgb(56, 55, 55);
+      
+    }
+    .change{margin-top: 0;
+        margin-left:10%;
+        width: auto;
+        background-color: brown;
+        height: 7vw;
+        padding: 0;
+        overflow: hidden;
+    }
+    .wrapper{
+        height:95vh;
+    }
+    #section {
+        text-shadow: 5px 5px 2px rgb(109, 28, 85);
+        background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
+        margin-top: 5%;
+        width: 92%;
+        text-align: center;
+        color:#d88581d2 ;
+        padding-left: 7%;
+        font-family: sans-serif;
+        font-size: 6em;
+        letter-spacing: 3px;
+        word-spacing: 60px;
+    }
+    nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin: 0px;
+    padding: 0px 25px;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+}
+}

@@ -278,6 +278,29 @@ nav i:hover,nav .menu li a:hover{
     grid-template-rows: auto;
     grid-gap: 2em;
 }
+.planbtn{
+    font-size: 1.2vw;
+    height: 7vh;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border-radius: 7vh;
+    background:rgb(99, 32, 119);
+    color: white;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px rgb(109, 28, 85);
+    margin-left: 40%;
+    font-family:'Gloria Hallelujah', cursive;
+    transition: all ease 0.5s;
+    margin-top: 2%;
+    
+}
+
+.planbtn:hover{
+    opacity: 0.8;
+    font-size: bold;
+    transform: scale(1.1,1.1);
+}
 
 .trip{
     width:18vw;
