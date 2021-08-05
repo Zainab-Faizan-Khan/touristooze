@@ -474,7 +474,7 @@ exports.payeasy=(req,res)=>{
     if (err) throw err
     else{
       db.query('INSERT INTO planbooking (payment_status) VALUES ("1") WHERE SET Tripno=?',[req.session.tripno],(err,results)=>{
-        if (error) throw error
+        if (err) throw err
       })
     }
   })
@@ -504,7 +504,7 @@ db.query('INSERT INTO cardpayment SET ?',
 if (err) throw err
 else{
   db.query('INSERT INTO planbooking (payment_status) VALUES ("1") WHERE SET Tripno=?',[req.session.tripno],(err,results)=>{
-    if (error) throw error
+    if (err) throw err
   })
 }
 })
@@ -519,7 +519,7 @@ if (err) throw err
 
 else{
   db.query('INSERT INTO planbooking (payment_status) VALUES ("1") WHERE SET Tripno=?',[req.session.tripno],(err,results)=>{
-    if (error) throw error
+    if (err) throw err
   })
 }
 })
