@@ -453,6 +453,7 @@ else{
             db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
               if (err) throw err
               else{
+                console.log(result)
                 let image=result[0].image
             db.query('INSERT INTO wishlist SET ?',{ image:image,wishcity:result[0].Name,cnic:req.session.name},(error,results)=>{
               if (error) throw error
