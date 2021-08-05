@@ -403,6 +403,7 @@ exports.planpunjab=(req,res)=>{
         db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
           if (err) throw err
           else{
+            console.log(result[0])
             let image=result[0].image
             db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
               if (error) throw error
@@ -474,7 +475,7 @@ exports.payeasy=(req,res)=>{
   {
     if (err) throw err
     else{
-      db.query('INSERT INTO planbooking (payment_status) VALUES ("1") WHERE Tripno=?',[req.session.tripno],(err,results)=>{
+      db.query('INSERT INTO planbooking (payment_status) VALUES (1) WHERE Tripno=?',[req.session.tripno],(err,results)=>{
         if (err) throw err
       })
     }
@@ -484,7 +485,7 @@ exports.payeasy=(req,res)=>{
     if (err) throw err
     else{
     if(result.length>0){
-      db.query("INSERT INTO customer (payment_status) VALUES (0) WHERE cnic=?"[req.session.cnic],(error,result)=>{
+      db.query("INSERT INTO customer (payment_status) VALUES (0) WHERE cnic=?",[req.session.cnic],(error,result)=>{
         if (error) throw error
       })
     
@@ -504,7 +505,7 @@ db.query('INSERT INTO cardpayment SET ?',
 {
 if (err) throw err
 else{
-  db.query('INSERT INTO planbooking (payment_status) VALUES ("1") WHERE  Tripno=?',[req.session.tripno],(err,results)=>{
+  db.query('INSERT INTO planbooking (payment_status) VALUES (1) WHERE  Tripno=?',[req.session.tripno],(err,results)=>{
     if (err) throw err
   })
 }
@@ -512,14 +513,14 @@ else{
 
 res.redirect("../mainpage")
 }
-exports.payjazz=(req,res)=>{
+exports.payjazz=(req,res)=>{console.log(req.body.ano)
 db.query('INSERT INTO jazzpay SET ?',
-{Tripno:req.session.tripno,Accountno:req.body.ano,PayTotal:req.session.total},(err,result)=>
+{Tripno:req.session.tripno,Accountno:req.body.jcn,PayTotal:req.session.total},(err,result)=>
 {
 if (err) throw err
 
 else{
-  db.query('INSERT INTO planbooking (payment_status) VALUES ("1") WHERE  Tripno=?',[req.session.tripno],(err,results)=>{
+  db.query('INSERT INTO planbooking (payment_status) VALUES (1) WHERE  Tripno=?',[req.session.tripno],(err,results)=>{
     if (err) throw err
   })
 }
