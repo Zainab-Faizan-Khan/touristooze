@@ -1,6 +1,7 @@
 *{
   margin: 0 0;
   padding: 0 0;
+  overflow: hidden;
 }
 #loading{
   background-color: rgb(56, 9, 9);
@@ -404,7 +405,10 @@ opacity: 1;
       width: 60%;
       height: 100%;
       padding: 10% 20%;
-      text-align: center;
+      text-align: center;}
+      .signin h1{
+        margin-top: 0%;
+      
     }
     
   }
