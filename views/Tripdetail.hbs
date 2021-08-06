@@ -37,7 +37,9 @@
 </div>
 
 <button  id="continueBtn" onclick="window.location.href='{{des}}'">Continue</button>
-<button   id="cancelBtn" >Cancel Trip</button><form id="cancel" method="POST" action="/auth/canceltrip"></form>
+<button   id="cancelBtn" >Cancel Trip</button>
+<button   id="laterBtn" onclick="window.location.href='/MyTrips'">Pay Later</button>
+<form id="cancel" method="POST" action="/auth/canceltrip"></form>
 <div class="warn"><p>This will clear all Data</p><br>
 <button  id="YesBtn" >Yes</button>
 <button  id="NoBtn" >No</button>

@@ -27,6 +27,7 @@ exports.plantrip=(req,res)=>{
   req.session.bus=req.body.bus
   req.session.plane=req.body.plane
   req.session.province=req.body.province
+  req.session.cartok=[[],[],[],[]]
   db.query('SELECT Tripno FROM planbooking ORDER BY Tripno DESC LIMIT 1;',(err,result)=>{
     data=result[0];
     req.session.tripno=data.Tripno + 1;
@@ -69,42 +70,24 @@ Plane:req.session.plane},(error,results)=>{
 
 
 exports.plansindh=(req,res)=>{
- 
+  req.session.sindh=[]
+  if(req.session.up==1){
+    db.query("DELETE FROM citybooking WHERE province=? AND Tripno=?",["Sindh",req.session.tripno],(err,result)=>{if (err) throw err;
+  })
+}
   
-  if(req.session.back=req.session.form){
-    if(req.body.city){
-    const province="Sindh";
-    if(req.body.city[1].length==1){
-      db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
-        if (err) throw err
-        else{
-          let image=result[0].image
-          db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:req.body.city,Tripno:req.session.tripno},(error,results)=>{
-            if (error) throw error
-            
-          })
-        }})
-        res.redirect("../Tripdetail")
+  if(req.session.back=req.session.form){if(req.body.city){
+    if(req.body.city[0].length==1){
+      req.session.sindh.push(req.body.city)
     }
-    else if(req.body.city[1].length>1){
-    for(var x in req.body.city){
-      db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
-        if (err) throw err
-        else{
-          let image=result[0].image
-      db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
-        if (error) throw error
-      })}})}
-      
-      
-        
-        res.redirect("../Tripdetail")
-    }
-
-  }
-    else{res.redirect("../Tripdetail")}
-  
-  
+    else{
+      for(var x in req.body.city){
+        req.session.sindh.push(req.body.city[x])
+      }
+    }}
+    req.session.cartok[0]=req.session.sindh
+  res.redirect("../Tripdetail")
+  console.log(req.session.cart)
   
   }
 
@@ -115,6 +98,7 @@ exports.plansindh=(req,res)=>{
 
 else{
   if(req.body.city){
+    
     if(req.body.city[0].length==1){
       db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
         if (err) throw err
@@ -148,103 +132,45 @@ else{
 }
 
 exports.plankhyber=(req,res)=>{
-  
+  req.session.kpk=[]
+  if(req.session.up){
+
+    db.query("DELETE FROM citybooking WHERE province=? AND Tripno=?",["KPK",req.session.tripno],(err,result)=>{if (err) throw err;
+   })
+}
     
-    if(req.session.back==req.session.form){
-      const province="KPK";
-     if (req.body.city){
-      if(req.body.city[1].length==1){
-        
-        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
-          if (err) throw err
-          else{
-            let image=result[0].image
-            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:req.body.city,Tripno:req.session.tripno},(error,results)=>{
-              if (error) throw error
-              
-            })
-          }})
-         
-      
-        console.log(req.session.no)
-        if( req.session.province[req.session.no-1]=="Balochistan"){
-          
-          res.redirect("../Balochistan")
-          req.session.no-=1
-          
-        }
-        else if(req.session.province[req.session.no-1]=="Punjab" ){
-          res.redirect("../Punjab")
-          req.session.no-=1
-        }
-        else if(req.session.province[0]=="Sindh" ){
-          res.redirect("../Sindh")
-          req.session.no-=1
-        }
-        else{
-          
-          res.redirect("../Tripdetail")
-        }
+  if(req.session.back=req.session.form){
+    if(req.body.city){
+    if(req.body.city[0].length==1){
+      req.session.kpk.push(req.body.city)
     }
-    else if(req.body.city[1].length>1)
-    {for(var x in req.body.city){
-      db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
-        if (err) throw err
-        else{
-          let image=result[0].image
-          db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
-            if (error) throw error
+    else{
+      for(var x in req.body.city){
+        req.session.kpk.push(req.body.city[x])
+      }
+    }}
+    req.session.cartok[3]=req.session.kpk
+    if( req.session.province[req.session.no-1]=="Balochistan"){
             
-          })
-        }})}
-       
-    
-      console.log(req.session.no)
-      if( req.session.province[req.session.no-1]=="Balochistan"){
-        
-        res.redirect("../Balochistan")
-        req.session.no-=1
-        
-      }
-      else if(req.session.province[req.session.no-1]=="Punjab" ){
-        res.redirect("../Punjab")
-        req.session.no-=1
-      }
-      else if(req.session.province[0]=="Sindh" ){
-        res.redirect("../Sindh")
-        req.session.no-=1
-      }
-      else{
-        
-        res.redirect("../Tripdetail")
-      }
-
+      res.redirect("../Balochistan")
+      req.session.no-=1
+      
+    }
+    else if(req.session.province[req.session.no-1]=="Punjab" ){
+      res.redirect("../Punjab")
+      req.session.no-=1
+    }
+    else if(req.session.province[0]=="Sindh" ){
+      res.redirect("../Sindh")
+      req.session.no-=1
+    }
+    else{
+      
+      res.redirect("../Tripdetail")
+    }
+  console.log(req.session.cart)
+  
   }
-  
-  
-}
-else{if( req.session.province[req.session.no-1]=="Balochistan"){
-        
-  res.redirect("../Balochistan")
-  req.session.no-=1
-  
-}
-else if(req.session.province[req.session.no-1]=="Punjab" ){
-  res.redirect("../Punjab")
-  req.session.no-=1
-}
-else if(req.session.province[0]=="Sindh" ){
-  res.redirect("../Sindh")
-  req.session.no-=1
-}
-else{
-  
-  res.redirect("../Tripdetail")
-}}
-  }
-    
-  
-
 
   else{
     if(req.body.city){
@@ -278,70 +204,39 @@ else{
   }
 exports.planbaloch=(req,res)=>{
   console.log(req.body)
-    
-    if(req.session.back==req.session.form){
-      if(req.body.city){
-      const province="Balochistan";
-      if(req.body.city[1].length==1){
-        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
-          if (err) throw err
-          else{
-            let image=result[0].image
-            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:req.body.city,Tripno:req.session.tripno},(error,results)=>{
-              if (error) throw error
-              
-            })
-          }})
-        
-         if(req.session.province[req.session.no-1]=="Punjab" ){
-          res.redirect("../Punjab")
-          req.session.no-=1
-        }
-        else if(req.session.province[0]=="Sindh"){
-          res.redirect("../Sindh")
-          req.session.no-=1
-        }
-        else{
-          res.redirect("../Tripdetail")
-        }
-      }
-      else if(req.body.city[0].length>1){for(var x in req.body.city){
-        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
-          if (err) throw err
-          else{
-            let image=result[0].image
-            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
-              if (error) throw error
-              
-            })
-          }})}
-          if(req.session.province[req.session.no-1]=="Punjab" ){
-            res.redirect("../Punjab")
-            req.session.no-=1
-          }
-          else if(req.session.province[0]=="Sindh"){
-            res.redirect("../Sindh")
-            req.session.no-=1
-          }
-          else{
-            res.redirect("../Tripdetail")
-          }}
+  req.session.baloch=[]
+  if(req.session.up){
+    db.query("DELETE FROM citybooking WHERE province=? AND Tripno=?",["Balochistan",req.session.tripno],(err,result)=>{if (err) throw err;
+    })
+}
+  if(req.session.back=req.session.form){if(req.body.city){
+    if(req.body.city[0].length==1){
+      req.session.baloch.push(req.body.city)
     }
-   else{if(req.session.province[req.session.no-1]=="Punjab" ){
-    res.redirect("../Punjab")
-    req.session.no-=1
+    else{
+      for(var x in req.body.city){
+        req.session.baloch.push(req.body.city[x])
+      }
+    }}
+    req.session.cartok[2]=req.session.baloch
+     if(req.session.province[1]=="Punjab"){
+      res.redirect("../Punjab")
+      req.session.no-=1
+    }
+    else if(req.session.province[0]=="Punjab"){
+      res.redirect("../Punjab")
+      req.session.no-=1
+    }
+    else if(req.session.province[0]=="Sindh"){
+      res.redirect("../Sindh")
+      req.session.no-=1
+    }
+    else{
+      res.redirect("../Tripdetail")
+    }
+  console.log(req.session.cart)
+  
   }
-  else if(req.session.province[0]=="Sindh"){
-    res.redirect("../Sindh")
-    req.session.no-=1
-  }
-  else{
-    res.redirect("../Tripdetail")
-  }}
-   
-   
-        }
-
 
 
         else{
@@ -376,64 +271,34 @@ exports.planbaloch=(req,res)=>{
         }
 exports.planpunjab=(req,res)=>{
   console.log(req.body)
-    
-    if(req.session.back==req.session.form){
-      if(req.body.city){
-      const province="Punjab";
-      if(req.body.city[1].length==1){
-        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city],(err,result)=>{
-          if (err) throw err
-          else{
-            let image=result[0].image
-            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:req.body.city,Tripno:req.session.tripno},(error,results)=>{
-              if (error) throw error
-              
-            })
-          }})
-       
-         if(req.session.province[0]=="Sindh" ){
-          res.redirect('../Sindh')
-          req.session.no-=1
-        }
-        else{
-          res.redirect("../Tripdetail")
-        }
-      }
-      else if(req.body.city[1].length>1){for(var x in req.body.city){
-        db.query('SELECT * FROM cities WHERE Name=?',[req.body.city[x]],(err,result)=>{
-          if (err) throw err
-          else{
-            console.log(result[0])
-            let image=result[0].image
-            db.query('INSERT INTO citybooking SET ?',{ image:image,province:province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
-              if (error) throw error
-              
-            })
-          }})}
-          if(req.session.province[0]=="Sindh" ){
-            res.redirect('../Sindh')
-            req.session.no-=1
-          }
-          else{
-            res.redirect("../Tripdetail")
-          }}
-        }     
-else{if(req.session.province[0]=="Sindh" ){
-  res.redirect('../Sindh')
-  req.session.no-=1
-}
-else{
-  res.redirect("../Tripdetail")
-}}
-
-
+  req.session.punjab=[]
+  if(req.session.up){
+        db.query("DELETE FROM citybooking WHERE province=? AND Tripno=?",["Punjab",req.session.tripno],(err,result)=>{if (err) throw err;
+        })
     }
-
-
-
-
-
-
+    
+  if(req.session.back=req.session.form){
+    
+    if(req.body.city){
+    if(req.body.city[0].length==1){
+      req.session.punjab.push(req.body.city)
+    }
+    else{
+      for(var x in req.body.city){
+        req.session.punjab.push(req.body.city[x])
+      }
+    }}
+    req.session.cartok[1]=req.session.punjab
+    if(req.session.province[0]=="Sindh" ){
+      res.redirect('../Sindh')
+      req.session.no-=1
+    }
+    else{
+      res.redirect("../Tripdetail")
+    }
+  console.log(req.session.cart)
+    
+  }
 
 
     else{
@@ -475,7 +340,7 @@ exports.payeasy=(req,res)=>{
   {
     if (err) throw err
     else{
-      db.query('INSERT INTO planbooking (payment_status) VALUES (1) WHERE Tripno=?',[req.session.tripno],(err,results)=>{
+      db.query('UPDATE planbooking SET payment_status=1 WHERE Tripno=?',[req.session.tripno],(err,results)=>{
         if (err) throw err
       })
     }
@@ -485,19 +350,19 @@ exports.payeasy=(req,res)=>{
     if (err) throw err
     else{
     if(result.length>0){
-      db.query("INSERT INTO customer (payment_status) VALUES (0) WHERE cnic=?",[req.session.cnic],(error,result)=>{
+      db.query("UPDATE customer SET payment_status=0 WHERE cnic=?",[req.session.cnic],(error,result)=>{
         if (error) throw error
       })
     
     }
     else{
-      db.query("INSERT INTO customer (payment_status) VALUES (1) WHERE cnic=?"[req.session.cnic],(error,result)=>{
+      db.query("UPDATE customer SET payment_status=1 WHERE cnic=?"[req.session.cnic],(error,result)=>{
         if (error) throw error
       })
     }
   }
   })
-  res.redirect("../mainpage")
+  res.redirect("../MyTrips")
 }
 exports.paycard=(req,res)=>{
 db.query('INSERT INTO cardpayment SET ?',
@@ -505,13 +370,28 @@ db.query('INSERT INTO cardpayment SET ?',
 {
 if (err) throw err
 else{
-  db.query('INSERT INTO planbooking (payment_status) VALUES (1) WHERE  Tripno=?',[req.session.tripno],(err,results)=>{
+  db.query('UPDATE planbooking SET payment_status=1 WHERE  Tripno=?',[req.session.tripno],(err,results)=>{
     if (err) throw err
   })
 }
 })
-
-res.redirect("../mainpage")
+db.query("SELECT * FROM planbooking WHERE payment_status=?",[0],(err,result)=>{
+  if (err) throw err
+  else{
+  if(result.length>0){
+    db.query("UPDATE customer SET payment_status=0 WHERE cnic=?",[req.session.cnic],(error,result)=>{
+      if (error) throw error
+    })
+  
+  }
+  else{
+    db.query("UPDATE customer SET payment_status=1 WHERE cnic=?"[req.session.cnic],(error,result)=>{
+      if (error) throw error
+    })
+  }
+}
+})
+res.redirect("../MyTrips")
 }
 exports.payjazz=(req,res)=>{console.log(req.body.ano)
 db.query('INSERT INTO jazzpay SET ?',
@@ -520,13 +400,28 @@ db.query('INSERT INTO jazzpay SET ?',
 if (err) throw err
 
 else{
-  db.query('INSERT INTO planbooking (payment_status) VALUES (1) WHERE  Tripno=?',[req.session.tripno],(err,results)=>{
+  db.query('UPDATE planbooking SET payment_status=1 WHERE Tripno=?',[req.session.tripno],(err,results)=>{
     if (err) throw err
   })
 }
 })
-
-res.redirect("../mainpage")
+db.query("SELECT * FROM planbooking WHERE payment_status=?",[0],(err,result)=>{
+  if (err) throw err
+  else{
+  if(result.length>0){
+    db.query("UPDATE customer SET payment_status=0 WHERE cnic=?",[req.session.cnic],(error,result)=>{
+      if (error) throw error
+    })
+  
+  }
+  else{
+    db.query("UPDATE customer SET payment_status=1 WHERE cnic=?"[req.session.cnic],(error,result)=>{
+      if (error) throw error
+    })
+  }
+}
+})
+res.redirect("../MyTrips")
 }
 
 exports.canceltrip=(req,res)=>{
@@ -539,21 +434,23 @@ if(err) throw err
 
 req.session.package=null
 req.session.total=0
-res.redirect("../mainpage")
+res.redirect("../MyTrips")
 }
 
 exports.mytrip=(req,res)=>{
   
   req.session.tripno=req.body.tri
   res.redirect("../Tripdetail")
-  console.log(req.session.tripno)
+  
+
 }
 
 exports.wait=(req,res)=>{
-
+  
+    
   db.query("SELECT * FROM citybooking WHERE Tripno=?",[req.session.tripno],(err,results)=>{
 
-    const rate=7923
+    const rate=1500
     console.log(results)
     if(results.length>0){
     req.session.total=rate * results.length
@@ -563,5 +460,5 @@ exports.wait=(req,res)=>{
     }
     res.redirect("../Trips")
   })
- 
+  
 }

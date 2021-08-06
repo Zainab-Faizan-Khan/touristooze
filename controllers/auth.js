@@ -10,6 +10,7 @@ const db= mysql.createConnection({
     database:process.env.DATABASE,
     
 })
+
 exports.signin=(req,res)=>{
     
 
@@ -107,7 +108,12 @@ exports.signup=(req,res)=>{
 }
 
 
-
+exports.review=(req,res)=>{
+    db.query('INSERT INTO reviews SET ?',{name:req.body.name,review:req.body.review},(error,results)=>{
+        if (error) throw error
+        res.redirect("../AboutUs")
+    })
+}
 
 
 

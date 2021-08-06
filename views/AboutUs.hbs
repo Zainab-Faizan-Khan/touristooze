@@ -6,6 +6,7 @@
     <link rel='stylesheet' href="/AboutUs.css"/>
     <!--icon of website-->
     <link rel="shortcut icon" href="/img/logo.png"/>
+    <script src="/jquery.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
@@ -99,18 +100,15 @@ function showPage() {
 </script>
   <div class="wrapper">
     <!--navigation bar-->
-  <nav class="navbar">
+   <nav class="navbar">
       <!--logo-->
       <img src="/img/logo.png">
       <a href="/mainpage" class="logo">Touristooze</a>
         <!--search-->
 
-<!--        <label class="menu-icon" for="menu-btn" style="font-size:1.2rem; ">
-          <span><i style= "padding: 10px" class="fas fa-bars"></i></span>
-      </label> -->
+      
       <!--menu-->
-        <!--menu-->
-      <ul class="menu">
+     <ul class="menu">
           <li><a href="/MyTrips">My Trips</a></li>
           <li><a href="/AboutUs/#re">Reviews</a></li>
           <li><a href="/AboutUs">About</a></li>
@@ -188,7 +186,7 @@ function showPage() {
         </div>
     </div>
   <h1 class="mainheadings" id="re">HEAR FROM OUR<br>CUSTOMERS..! </h1>
-  <button class="planbtn" style="width:16vw">Read All On Our Blog!</button>
+  <button class="planbtn" id="give" style="width:16vw" onclick="myFunctiongive()">GIVE REVIEW!</button>
      <div class="review" id="r4">
         <span></span>
         <span></span>
@@ -220,6 +218,42 @@ function showPage() {
     </div>
 </div>
 </div><!--test-->
+
+<div id="reviewportion">
+  <form action="/auth/review" method="POST" id="r">
+    <label for="name"><b>Name: </b></label><br>
+    <input type="text" id="name" placeholder="Enter Name" name="name"  required><br>
+    <label for="review"><b>Review: </b></label><br>
+    <textarea id="review" name="review" rows="4" cols="50"></textarea><br>
+    <button  id="givebtn" onclick="myFunctions()" >Submit</button>
+    <button type="button" id="cancelbtn" onclick="myFunction()">Cancel</button>
+  </form>
+</div>
+    <script>
+function enableScrolling(){
+    window.onscroll=function(){};
+    }
+      function disableScrolling(){
+          var x=window.scrollX;
+          var y=window.scrollY;
+          window.onscroll=function(){window.scrollTo(x, y);};
+      }
+   function  myFunctions(){
+     document.getElementById("reviewportion").style.display="none"
+     document.getElementById("r").submit()
+     enableScrolling()
+   }
+   function  myFunction(){
+     document.getElementById("reviewportion").style.display="none"
+     enableScrolling()
+   }
+
+   function  myFunctiongive(){
+     document.getElementById("reviewportion").style.display="block"
+     disableScrolling()
+   }
+
+</script>
 <div id="tourguides">
   <div id="tourguides1">
   <h1 class="mainheadings">OUR POPULAR TOUR GUIDES</h1>
@@ -329,5 +363,7 @@ function showPage() {
          <p id="last">Copyright @2020 Touristooze. Designed by Alishba , Zainab</p>
   
     </footer>
+
 </body>
+
 </html>  

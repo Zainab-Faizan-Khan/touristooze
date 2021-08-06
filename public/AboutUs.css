@@ -105,7 +105,7 @@ body{
 
 .container{}
 /*These are the contents of the navigation bar*/
- ul{
+ul{
     list-style: none;
 }
 a{
@@ -114,6 +114,7 @@ a{
 nav{
     display: flex;
     justify-self: space-around;
+    overflow-y: hidden;
    position: fixed;
    z-index: 200;
     width: 100%;
@@ -121,28 +122,29 @@ nav{
     color: white;
     height: 4rem;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1rem;
     background-color: rgba(0, 0, 0, 0.473);
-    align-items:center;
+    
 }
-.navbar img{height:4vw;width:5vw;}
+.navbar img{display: none;}
 
 .logo{display: flex;
 flex-direction: row;
-align-items: center;
+align-items: center;margin-right: 10%;
 color: white;}
 
-nav .menu{display:flex;margin-left: 35%;}
+nav .menu{display:flex;}
 nav .menu li a{
-    height: 40px;
-    line-height: 43px;
+    
+    
     margin: 0px;
-    padding: 0px 25px;
+    padding: 30px 5px;
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     font-weight: 500;
     text-transform: uppercase;
     color: white;
+    overflow-y: hidden;
 }
 
 nav i:hover,nav .menu li a:hover{
@@ -412,7 +414,42 @@ nav i:hover,nav .menu li a:hover{
     50%{transform: rotate(240deg);}
 
 }
+#continuebtn,#NoBtn,#cancelbtn,#givebtn{
+    cursor: pointer;
+    margin-right: 15%;
+    width:7.5em;
+    font-size: 1.1em;
+    background-color: rgba(165, 79, 79, 0.747);
+    border-radius: 10px;
+    outline: none;
+    height: 2.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 2%;
+   margin-left: 3%;
+   
+}
+#reviewportion input ,#reviewportion textarea{
+    background-color: #e0bbb9;
+    outline: none;
+    font-size: 1em;
 
+}
+#reviewportion{
+    position: fixed;
+    top:30vh;
+    height:20vh;
+    width: 50vw;
+    display:none;
+    left:25vw;
+    background-color: #db938f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding-left: 5%;
+    justify-content: center;
+    align-items: center;
+    z-index:2000;
+    
+    padding: 3%;
+}
 #tourguides{
     width: 95%;
     margin-left: 3%;
@@ -623,6 +660,48 @@ footer h2{
     box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.39);  }
 ::-webkit-scrollbar-thumb{background: linear-gradient(rgb(94, 32, 32),rgb(109, 37, 37),rgb(163, 55, 55),rgb(172, 77, 77)); border-radius: 20px;}
 @media screen and (min-width: 480px) {
+    .navbar img{display:flex;}
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    nav{
+        display: flex;
+        justify-self: space-around;
+        overflow-y: hidden;
+       position: fixed;
+       z-index: 200;
+        width: 100%;
+        border: 1px solid black;
+        color: white;
+        height: 4rem;
+        justify-content: center;
+        font-size: 2rem;
+        background-color: rgba(0, 0, 0, 0.473);
+        align-items:center;
+    }
+    .navbar img{height:4vw;width:5vw;}
+    
+    .logo{display: flex;margin-right: 35%;
+    flex-direction: row;
+    align-items: center;
+    color: white;}
+    
+    nav .menu{display:flex;}
+    nav .menu li a{
+        height: 40px;
+        line-height: 43px;
+        margin: 0px;
+        padding: 0px 25px;
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: white;
+        overflow-y: hidden;
+    }
     .about{
         display: grid;
         grid-template-columns: 50% 50% ;

@@ -7,7 +7,7 @@ const router=express.Router();
 router.post("/signup", authController.signup);
 router.post("/signin",authController.signin);
 router.post("/pack",planController.pack);
-
+router.post("/review", authController.review);
 router.post("/plansindh",planController.plansindh);
 router.post("/planpunjab",planController.planpunjab);
 router.post("/planbaloch",planController.planbaloch);

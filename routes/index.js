@@ -94,6 +94,9 @@ router.get("/Sindh" ,(req,res)=> {
                 db.query("SELECT Name,Type,image FROM sindh WHERE City='Shikarpur'",(err,results)=>{if (err) throw err
                     else{
                         req.session.shikarpur=results 
+                        console.log(req.session.up)
+                         
+
                         
                         
                 res.render("Sindh",{tag:()=>{if(req.session.val){return "Logout"}else{return "Login"}},
@@ -102,7 +105,7 @@ router.get("/Sindh" ,(req,res)=> {
                 dharki:req.session.dharki,nawabshah:req.session.nawabshah,kotri:req.session.kotri,jacobabad:req.session.jacobabad,
                 sukker:req.session.sukker,shadadkot:req.session.shadadkot,sehwan:req.session.sehwan,rohri:req.session.rohri,
                 tandoallah:req.session.tandoallah,umerkot:req.session.umerkot,tandoadam:req.session.tandoadam,shikarpur:req.session.shikarpur,
-               events:e
+               events:e,log:req.session.val
             });      
                     } })        
                                                                                                 } })        
@@ -135,6 +138,7 @@ router.get("/Sindh" ,(req,res)=> {
 }) 
 
 router.get("/Punjab" ,(req,res)=> {
+    
     db.query("SELECT Name,City,month FROM events WHERE Province='Punjab' AND status=1",(err,r)=>{if (err) throw err
         else{
             let e=r
@@ -218,7 +222,7 @@ router.get("/Punjab" ,(req,res)=> {
                 deraghazi:req.session.deraghazi,islamabad:req.session.islamabad,faislabad:req.session.faislabad,gujranwala:req.session.gujranwala,
                 gujrat:req.session.gujrat,jhang:req.session.jhang,kamoke:req.session.kamoke,wah:req.session.wah,
                 kasur:req.session.kasur,multan:req.session.multan,sargodha:req.session.sargodha,sheikhupura:req.session.sheikhupura,
-                sahiwal:req.session.sahiwal,rawalpindi:req.session.rawalpindi,rahimyarkhan:req.session.rahimyarkhan,okara:req.session.okara
+                sahiwal:req.session.sahiwal,rawalpindi:req.session.rawalpindi,rahimyarkhan:req.session.rahimyarkhan,okara:req.session.okara,log:req.session.val
                
             });        
                     } })        
@@ -251,7 +255,8 @@ router.get("/Punjab" ,(req,res)=> {
 }});}})})
 
 router.get("/KPK" ,(req,res)=> {
-    db.query("SELECT Name,City,month FROM events WHERE Province='Balochistan'AND status=1",(err,r)=>{if (err) throw err
+    
+    db.query("SELECT Name,City,month FROM events WHERE Province='KPK'AND status=1",(err,r)=>{if (err) throw err
         else{
             let e=r
     db.query("SELECT Name,Type,image FROM kpk WHERE City='Abbottabad'",(err,results)=>{if (err) throw err
@@ -335,7 +340,7 @@ router.get("/KPK" ,(req,res)=> {
                 kohat:req.session.kohat,kurram:req.session.kurram,khyber:req.session.khyber,havelian:req.session.havelian,
                 karak:req.session.karak,lakkimarwat:req.session.lakkimarwat,malakand:req.session.malakand,mansehra:req.session.mansehra,
                 peshawer:req.session.peshawer,swabi:req.session.swabi,nowshera:req.session.nowshera,mardan:req.session.mardan
-               
+               ,log:req.session.val
             });        
                     } })        
                                                                                                 } })        
@@ -367,6 +372,7 @@ router.get("/KPK" ,(req,res)=> {
 }});}})})
 
 router.get("/Balochistan" ,(req,res)=> {
+    
     db.query("SELECT Name,City,month FROM events WHERE Province='Balochistan'AND status=1",(err,r)=>{if (err) throw err
         else{
             let e=r
@@ -466,7 +472,7 @@ router.get("/Balochistan" ,(req,res)=> {
                 musakhel:req.session.musakhel,makran:req.session.makran,loralai:req.session.loralai,lasebela:req.session.lasebela,
                 kech:req.session.kech,harnai:req.session.harnai,kalat:req.session.kalat,jaffarabad:req.session.jaffarabad,
                 derabugti:req.session.tandoallah,awaran:req.session.awaran,chagai:req.session.chagai,gawadar:req.session.gawadar
-               
+               ,log:req.session.val
             });        
                     } })        
                                                                                                 } })        
@@ -503,9 +509,83 @@ router.get("/" ,(req,res)=> {
     res.redirect("../mainpage")
 });
 router.get("/Tripdetail" ,(req,res)=> {
+    for(var x in req.session.cartok){
+        if(req.session.cartok[x].length){
+            for(var y=0;y<req.session.cartok[x].length;y++){
+                req.session.cart.push(req.session.cartok[x][y])
+            }
+        }
+    }
     res.render("Pleasewait")
 })
 router.get("/Trips" ,(req,res)=> {
+    if(req.session.val){
+        req.session.up=1
+        if((req.session.cart)&&(req.session.back==req.session.form)){
+            for(var x in req.session.cart){
+              db.query('SELECT * FROM cities WHERE Name=?',[req.session.cart[x]],(err,result)=>{
+                if (err) throw err
+                else{
+                  console.log(result[0])
+                  let image=result[0].image
+                  db.query('INSERT INTO citybooking SET ?',{ image:image,province:result[0].Province,cityname:result[0].Name,Tripno:req.session.tripno},(error,results)=>{
+                    if (error) throw error
+                    
+                  })}})
+            }
+            const rate=1500
+        
+        if(req.session.cart.length>0){
+        req.session.total=rate * req.session.cart.length
+        }
+        else{    db.query('SELECT * FROM cities LIMIT 10',(err,result)=>{
+            if (err) throw err
+            else{
+            for(var x in result){
+            let image=result[x].image
+            db.query('INSERT INTO citybooking SET ?',{ image:image,province:result[x].Province,cityname:result[x].Name,Tripno:req.session.tripno},(error,results)=>{
+                if (error) throw error
+                
+            })}}})
+          req.session.total=rate*10
+        }
+        db.query("SELECT * FROM planbooking WHERE Tripno=?",[req.session.tripno],(err,result)=>{
+                    
+                    
+                    
+          if(err) throw err
+          else{
+          req.session.startdate=result[0].StartDate
+          req.session.enddate=result[0].EndDate
+    
+          let p=null
+          let des=null
+          if(result[0].payment_status=="0"){
+              p="Pending"
+              des="/Payment"
+          }
+          else{
+              p="Clear"
+          }
+      db.query("SELECT * FROM citybooking WHERE Tripno=?",[req.session.tripno],(err,results)=>{
+          if (err)throw err
+          console.log("results are")
+          console.log(results)
+          req.session.city=results
+      
+      res.render("Tripdetail",
+      {des:des,p:p,startdate:req.session.startdate,enddate:req.session.enddate,
+          city:req.session.city,tripno:req.session.tripno,name:req.session.name,pay:req.session.total});
+      
+      
+      })
+    }        
+      })
+        }
+        else{
+            
+
+              
     db.query("SELECT * FROM planbooking WHERE Tripno=?",[req.session.tripno],(err,result)=>{
                 
                 
@@ -537,12 +617,14 @@ router.get("/Trips" ,(req,res)=> {
     
     })
 }        
-    })})
+    })}}
+    else{res.redirect("../SignIn")}
+})
 
 
 
 router.get("/mainpage" ,(req,res)=> {
-if(undefined){console.log("ansidn")}
+
     db.query("SELECT * FROM news  ORDER BY date DESC ",(err,result)=>{
         req.session.package=null
         req.session.tripno="0"
@@ -559,6 +641,8 @@ if(undefined){console.log("ansidn")}
     })
 });
 router.get("/PlanTrip" ,(req,res)=> {
+    req.session.up=0
+    req.session.tripno=0
     req.session.form=req.originalUrl;
     req.session.back=req.originalUrl;
     if(req.session.val=="1"){
@@ -589,7 +673,8 @@ router.get("/Login" ,(req,res)=> {
     
 });
 router.get("/MyTrips" ,(req,res)=> {
-
+req.session.up=0
+req.session.tripno=0
     if(req.session.val=="1"){
         
         db.query("SELECT * FROM planbooking WHERE cnic=?",[req.session.cnic],(err,results)=>{
@@ -600,9 +685,8 @@ router.get("/MyTrips" ,(req,res)=> {
             else{
         
         let wish=result
-        console.log("the wishlist is(i am in index mytrip)" )
-        console.log(wish)
-        req.session.back=req.originalUrl;
+      
+        req.session.cart=[]
         
         res.render("MyTrips",{wish:wish,trips:trips,name:req.session.name,email:req.session.email,country:req.session.country,phone_no:req.session.phone_no,pay:req.session.pay});
     
@@ -623,7 +707,7 @@ router.get("/catalog" ,(req,res)=> {
     req.session.tripno=null
     res.render("catalog");
     req.session.back=req.originalUrl;
-    
+
 
 });
 router.get("/Payment" ,(req,res)=> {
@@ -640,7 +724,7 @@ router.get("/Payment" ,(req,res)=> {
 });
 router.get("/AboutUs" ,(req,res)=> {
 
-    db.query("SELECT * FROM reviews ORDER BY sno",(err,result)=>{
+    db.query("SELECT * FROM reviews ORDER BY sno DESC",(err,result)=>{
         if(err) throw err
         else{
             let r1=result[0]

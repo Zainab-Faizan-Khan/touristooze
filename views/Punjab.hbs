@@ -345,43 +345,7 @@ function showSlides() {
           </div>{{/each}}
   </div> 
 
-    <div class="city" id="bahawalpur">
-      <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
-          <label for="check3">
-            <input id="check3" type="checkbox" value="Bahawalpur" class="checkbox" name="city" style="visibilty:visible">
-            <div class="checkb">
-              <div class="check"></div>
-              <h4>Add to <br>Wishlist!</h4>
-            </div>
-          </label>
-          <div style="display:flex;flex-direction:row;border-bottom:3px solid brown">
-            
-            <div class="cimg">
-              <img src="/Punjab/logos/bahawalpur.jpg" alt="">
-            </div>
-            <h1 class="cname"> Bahawalpur</h1>
-          </div>
-          
-              
-
-{{#each bahawalpur}}
-              <div class="places {{this.Type}}">
-          
-            
-             
-            <div style="display:flex;flex-direction:row;border-bottom:3px solid brown;margin-bottom:3%">
-            
-            <div class="pimg">
-              <img src="{{this.image}}" alt="">
-            </div>
-            <h1 class="pname">{{this.Name}}</h1>
-          </div>
-          <h2>Activities: {{this.Type}}</h2>
-       
-
-          </div>{{/each}}
-  </div> 
-
+    
     <div class="city" id="chiniot">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check4">
@@ -991,7 +955,9 @@ function showSlides() {
   </div>
   
 </div>
+{{#if log}}
 <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+{{/if}}
 
     <div class="filterportion" id="cartportion">
       <div class="filterbox">

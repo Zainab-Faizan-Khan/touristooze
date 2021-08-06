@@ -118,7 +118,7 @@ body{
    
 }
 /*These are the contents of the navigation bar*/
- ul{
+ul{
     list-style: none;
 }
 a{
@@ -127,6 +127,7 @@ a{
 nav{
     display: flex;
     justify-self: space-around;
+    overflow-y: hidden;
    position: fixed;
    z-index: 200;
     width: 100%;
@@ -134,28 +135,29 @@ nav{
     color: white;
     height: 4rem;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1rem;
     background-color: rgba(0, 0, 0, 0.473);
-    align-items:center;
+    
 }
-.navbar img{height:4vw;width:5vw;}
+.navbar img{display: none;}
 
 .logo{display: flex;
 flex-direction: row;
-align-items: center;
+align-items: center;margin-right: 10%;
 color: white;}
 
-nav .menu{display:flex; margin-left: 35%;}
+nav .menu{display:flex;}
 nav .menu li a{
-    height: 40px;
-    line-height: 43px;
+    
+    
     margin: 0px;
-    padding: 0px 25px;
+    padding: 30px 5px;
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     font-weight: 500;
     text-transform: uppercase;
     color: white;
+    overflow-y: hidden;
 }
 
 nav i:hover,nav .menu li a:hover{
@@ -165,34 +167,14 @@ nav i:hover,nav .menu li a:hover{
     transition: all ease 0.5s;
 }
 
-.search{
-    width: 15%;
-    display: flex;
-    background-color: transparent;
-    height: 40px;
-    border-radius: 20px;
-    align-items: center;
-    justify-content:center ;
-    padding: 0px 20px;
-    margin-left: 5%;
-    border: 3px solid white;
-    font-size: large;
-    color: white;
-}
 
-.search input{
-    background-color: transparent;
-    outline: none;
-    width:90%;
-    border: none;
-    font-weight: bolder;
-}
 /*This the wrapper which also contains the nav bar */
 .wrapper{
-    height:30vh;
+  
 }
 
-.H{font-size: 5em;
+
+.H{font-size: 2em;
     text-align: center;
     color: black;
     font-family:'Gloria Hallelujah', cursive;
@@ -244,11 +226,11 @@ nav i:hover,nav .menu li a:hover{
     30%{transform:translateY(-22%);}
     40%{transform:translateY(-42%);}
     50%{transform:translateY(-42%);}
-    60%{transform:translateY(-62%);}
-    70%{transform:translateY(-62%);}
-    80%{transform:translateY(-82%);}
-    80%{transform:translateY(-82%);}
-    90%{transform:translateY(-82%);}
+    60%{transform:translateY(-63%);}
+    70%{transform:translateY(-63%);}
+    80%{transform:translateY(-80%);}
+    80%{transform:translateY(-80%);}
+    90%{transform:translateY(-80%);}
     100%{transform:translateY(0%);}
 
 }
@@ -260,13 +242,13 @@ nav i:hover,nav .menu li a:hover{
     background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
     margin-top: 5%;
     
-    text-align:left;
+    text-align:center;
     color:#d88581d2 ;
     padding-left: 2%;
     font-family: sans-serif;
     font-size: 2em;
-    letter-spacing: 3px;
-    word-spacing: 10px;
+    
+   letter-spacing: 3px;
 }
 
 .subsec{
@@ -282,7 +264,7 @@ nav i:hover,nav .menu li a:hover{
 .subsec h2{
     font-family:'Gloria Hallelujah', cursive;
     margin-top: 7%;
-    font-size: 5em;    
+    font-size: 2em;    
     text-decoration: underline;
     text-decoration-color:brown ;
     background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
@@ -291,7 +273,8 @@ nav i:hover,nav .menu li a:hover{
     background-color: #db938f;
     padding-top: 2%;
     width:100%;
-    height: 60vh;
+    height: 20vh;
+    
 }
 
 .gallery{
@@ -368,7 +351,7 @@ nav i:hover,nav .menu li a:hover{
 }
 .actgal{
     width: 30%;
-    height: 40vh;
+    height: 10vh;
     background-size: cover;
     background-position: center;
     border-radius: 3%;
@@ -381,8 +364,6 @@ nav i:hover,nav .menu li a:hover{
 
 }
 
-#act1{animation: a1 8s linear infinite;animation-timing-function: ease-in-out;}
-@keyframes a1{50%{background:  url(/img/plan/act5.jpg); background-size: cover;} 0%,100%{ background-size: cover;background:   url(/img/plan/act1.jpg);}}
 
 #act2{
     background-image: url(/img/plan/act2.jpg);
@@ -390,8 +371,6 @@ nav i:hover,nav .menu li a:hover{
     margin-left: -5%;
 }
 
-#act2{animation: a2 8s linear infinite;animation-timing-function: ease-in-out;}
-@keyframes a2{50%{background:   url(/img/plan/act1.jpg); background-size: cover;} 0%,100%{ background-size: cover;background:  url(/img/plan/act2.jpg);}}
 
 #act3{
     background-image: url(/img/plan/act3.jpg);
@@ -399,17 +378,13 @@ nav i:hover,nav .menu li a:hover{
     z-index: 5;
 }
 
-#act3{animation: a3 8s linear infinite;animation-timing-function: ease-in-out;}
-@keyframes a3{50%{background:   url(/img/plan/act2.jpg); background-size: cover;} 0%,100%{background:   url(/img/plan/act3.jpg); background-size: cover;}}
-
-
 
 
 
 .pack{
     width:40%;
     margin-left: 30%;
-    height :50vh;
+    height :20vh;
     margin-top: 2%;
     justify-content: center;
     display: flex;
@@ -447,16 +422,16 @@ nav i:hover,nav .menu li a:hover{
 }
 
 .pack h3{
-    font-size: 2vw;
+    font-size: 0.8em;
     font-family:'Gloria Hallelujah', cursive;
     font-weight: 25vh;
     margin-top: 5%;
-    margin-bottom: 5%;
+    
 }
 
-#packul li{text-align: left;font-size: 1vw;}
+#packul li{text-align: left;font-size: 0.2em;}
 
-.pack p{font-size: 1vw;}
+.pack p{font-size: 0.2em;}
 
 .dot{
     height: 10%;
@@ -515,7 +490,7 @@ nav i:hover,nav .menu li a:hover{
 
 .news{
     overflow: hidden;
-    height: 20vw;
+    height: 30vw;
     background-color: #db938fd2;
     display: flex;
     margin-bottom: 2vw;
@@ -536,11 +511,17 @@ nav i:hover,nav .menu li a:hover{
     animation-fill-mode: forwards;
 
 }
+.newsslide h1{
+    font-size: 0.8em;
+}
+.newsslide p{
+    font-size: 0.2em;
+}
 @keyframes newslide {
     0%,100%{transform: translateX(0em);}
-    20%{transform:translateX(-46em) ;}
-    40%{transform:translateX(-90em) ;}
-    60%{transform:translateX(-46em) ;}
+    20%{transform:translateX(-12em) ;}
+    40%{transform:translateX(-23em) ;}
+    60%{transform:translateX(-12em) ;}
 
     
   }
@@ -605,19 +586,7 @@ footer h2{
 .menu-icon{display: none;}
 
 
-@media only screen and (max-width:900px){
 
-    /* .btn{display: none;} */
-    nav .menu{flex-direction: column;display:none;
-margin-top :270px;position:absolute;right:10%;z-index: 20;}
-nav .menu li {margin: 0;}
-nav .menu li a{display: block; width:100%;background-color: black;}
-.menu-icon{display:flex;position: absolute;right: 5%;}
-/* .menu-icon:hover{color: brown;} */
-/* .menu-icon:hover{display: none;}*/
-nav.menu{display: flex;} 
-/* .btn:hover{display: none;} */
-}
 ::-webkit-scrollbar{width:15px; border-radius: 20px;}
 ::-webkit-scrollbar-track{background: linear-gradient(transparent,rgba(182, 92, 92, 0.945)); 
     box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.39);  }
@@ -625,6 +594,131 @@ nav.menu{display: flex;}
 
 
 @media screen and (min-width: 480px) {
+    .navbar img{display:flex;}
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    nav{
+        display: flex;
+        justify-self: space-around;
+        overflow-y: hidden;
+       position: fixed;
+       z-index: 200;
+        width: 100%;
+        border: 1px solid black;
+        color: white;
+        height: 4rem;
+        justify-content: center;
+        font-size: 2rem;
+        background-color: rgba(0, 0, 0, 0.473);
+        align-items:center;
+    }
+    .navbar img{height:4vw;width:5vw;}
+    
+    .logo{display: flex;margin-right: 35%;
+    flex-direction: row;
+    align-items: center;
+    color: white;}
+    
+    nav .menu{display:flex;}
+    nav .menu li a{
+        height: 40px;
+        line-height: 43px;
+        margin: 0px;
+        padding: 0px 25px;
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: white;
+        overflow-y: hidden;
+    }
+    @keyframes animatetext {
+        0%{transform: translateY(0%);}   
+        10%{transform: translateY(0%);}
+        20%{transform:translateY(-22%);}
+        30%{transform:translateY(-22%);}
+        40%{transform:translateY(-42%);}
+        50%{transform:translateY(-42%);}
+        60%{transform:translateY(-62%);}
+        70%{transform:translateY(-62%);}
+        80%{transform:translateY(-82%);}
+        80%{transform:translateY(-82%);}
+        90%{transform:translateY(-82%);}
+        100%{transform:translateY(0%);}
+    
+    }
+
+    .actgal{
+        width: 30%;
+        height: 40vh;
+        background-size: cover;
+        background-position: center;
+        border-radius: 3%;
+        box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.6);
+    }
+    
+    #act1{
+        background-image: url(/img/plan/act1.jpg);    
+        transform: rotate(12deg);
+    
+    }
+    
+    #act1{animation: a1 8s linear infinite;animation-timing-function: ease-in-out;}
+    @keyframes a1{50%{background:  url(/img/plan/act5.jpg); background-size: cover;} 0%,100%{ background-size: cover;background:   url(/img/plan/act1.jpg);}}
+    
+    #act2{
+        background-image: url(/img/plan/act2.jpg);
+        transform: rotate(-6deg);
+        margin-left: -5%;
+    }
+    
+    #act2{animation: a2 8s linear infinite;animation-timing-function: ease-in-out;}
+    @keyframes a2{50%{background:   url(/img/plan/act1.jpg); background-size: cover;} 0%,100%{ background-size: cover;background:  url(/img/plan/act2.jpg);}}
+    
+    #act3{
+        background-image: url(/img/plan/act3.jpg);
+        margin-left: -5%;
+        z-index: 5;
+    }
+    
+    #act3{animation: a3 8s linear infinite;animation-timing-function: ease-in-out;}
+    @keyframes a3{50%{background:   url(/img/plan/act2.jpg); background-size: cover;} 0%,100%{background:   url(/img/plan/act3.jpg); background-size: cover;}}
+    
+    
+    
+    
+    
+    .formatsec{
+        background-color: #db938f;
+        padding-top: 2%;
+        width:100%;
+        height: 60vh;
+    }
+    #section {
+        text-shadow: 5px 5px 2px rgb(109, 28, 85);
+        background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
+        margin-top: 5%;
+        
+        text-align:left;
+        color:#d88581d2 ;
+        padding-left: 2%;
+        font-family: sans-serif;
+        font-size: 2em;
+        letter-spacing: 3px;
+        word-spacing: 10px;
+    }
+.subsec h2{
+    font-family:'Gloria Hallelujah', cursive;
+    margin-top: 7%;
+    font-size: 5em;    
+    text-decoration: underline;
+    text-decoration-color:brown ;
+    background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
+}
     .pop{background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
         height:89%;
         width: 48%;
@@ -671,4 +765,68 @@ nav.menu{display: flex;}
     text-transform: uppercase;
     color: white;
 }
+.H{font-size: 5em;
+    text-align: center;
+    color: black;
+    font-family:'Gloria Hallelujah', cursive;
+    margin-top:4%;
+    background:linear-gradient(transparent,rgba(228, 225, 225, 0.479),transparent);
+}
+.pack{
+    width:40%;
+    margin-left: 30%;
+    height :50vh;
+    margin-top: 2%;
+    justify-content: center;
+    display: flex;
+}
+
+.packagelist{
+    width: 35vw;
+    height:auto;
+    padding: 5% 3%;
+    border-radius: 4%; 
+    box-shadow: 10px 10px 5px #302f2f;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-family:'Gloria Hallelujah', cursive;
+}
+
+
+.pack h3{
+    font-size: 2vw;
+    font-family:'Gloria Hallelujah', cursive;
+    font-weight: 25vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#packul li{text-align: left;font-size: 1vw;}
+
+.pack p{font-size: 1vw;}
+.news{
+    overflow: hidden;
+    height: 20vw;
+    background-color: #db938fd2;
+    display: flex;
+    margin-bottom: 2vw;
+    padding:5% 5%;
+    flex-direction: row;
+}
+.newsslide h1{
+    font-size: 2em;
+}
+.newsslide p{
+    font-size: 1em;
+}
+@keyframes newslide {
+    0%,100%{transform: translateX(0em);}
+    20%{transform:translateX(-46em) ;}
+    40%{transform:translateX(-90em) ;}
+    60%{transform:translateX(-46em) ;}
+
+    
+  }
 }

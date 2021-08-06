@@ -161,7 +161,7 @@ body{
 }
 .pname{font-size: 3em;}
 
-#continueBtn,#NoBtn,#cancelBtn,#YesBtn{
+#continueBtn,#NoBtn,#cancelBtn,#YesBtn,#laterBtn{
     cursor: pointer;
     margin-right: 15%;
     width:7.5em;

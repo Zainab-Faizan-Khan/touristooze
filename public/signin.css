@@ -129,14 +129,15 @@ body{
   font-weight: bold;
   opacity: 1; /* Firefox */
 }
-.pop{background:linear-gradient(transparent,rgba(228, 225, 225, 0.479));
+.pop{
+  background:linear-gradient(transparent,rgba(228, 225, 225, 0.479));
   
   width: 50%;
   height: 100vh;
   padding-top: 3%;
   letter-spacing: 2px;
   color: white;
-
+  transition: all ease-in-out 0.5s;
   text-shadow: 0 0 10px rgb(56, 55, 55);
   
 }
