@@ -25,7 +25,7 @@ exports.signin=(req,res)=>{
             
             bcrypt.hash(pass, 10, function(err, hash1) {
                
-            })
+            });
                 
             bcrypt.compare(pass,hash,function(error,result){
                 if(result){
