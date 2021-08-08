@@ -22,6 +22,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.12",
     "util.promisify": "^1.1.1"
   }
 }
