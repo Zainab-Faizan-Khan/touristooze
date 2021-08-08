@@ -35,20 +35,8 @@ app.use(session({
       maxAge: 8*60*60*1000, // 8hr
   }
 }));
-app.use((req, res, next) => {
-    if (req.header('x-forwarded-proto') !== 'https') {
-      res.redirect(`https://touristooze.herokuapp.com`)
-    } else {
-      next();
-    }
-  });
+
 app.use(express.static(publicDirectory));
-
-
-
-
-
-
 
 app.set('view engine' ,'hbs');
 
@@ -61,9 +49,10 @@ db.connect((error)=>{
 app.use('/',require('./routes/index'));
 app.use('/auth',require('./routes/auth'))
 var port=process.env.PORT||5000
-app.listen(port,()=>{
-console.log("server working fine!");
-});
+app.listen = function listen() {
+    var server = http.createServer(this);
+    return server.listen.apply(server, arguments);
+  };
 
 //https://touristoozeplanner.herokuapp.com
 
