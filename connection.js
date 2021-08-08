@@ -52,7 +52,7 @@ db.connect((error)=>{
 //Define routes
 app.use('/',require('./routes/index'));
 app.use('/auth',require('./routes/auth'))
-var port=process.env.PORT||3000
+var port=process.env.PORT||5000
 app.listen(port,()=>{
 console.log("server working fine!");
 });
