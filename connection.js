@@ -18,13 +18,13 @@ const db= mysql.createConnection({
 })
 
 const publicDirectory=path.join(__dirname,"/public");
-app.use(express.static(publicDirectory));
 //Parsing url encoded bodies when form sends it
 app.use(express.urlencoded({extended:false}));
 //parsing json bodoes as sent by api clients
 //we recieve the info as json
 app.use(express.json());
 app.use(cookieParser());
+
 
 app.use(session({
   name: 'session',
@@ -35,6 +35,7 @@ app.use(session({
       maxAge: 8*60*60*1000, // 8hr
   }
 }));
+app.use(express.static(publicDirectory));
 
 
 
