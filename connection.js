@@ -45,7 +45,7 @@ app.use(session({
 app.set('view engine' ,'hbs');
 
 db.connect((error)=>{
-    if(error) throw error;
+    
     console.log("Database connected");
 })
 
