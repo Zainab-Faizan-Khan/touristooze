@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 <head>
     <title>Sindh Province</title>
@@ -31,7 +31,6 @@
   function loadfun() {
   myVar = setTimeout(showPage, 3000);
 }
-
 function showPage() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
@@ -136,7 +135,6 @@ function showPage() {
 <script>
 var slideIndex = 0;
 showSlides();
-
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("imgdiv");
@@ -396,7 +394,7 @@ function showSlides() {
     <div class="city" id="dharki">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check4">
-            <input id="check4" type="checkbox" value="Dharki" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check4" type="checkbox" value="Daharki" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -433,7 +431,7 @@ function showSlides() {
     <div class="city" id="mirpurkhas">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                    <label for="check5">
-            <input id="check5" type="checkbox" value="Mirpur Khas" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check5" type="checkbox" value="Mirpur khas" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -761,7 +759,7 @@ function showSlides() {
     <div class="city" id="shadadkot">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check14">
-            <input id="check14" type="checkbox" value="Shadadkot" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check14" type="checkbox" value="Shahdadkot" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -869,7 +867,7 @@ function showSlides() {
     <div class="city" id="tando-allahyar">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check17">
-            <input id="check17" type="checkbox" value="Tando Allahyar" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check17" type="checkbox" value="Tando Allah yar" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -979,7 +977,7 @@ function showSlides() {
           
           
                    <label for="check20">
-            <input id="check20" type="checkbox" value="tandoadam" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check20" type="checkbox" value="Tando Adam" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -1014,7 +1012,6 @@ function showSlides() {
 </div>
    
   <script src="/slider.js">
-
   </script>
   
 
@@ -1022,9 +1019,8 @@ function showSlides() {
   </div>
   
 </div>
-{{#if log}}
 <div class="cart"><i class="fas fa-shopping-cart"></i></div>
-{{/if}}
+
     <div class="filterportion" id="cartportion">
       <div class="filterbox">
       <img src="/img/payment/close.png" alt="close" class="close" id="close5">
@@ -1050,23 +1046,15 @@ function showSlides() {
 <footer>
 </footer>
 <script>     
-
    document.querySelector("#ccancelBtn").addEventListener("click", function(){
             document.querySelector("#cartportion").style.display="none";
             enableScrolling()
             })</script>
   <script>
-
 $(document).ready(function() {
 var checkboxes = $( '.activitychoice' );
-
     // Check all checkboxes
     checkboxes.prop( 'checked', true );
-
-
-
-
-
    
   $(".checkbox").click(function () {
     $( "#list" ).empty();
@@ -1088,7 +1076,6 @@ var checkboxes = $( '.activitychoice' );
                 $('.messagehead').css("display","none");
             }
             
-
         });
   $("#f").click(function(){
         var x = $("#cityfilter").val();
@@ -1100,8 +1087,6 @@ var checkboxes = $( '.activitychoice' );
         
     });
     $("#ccancelBtn").click(function(event) {$('#cartportion').css("display","none");} );
-
-
     $("#applyBtn").click(function(event) {
       $('#filterportion').css("display","none");
       $(".places").css("display","none")
@@ -1126,37 +1111,24 @@ var checkboxes = $( '.activitychoice' );
             }
      
       } );
-
-
-
-
     $(".cart").click(function(event) {$('#cartportion').css("display","block");} );
     $("#close5").click(function(event) {$('#cartportion').css("display","none");} );
   
     $(".o").click(function(event) {
        
        x=$(this).attr('id');
-
        if (x=="1"){
          $(".city").css("display","none");
        $('#karachi').css("display","block");
        }
        else  if(x=="2"){$(".city").css("display","none");$('#hyderabad').css("display","block");}
-
        else  if(x=="3"){$(".city").css("display","none");$('#sehwan').css("display","block");}
-
        else  if(x=="4"){$(".city").css("display","none");$('#Rohri').css("display","block");}
-
        else  if(x=="5"){$(".city").css("display","none");$('#sukkur').css("display","block");}
-
        else  if(x=="6"){$(".city").css("display","none");$('#mirpurkhas').css("display","block");}
-
        else  if(x=="7"){$(".city").css("display","none");$('#larkana').css("display","block");}
-
        else  if(x=="8"){$(".city").css("display","none");$('#Nawabshah').css("display","block");}
-
        else  if(x=="9"){$(".city").css("display","none");$('#umerkot').css("display","block");}
-
     });
 });
   </script>

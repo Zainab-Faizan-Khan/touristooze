@@ -28,7 +28,6 @@
   function loadfun() {
   myVar = setTimeout(showPage, 3000);
 }
-
 function showPage() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
@@ -134,7 +133,6 @@ function showPage() {
 <script>
 var slideIndex = 0;
 showSlides();
-
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("imgdiv");
@@ -245,11 +243,7 @@ function showSlides() {
       <h1 class="boxhead">khyber</h1>
       </div>
     </li>
-    <li class="item-e o" id="5">  
-      <div class="box"style="background-image: url(/Khyber/logos/swat.jpg);">
-      <h1 class="boxhead">Swat</h1>
-      </div>
-    </li>
+    
     <li class="item-f o" id="6">  
       <div class="box"style="background-image: url(/Khyber/logos/bannu.jpg);">
       <h1 class="boxhead">bannu</h1>
@@ -738,7 +732,7 @@ function showSlides() {
     <div class="city" id="lakkimarwat">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check14">
-            <input id="check14" type="checkbox" value="Lakkimarwat" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check14" type="checkbox" value="Lakki Marwat" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -842,7 +836,7 @@ function showSlides() {
     <div class="city" id="peshawer">
       <img src="/img/payment/close.png" alt="close" class="close daba" id="close2"onclick="this.parentNode.style.display='none'">
                     <label for="check17">
-            <input id="check17" type="checkbox" value="Peshawer" class="checkbox" name="city" style="visibilty:visible">
+            <input id="check17" type="checkbox" value="Peshawar" class="checkbox" name="city" style="visibilty:visible">
             <div class="checkb">
               <div class="check"></div>
               <h4>Add to <br>Wishlist!</h4>
@@ -984,7 +978,6 @@ function showSlides() {
 </div>
    
   <script src="/slider.js">
-
   </script>
   
 
@@ -992,9 +985,7 @@ function showSlides() {
   </div>
   
 </div>
-{{#if log}}
 <div class="cart"><i class="fas fa-shopping-cart"></i></div>
-{{/if}}
 
     <div class="filterportion" id="cartportion">
       <div class="filterbox">
@@ -1017,16 +1008,13 @@ function showSlides() {
 <footer>
 </footer>
 <script>     
-
    document.querySelector("#ccancelBtn").addEventListener("click", function(){
             document.querySelector("#cartportion").style.display="none";
             enableScrolling()
             })</script>
   <script>
-
 $(document).ready(function() {
 var checkboxes = $( '.activitychoice' );
-
     // Check all checkboxes
     checkboxes.prop( 'checked', true );
   $(".checkbox").click(function () {
@@ -1048,7 +1036,6 @@ var checkboxes = $( '.activitychoice' );
                 $('.messagehead').css("display","none");
             }
             
-
         });
   $("#f").click(function(){
         var x = $("#cityfilter").val();
@@ -1062,7 +1049,6 @@ var checkboxes = $( '.activitychoice' );
     $("#ccancelBtn").click(function(event) {$('#cartportion').css("display","none");} );
     $(".cart").click(function(event) {$('#cartportion').css("display","block");} );
     $("#close5").click(function(event) {$('#cartportion').css("display","none");} );
-
         $("#applyBtn").click(function(event) {
       $('#filterportion').css("display","none");
       $(".places").css("display","none")
@@ -1087,32 +1073,21 @@ var checkboxes = $( '.activitychoice' );
             }
      
       } );
-
-
    
     $(".o").click(function(event) {
        $(".city").css("display","none");
        x=$(this).attr('id');
-
        if (x=="1"){
        $('#peshawer').css("display","block");
        }
        else  if(x=="2"){$('#chitral').css("display","block");}
-
        else  if(x=="3"){$('#abbotabad').css("display","block");}
-
        else  if(x=="4"){$('#khyber').css("display","block");}
-
-       else  if(x=="5"){$('#swat').css("display","block");}
-
+      
        else  if(x=="6"){$('#bannu').css("display","block");}
-
        else  if(x=="7"){$('#mardan').css("display","block");}
-
        else  if(x=="8"){$('#mansehra').css("display","block");}
-
        else  if(x=="9"){$('#kurram').css("display","block");}
-
     });
 });
   </script>

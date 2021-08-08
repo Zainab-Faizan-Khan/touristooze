@@ -5,9 +5,9 @@ const path=require("path");
 const bodyParser=require("body-parser")
 const session=require("express-session")
 const cookieParser=require("cookie-parser")
-
-dotenv.config({path:'./.env'})
 const app = express();
+dotenv.config({path:'./.env'})
+
 const db= mysql.createConnection({
     connectionLimit:100,
     user:process.env.DATABASE_USER,
@@ -52,10 +52,10 @@ db.connect((error)=>{
 //Define routes
 app.use('/',require('./routes/index'));
 app.use('/auth',require('./routes/auth'))
-
-app.listen(3000,()=>{
+var port=process.env.PORT||3000
+app.listen(port,()=>{
 console.log("server working fine!");
 });
 
-
+//https://touristoozeplanner.herokuapp.com
 

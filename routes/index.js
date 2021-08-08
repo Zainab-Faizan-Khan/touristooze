@@ -54,10 +54,10 @@ router.get("/Sindh" ,(req,res)=> {
                 else{
                     req.session.larkana=results
                     
-            db.query("SELECT Name,Type,image FROM sindh WHERE City='Mirpur Khas'",(err,results)=>{if (err) throw err
+            db.query("SELECT Name,Type,image FROM sindh WHERE City='Mirpur khas'",(err,results)=>{if (err) throw err
                 else{
                     req.session.mirpur=results
-            db.query("SELECT Name,Type,image FROM sindh WHERE City='Dharki'",(err,results)=>{if (err) throw err
+            db.query("SELECT Name,Type,image FROM sindh WHERE City='Daharki'",(err,results)=>{if (err) throw err
                 else{
                     req.session.dharki=results
                     
@@ -82,7 +82,7 @@ router.get("/Sindh" ,(req,res)=> {
             db.query("SELECT Name,Type,image FROM sindh WHERE City='Rohri'",(err,results)=>{if (err) throw err
                 else{
                     req.session.rohri=results
-            db.query("SELECT Name,Type,image FROM sindh WHERE City='Tando Allahyar'",(err,results)=>{if (err) throw err
+            db.query("SELECT Name,Type,image FROM sindh WHERE City='Tando Allah yar'",(err,results)=>{if (err) throw err
                 else{
                     req.session.mirpur=results
             db.query("SELECT Name,Type,image FROM sindh WHERE City='Umerkot'",(err,results)=>{if (err) throw err
@@ -209,7 +209,7 @@ router.get("/Punjab" ,(req,res)=> {
                     db.query("SELECT Name,Type,image FROM punjab WHERE City='Chiniot'",(err,results)=>{if (err) throw err
                 else{
                     req.session.chiniot=results
-                    db.query("SELECT Name,Type,image FROM punjab WHERE City='Bahawalpur'",(err,results)=>{if (err) throw err
+                    db.query("SELECT Name,Type,image FROM punjab WHERE City='Bhawalpur'",(err,results)=>{if (err) throw err
                 else{
                     req.session.bahawalpur=results
                     db.query("SELECT Name,Type,image FROM punjab WHERE City='Sialkot'",(err,results)=>{if (err) throw err
@@ -222,7 +222,7 @@ router.get("/Punjab" ,(req,res)=> {
                 deraghazi:req.session.deraghazi,islamabad:req.session.islamabad,faislabad:req.session.faislabad,gujranwala:req.session.gujranwala,
                 gujrat:req.session.gujrat,jhang:req.session.jhang,kamoke:req.session.kamoke,wah:req.session.wah,
                 kasur:req.session.kasur,multan:req.session.multan,sargodha:req.session.sargodha,sheikhupura:req.session.sheikhupura,
-                sahiwal:req.session.sahiwal,rawalpindi:req.session.rawalpindi,rahimyarkhan:req.session.rahimyarkhan,okara:req.session.okara,log:req.session.val
+                sahiwal:req.session.sahiwal,events:e,rawalpindi:req.session.rawalpindi,rahimyarkhan:req.session.rahimyarkhan,okara:req.session.okara,log:req.session.val
                
             });        
                     } })        
@@ -259,7 +259,7 @@ router.get("/KPK" ,(req,res)=> {
     db.query("SELECT Name,City,month FROM events WHERE Province='KPK'AND status=1",(err,r)=>{if (err) throw err
         else{
             let e=r
-    db.query("SELECT Name,Type,image FROM kpk WHERE City='Abbottabad'",(err,results)=>{if (err) throw err
+    db.query("SELECT Name,Type,image FROM kpk WHERE City='Abbotabad'",(err,results)=>{if (err) throw err
         else{
             req.session.abbotabad=results
         
@@ -314,7 +314,7 @@ router.get("/KPK" ,(req,res)=> {
                     db.query("SELECT Name,Type,image FROM kpk WHERE City='Malakand'",(err,results)=>{if (err) throw err
                 else{
                     req.session.malakand=results
-                    db.query("SELECT Name,Type,image FROM kpk WHERE City='Peshawer'",(err,results)=>{if (err) throw err
+                    db.query("SELECT Name,Type,image FROM kpk WHERE City='Peshawar'",(err,results)=>{if (err) throw err
                 else{
                     req.session.peshawer=results
                     db.query("SELECT Name,Type,image FROM kpk WHERE City='Mansehra'",(err,results)=>{if (err) throw err
@@ -339,7 +339,7 @@ router.get("/KPK" ,(req,res)=> {
                 deraismail:req.session.deraismail,dir:req.session.dir,hangu:req.session.hangu,haripur:req.session.haripur,
                 kohat:req.session.kohat,kurram:req.session.kurram,khyber:req.session.khyber,havelian:req.session.havelian,
                 karak:req.session.karak,lakkimarwat:req.session.lakkimarwat,malakand:req.session.malakand,mansehra:req.session.mansehra,
-                peshawer:req.session.peshawer,swabi:req.session.swabi,nowshera:req.session.nowshera,mardan:req.session.mardan
+                peshawer:req.session.peshawer,swabi:req.session.swabi,nowshera:req.session.nowshera,events:e,mardan:req.session.mardan
                ,log:req.session.val
             });        
                     } })        
@@ -392,7 +392,7 @@ router.get("/Balochistan" ,(req,res)=> {
             
              
 
-            db.query("SELECT Name,Type,image FROM balochistan WHERE City='Zohb'",(err,results)=>{if (err) throw err
+            db.query("SELECT Name,Type,image FROM balochistan WHERE City='Zhob'",(err,results)=>{if (err) throw err
                 else{
                     req.session.zhob=results
                     
@@ -471,7 +471,7 @@ router.get("/Balochistan" ,(req,res)=> {
                 kohlu:req.session.kohlu,khuzdar:req.session.khuzdar,quetta:req.session.quetta,sibi:req.session.sibi,
                 musakhel:req.session.musakhel,makran:req.session.makran,loralai:req.session.loralai,lasebela:req.session.lasebela,
                 kech:req.session.kech,harnai:req.session.harnai,kalat:req.session.kalat,jaffarabad:req.session.jaffarabad,
-                derabugti:req.session.tandoallah,awaran:req.session.awaran,chagai:req.session.chagai,gawadar:req.session.gawadar
+                derabugti:req.session.tandoallah,awaran:req.session.awaran,chagai:req.session.chagai,events:e,gawadar:req.session.gawadar
                ,log:req.session.val
             });        
                     } })        
@@ -506,7 +506,7 @@ router.get("/Balochistan" ,(req,res)=> {
 });
 
 router.get("/" ,(req,res)=> {
-    res.redirect("../mainpage")
+    res.redirect("../SignIn")
 });
 router.get("/Tripdetail" ,(req,res)=> {
     for(var x in req.session.cartok){
@@ -656,7 +656,7 @@ router.get("/SignIn" ,(req,res)=> {
     req.session.package=null
 
     if(req.session.val=="1"){
-        req.session.destroy(function(err){if(err){}}
+        req.session.destroy(function(err){if(err){console.log("oho")}}
         );
         
     res.render("SignIn"); }
