@@ -9,12 +9,12 @@ const app = express();
 dotenv.config({path:'./.env'})
 
 const db= mysql.createConnection({
-    connectionLimit:100,
-    user:process.env.DATABASE_USER,
-    host:process.env.DATABASE_HOST,
-    password:process.env.DATABASE_PASSWORD,
-    database:process.env.DATABASE,
-    
+  connectionLimit:100,
+  user:process.env.DATABASE_USER,
+  host:process.env.DATABASE_HOST,
+  password:process.env.DATABASE_PASSWORD,
+  database:process.env.DATABASE,
+  
 })
 
 const publicDirectory=path.join(__dirname,"/public");
@@ -46,13 +46,12 @@ app.set('view engine' ,'hbs');
 
 db.connect((error)=>{
     
-    console.log("Database connected");
+  console.log("Database connected"); 
 })
-
 //Define routes
 app.use('/',require('./routes/index'));
 app.use('/auth',require('./routes/auth'))
-var port=process.env.PORT||5000
+var port=4000
 app.listen(port,()=>{
 console.log("server working fine!");
 });

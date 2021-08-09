@@ -9,18 +9,22 @@ const mysql= require("mysql");
 
 
 const db= mysql.createConnection({
+    connectionLimit:100,
     user:process.env.DATABASE_USER,
     host:process.env.DATABASE_HOST,
     password:process.env.DATABASE_PASSWORD,
     database:process.env.DATABASE,
     
-})
-
+  })
 
 
 
 router.get("/Sindh" ,(req,res)=> {
-
+    req.session.sindh=[]
+   
+      db.query("DELETE FROM citybooking WHERE province='Sindh' AND Tripno=?",[req.session.tripno],(err,result)=>{if (err) throw err;
+   
+      })
     db.query("SELECT Name,City,month FROM events WHERE Province='Sindh' AND status=1",(err,r)=>{if (err) throw err
         else{
             let e=r
@@ -138,6 +142,11 @@ router.get("/Sindh" ,(req,res)=> {
 }) 
 
 router.get("/Punjab" ,(req,res)=> {
+    req.session.punjab=[]
+    
+          db.query("DELETE FROM citybooking WHERE province='Punjab' AND Tripno=?",[req.session.tripno],(err,result)=>{if (err) throw err;
+          })
+      
     
     db.query("SELECT Name,City,month FROM events WHERE Province='Punjab' AND status=1",(err,r)=>{if (err) throw err
         else{
@@ -255,7 +264,12 @@ router.get("/Punjab" ,(req,res)=> {
 }});}})})
 
 router.get("/KPK" ,(req,res)=> {
+    req.session.kpk=[]
+    console.log("in kpk",req.session.up)
     
+  
+      db.query("DELETE FROM citybooking WHERE province='KPK' AND Tripno=?",[req.session.tripno],(err,result)=>{if (err) throw err;
+      })
     db.query("SELECT Name,City,month FROM events WHERE Province='KPK'AND status=1",(err,r)=>{if (err) throw err
         else{
             let e=r
@@ -372,6 +386,10 @@ router.get("/KPK" ,(req,res)=> {
 }});}})})
 
 router.get("/Balochistan" ,(req,res)=> {
+    req.session.baloch=[]
+   
+      db.query("DELETE FROM citybooking WHERE province='Balochistan' AND Tripno=?",[req.session.tripno],(err,result)=>{if (err) throw err;
+      }) 
     
     db.query("SELECT Name,City,month FROM events WHERE Province='Balochistan'AND status=1",(err,r)=>{if (err) throw err
         else{
@@ -509,6 +527,7 @@ router.get("/" ,(req,res)=> {
     res.redirect("../SignIn")
 });
 router.get("/Tripdetail" ,(req,res)=> {
+    req.session.cart=[]
     for(var x in req.session.cartok){
         if(req.session.cartok[x].length){
             for(var y=0;y<req.session.cartok[x].length;y++){
@@ -516,12 +535,15 @@ router.get("/Tripdetail" ,(req,res)=> {
             }
         }
     }
+    console.log("cart ok is",req.session.cartok)
+    console.log("the cart is ",req.session.cart)
     res.render("Pleasewait")
 })
 router.get("/Trips" ,(req,res)=> {
     if(req.session.val){
         req.session.up=1
         if((req.session.cart)&&(req.session.back==req.session.form)){
+            console.log("the cart is", req.session.cart)
             for(var x in req.session.cart){
               db.query('SELECT * FROM cities WHERE Name=?',[req.session.cart[x]],(err,result)=>{
                 if (err) throw err
@@ -555,6 +577,7 @@ router.get("/Trips" ,(req,res)=> {
                     
           if(err) throw err
           else{
+              console.log(req.session.tripno)
           req.session.startdate=result[0].StartDate
           req.session.enddate=result[0].EndDate
     
@@ -682,15 +705,18 @@ req.session.tripno=0
             
 
         db.query("SELECT * FROM wishlist WHERE cnic=?",[req.session.name],(err,result)=>{if (err) throw err;
-            else{
+            else{let wish=result
+                db.query("SELECT * FROM planbooking WHERE Name=? AND payment_status=0",[req.session.name],(err,result)=>{if (err) throw err;
+                    else{
+                        if(result>0){req.session.pay="Pending"}
+                        else{req.session.pay="Clear"}
         
-        let wish=result
       
         req.session.cart=[]
         
         res.render("MyTrips",{wish:wish,trips:trips,name:req.session.name,email:req.session.email,country:req.session.country,phone_no:req.session.phone_no,pay:req.session.pay});
     
-    
+                 } })
     
     
     }})})} else {

@@ -1,15 +1,18 @@
-const session=require("express-session")
+const session=require("cookie-session")
 const mysql= require("mysql");
 const bcrypt=require('bcryptjs');
 const router = require("../routes");
 
 const db= mysql.createConnection({
-    user:process.env.DATABASE_USER,
-    host:process.env.DATABASE_HOST,
-    password:process.env.DATABASE_PASSWORD,
-    database:process.env.DATABASE,
-    
+  connectionLimit:100,
+  user:process.env.DATABASE_USER,
+  host:process.env.DATABASE_HOST,
+  password:process.env.DATABASE_PASSWORD,
+  database:process.env.DATABASE,
+  
 })
+
+
 exports.pack=(req,res)=>{
   
   req.session.package=req.body.package;
@@ -31,18 +34,18 @@ exports.plantrip=(req,res)=>{
   db.query('SELECT Tripno FROM planbooking ORDER BY Tripno DESC LIMIT 1;',(err,result)=>{
     data=result[0];
     req.session.tripno=data.Tripno + 1;
-    
-  })
-  db.query('INSERT INTO planbooking SET ?',{Name:req.session.name,
+    console.log(req.session.tripno)
+  
+  db.query('INSERT INTO planbooking SET ?',{Name:req.session.name,Tripno:req.session.tripno,
       cnic:req.session.cnic,StartDate:req.session.startdate,EndDate:req.session.enddate,
   Car:req.session.car,Train:req.session.train,Bus:req.session.bus,
 Plane:req.session.plane},(error,results)=>{
       if(error){console.log(error);res.redirect("../PlanTrip")}
       else{
-        req.session.no=req.session.province.length-1;
-        if(req.session.province.no<0){res.render("/Payment")}
+        
+        if(req.session.province==0||req.session.province==undefined){res.redirect("/Tripdetail")}
         else{
-          
+          req.session.no=req.session.province.length-1;
           if((req.session.province=="Sindh")|| (req.session.province=="Balochistan" )||(req.session.province=="KPK")||(req.session.province=="Punjab")){
             res.redirect("../"+req.session.province)
           }
@@ -55,7 +58,7 @@ Plane:req.session.plane},(error,results)=>{
       }
       })
 
-
+    })
   //for selecting destinations
   
 
@@ -70,13 +73,9 @@ Plane:req.session.plane},(error,results)=>{
 
 
 exports.plansindh=(req,res)=>{
-  req.session.sindh=[]
-  if(req.session.up==1){
-    db.query("DELETE FROM citybooking WHERE province=? AND Tripno=?",["Sindh",req.session.tripno],(err,result)=>{if (err) throw err;
-  })
-}
+
   
-  if(req.session.back=req.session.form){if(req.body.city){
+  if(req.session.back==req.session.form){if(req.body.city){
     if(req.body.city[0].length==1){
       req.session.sindh.push(req.body.city)
     }
@@ -132,14 +131,9 @@ else{
 }
 
 exports.plankhyber=(req,res)=>{
-  req.session.kpk=[]
-  if(req.session.up){
-
-    db.query("DELETE FROM citybooking WHERE province=? AND Tripno=?",["KPK",req.session.tripno],(err,result)=>{if (err) throw err;
-   })
-}
+ 
     
-  if(req.session.back=req.session.form){
+  if(req.session.back==req.session.form){
     if(req.body.city){
     if(req.body.city[0].length==1){
       req.session.kpk.push(req.body.city)
@@ -204,12 +198,8 @@ exports.plankhyber=(req,res)=>{
   }
 exports.planbaloch=(req,res)=>{
   console.log(req.body)
-  req.session.baloch=[]
-  if(req.session.up){
-    db.query("DELETE FROM citybooking WHERE province=? AND Tripno=?",["Balochistan",req.session.tripno],(err,result)=>{if (err) throw err;
-    })
-}
-  if(req.session.back=req.session.form){if(req.body.city){
+
+  if(req.session.back==req.session.form){if(req.body.city){
     if(req.body.city[0].length==1){
       req.session.baloch.push(req.body.city)
     }
@@ -271,13 +261,9 @@ exports.planbaloch=(req,res)=>{
         }
 exports.planpunjab=(req,res)=>{
   console.log(req.body)
-  req.session.punjab=[]
-  if(req.session.up){
-        db.query("DELETE FROM citybooking WHERE province=? AND Tripno=?",["Punjab",req.session.tripno],(err,result)=>{if (err) throw err;
-        })
-    }
+
     
-  if(req.session.back=req.session.form){
+  if(req.session.back==req.session.form){
     
     if(req.body.city){
     if(req.body.city[0].length==1){
