@@ -1,9 +1,10 @@
-const session=require("express-session")
+const session=require("cookie-session")
 const mysql= require("mysql");
 const bcrypt=require('bcryptjs');
 const router = require("../routes");
 
 const db= mysql.createConnection({
+    connectionLimit:100,
     user:process.env.DATABASE_USER,
     host:process.env.DATABASE_HOST,
     password:process.env.DATABASE_PASSWORD,
@@ -39,8 +40,7 @@ exports.signin=(req,res)=>{
                     req.session.country=data.country;
                     req.session.cnic=data.cnic;
                     req.session.val="1";
-                    if(data.payment_status=0){req.session.pay="clear";console.log("it is clear")}
-                    else{req.session.pay="pending"}
+                    
                     
 
                     res.redirect("../MyTrips");

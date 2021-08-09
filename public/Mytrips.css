@@ -110,7 +110,7 @@ body{
 
 .container{}
 /*These are the contents of the navigation bar*/
- ul{
+ul{
     list-style: none;
 }
 a{
@@ -119,6 +119,7 @@ a{
 nav{
     display: flex;
     justify-self: space-around;
+    overflow-y: hidden;
    position: fixed;
    z-index: 200;
     width: 100%;
@@ -126,28 +127,29 @@ nav{
     color: white;
     height: 4rem;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1rem;
     background-color: rgba(0, 0, 0, 0.473);
-    align-items:center;
+    
 }
-.navbar img{height:4vw;width:5vw;}
+.navbar img{display: none;}
 
 .logo{display: flex;
 flex-direction: row;
-align-items: center;
+align-items: center;margin-right: 10%;
 color: white;}
 
-nav .menu{display:flex;margin-left: 35%;justify-content: flex-end;}
+nav .menu{display:flex;}
 nav .menu li a{
-    height: 40px;
-    line-height: 43px;
+    
+    
     margin: 0px;
-    padding: 0px 25px;
+    padding: 30px 5px;
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     font-weight: 500;
     text-transform: uppercase;
     color: white;
+    overflow-y: hidden;
 }
 
 nav i:hover,nav .menu li a:hover{
@@ -183,7 +185,7 @@ nav i:hover,nav .menu li a:hover{
 .wrapper{
     width: 100%;
     border-bottom: 2px solid black;
-    height:24vw;
+    height:24vh;
     background-size: cover;
     background-attachment: fixed;
     background:brown;
@@ -192,10 +194,11 @@ nav i:hover,nav .menu li a:hover{
 /*................................................*/
 .wrapper h3{
     color:#d88581d2 ;
-    margin-left: 35%;
+    text-align: center;
     font-family: sans-serif;
-    font-size: 6em;
-    padding-top: 7%;  
+    font-size: 2em;
+
+    padding-top: 20%;  
     text-shadow: 5px 5px 2px black;
 }
 
@@ -213,10 +216,10 @@ nav i:hover,nav .menu li a:hover{
     flex-direction: column;
 }
 .dp{
-    height: 10vw;
+    height:5em;
     border-radius: 50%;
     
-    width:10vw;
+    width:10em;
     margin:5%;
     margin-right: 3%;
     margin-bottom: 3%;
@@ -224,16 +227,16 @@ nav i:hover,nav .menu li a:hover{
 }
 
 .name{
-    height: 10vw;
-    width:20vw;
-    font-size: 2em;
+    height: 10%;
+    width:20%;
+    font-size: 1em;
     padding-top: 1%;
     padding-left: 3%;
     margin: 5%;
     border-left: 5px solid brown;
 }
 .Card h3 , .Card h4 {
-    font-size: 1.2em;
+    font-size: 0.5em;
     margin-bottom: 0.7em;
 }
 .info h3{
@@ -244,7 +247,7 @@ nav i:hover,nav .menu li a:hover{
 
 }
 .info h2{
-
+font-size: 0.5em;
     display: inline;
 
 }
@@ -257,7 +260,7 @@ nav i:hover,nav .menu li a:hover{
     margin-top:2%;
     margin-left: 65%;
     width: 32%;
-    height: 17em;
+    height: 24vh;
     padding: 1%;
     background-color: #d88581d2;
     border-radius: 5px;
@@ -266,7 +269,7 @@ nav i:hover,nav .menu li a:hover{
 }
 .wishlist h3{
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1em;
     text-shadow: 13px 17px 7px #302f2f;
 }
 .mytrips{
@@ -364,4 +367,199 @@ nav i:hover,nav .menu li a:hover{
     border-top-right-radius:15px ;
     transition: all ease-in-out 0.5s;
     text-transform: uppercase;
+}
+@media screen and (min-width: 480px) {
+    .box{
+    
+        width:10vw;
+        height:13vw;
+        border-radius: 15px;
+        margin:0 0%;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 10px 20px 5px rgba(0, 0, 0, 0.705);
+        transition: all ease-in-out 0.7s;
+        
+    }
+    
+    .boxhead{
+        text-align: center;
+        padding-top: 2%;
+        font-size: 1.5em;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.425);
+        font-weight: bold;
+        border-top-left-radius:15px ;
+        border-top-right-radius:15px ;
+        transition: all ease-in-out 0.5s;
+        text-transform: uppercase;
+    }
+    .wishlist h3{
+        font-weight: bold;
+        font-size: 2em;
+        text-shadow: 13px 17px 7px #302f2f;
+    }
+    .name{
+        height: 10vw;
+        width:20vw;
+        font-size: 2em;
+        padding-top: 1%;
+        padding-left: 3%;
+        margin: 5%;
+        border-left: 5px solid brown;
+    }
+    .Card h3 , .Card h4 {
+        font-size: 1.2em;
+        margin-bottom: 0.7em;
+    }
+    .info h3{
+        color: brown;
+        text-decoration: underline;
+        text-decoration-color:brown ;
+        display: inline;
+        font-size: 1em;
+    
+    }
+    .info h2{
+        font-size: 1em;
+            display: inline;
+        
+        
+    }
+    .info{
+        padding: 1em 2em;
+        width: 80%;
+        height: 10vw;
+    }
+    .wishlist{
+        margin-top:2%;
+        margin-left: 65%;
+        width: 32%;
+        height: 17em;
+        padding: 1%;
+        background-color: #d88581d2;
+        border-radius: 5px;
+        text-align: center;
+        color: brown;
+    }
+    .wishlist h3{
+        font-weight: bold;
+        font-size: 2em;
+        text-shadow: 13px 17px 7px #302f2f;
+    }
+    .mytrips{
+        margin:5% 5%;
+        padding: 3%;
+        width: 83%;
+        display: grid;
+        grid-template-columns: auto auto auto  ;
+        grid-template-rows: auto;
+        grid-gap: 2em;
+    }
+    .dp{
+        height: 10vw;
+        border-radius: 50%;
+        
+        width:10vw;
+        margin:5%;
+        margin-right: 3%;
+        margin-bottom: 3%;
+        border:5px solid brown;
+    }
+    .wrapper{
+        width: 100%;
+        border-bottom: 2px solid black;
+        height:24vw;
+        background-size: cover;
+        background-attachment: fixed;
+        background:brown;
+        box-shadow: 10px 10px 5px #302f2f;
+    }
+    /*................................................*/
+    .wrapper h3{
+        color:#d88581d2 ;
+        
+        font-family: sans-serif;
+        font-size: 6em;
+        padding-top: 7%;  
+        text-shadow: 5px 5px 2px black;
+    }
+    .navbar img{display:flex;}
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    nav{
+        display: flex;
+        justify-self: space-around;
+        overflow-y: hidden;
+       position: fixed;
+       z-index: 200;
+        width: 100%;
+        border: 1px solid black;
+        color: white;
+        height: 4rem;
+        justify-content: center;
+        font-size: 2rem;
+        background-color: rgba(0, 0, 0, 0.473);
+        align-items:center;
+    }
+    .navbar img{height:4vw;width:5vw;}
+    .Card h3 , .Card h4 {
+        font-size: 1.2em;
+        margin-bottom: 0.7em;
+    }
+    .info h3{
+        color: brown;
+        text-decoration: underline;
+        text-decoration-color:brown ;
+        display: inline;
+    
+    }
+    .info h2{
+    
+        display: inline;
+    
+    }
+    .info{
+        padding: 1em 2em;
+        width: 80%;
+        height: 10vw;
+    }
+    .wishlist{
+        margin-top:2%;
+        margin-left: 65%;
+        width: 32%;
+        height: 17em;
+        padding: 1%;
+        background-color: #d88581d2;
+        border-radius: 5px;
+        text-align: center;
+        color: brown;
+    }
+    .wishlist h3{
+        font-weight: bold;
+        font-size: 2em;
+        text-shadow: 13px 17px 7px #302f2f;
+    }
+    .logo{display: flex;margin-right: 35%;
+    flex-direction: row;
+    align-items: center;
+    color: white;}
+    
+    nav .menu{display:flex;}
+    nav .menu li a{
+        height: 40px;
+        line-height: 43px;
+        margin: 0px;
+        padding: 0px 25px;
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: white;
+        overflow-y: hidden;
+    }
 }

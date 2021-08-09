@@ -31,11 +31,11 @@ function showPage() {
       <a href="/mainpage" class="logo">Touristooze</a>
           <div class="pop" id="pop" style="float:right">
                <div class="register">
-                    <h1> Sign Up!</h1>
+                    <h1>Sign Up!</h1>
                          {{#if message}}
                               <h5 class="warning">{{message}}</h5>
                          {{/if}}
-                    <form action="/auth/signup" method="POST" >
+                    <form action="/auth/signup" method="POST">
                          <label for="fname"><b>First Name: </b></label>
                          <input type="text" placeholder="Enter First Name" name="fname"  required><br>
                          <label for="lname"><b>Last Name: </b></label>
