@@ -706,9 +706,9 @@ req.session.tripno=0
 
         db.query("SELECT * FROM wishlist WHERE cnic=?",[req.session.name],(err,result)=>{if (err) throw err;
             else{let wish=result
-                db.query("SELECT * FROM planbooking WHERE Name=? AND payment_status=0",[req.session.name],(err,result)=>{if (err) throw err;
-                    else{
-                        if(result>0){req.session.pay="Pending"}
+                db.query("SELECT * FROM planbooking WHERE  payment_status='0' AND Name=? ",[req.session.name],(err,result)=>{if (err) throw err;
+                    else{console.log("pay" ,result)
+                        if(result.length){req.session.pay="Pending";console.log("i am here")}
                         else{req.session.pay="Clear"}
         
       
