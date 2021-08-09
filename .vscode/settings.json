@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e8d92bcd-200f-421f-912f-e08269e035b9/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/touristooze",
+    "appService.deploySubpath": "."
+}
