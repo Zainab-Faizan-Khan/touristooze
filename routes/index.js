@@ -8,12 +8,15 @@ const router=express.Router();
 const mysql= require("mysql");
 
 
-const db= mysql.createConnection({
+const db= mysql.createPool({
     connectionLimit:100,
+    port:3306,
     user:process.env.DATABASE_USER,
     host:process.env.DATABASE_HOST,
     password:process.env.DATABASE_PASSWORD,
     database:process.env.DATABASE,
+ 
+  
     
   })
 

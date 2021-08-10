@@ -8,12 +8,14 @@ const cookieParser=require("cookie-parser")
 const app = express();
 dotenv.config({path:'./.env'})
 
-const db= mysql.createConnection({
+const db= mysql.createPool({
   connectionLimit:100,
+  port:3306,
   user:process.env.DATABASE_USER,
   host:process.env.DATABASE_HOST,
   password:process.env.DATABASE_PASSWORD,
   database:process.env.DATABASE,
+  
   
 })
 
@@ -40,15 +42,17 @@ app.use(express.static(publicDirectory));
 
 app.set('view engine' ,'hbs');
 
-db.connect((error)=>{
+db.getConnection((error)=>{
     
-  console.log("Database connected"); 
-})
+  console.log("Database Connected")
+  })
+
+
 //Define routes
 app.use('/',require('./routes/index'));
 app.use('/auth',require('./routes/auth'))
-var port=4000
-app.listen(port,()=>{
+
+app.listen(process.env.PORT || 7000,()=>{
 console.log("server working fine!");
 });
 
